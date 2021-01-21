@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang ="pt-Br">
+    <head>
+        <meta charset ="UTF-8" />
+        <title> Home </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="estilos/style.css">
+    </head>
+    <div class="container-fluid">
+        <body>
+            <header>
+                <nav>
+                    <figure>
+                        <img src="imagens/logo.png" alt="Logo" name = "logo" width="100px" height="60px">
+                    </figure>
+                    <ul>
+                        <li><a href = "procurar_produtos.html"> Procurar Produtos  </a></li>
+                        <li> | </li>
+                        <li><a href = "procurar_produtores.html"> Procurar Produtores  </a></li>
+                        <li> | </li>
+                        <li><a href = "pedidos.html"> Meus Pedidos   </a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container-body">
+                <main>
+                    <br/>
+                    <div class="form-group">
+                        <select class="form-control" id="tipo_produtores" name="tipo_produtores">
+                            <option label="">Tipo Produtores</option>
+                            <option value="1">Gado Bovino</option>
+                            <option value="2">Gado Suino</option>
+                            <option value="3">Equinos</option>
+                            <option value="4">Frutas</option>
+                            <option value="5">Vegetais</option>
+                            <option value="6">Vegetais</option>
+                            <option value="7">Outro</option>
+                        </select>
+                      </div> 
+                    <div class="input-group input-group-sm mb-3">
+                        <input type="text" class="form-control" name="tipo_comida" placeholder="Procure pelo nome do produtor ou Empresa" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Whatsapp</th>
+                            <th scope="col">E-mail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Murilo</td>
+                            <td>(xx)xxxxx-xxxx</td>
+                            <td>xxxxxxx@xxxx.com</td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>João</td>
+                            <td>(xx)xxxxx-xxxx</td>
+                            <td>xxxxxxx@xxxx.com</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                      <a href="index_usuario.html">Ir para página Incial.</a>
+                </main>
+            </div>
+        </body>
+        <footer align = "center">
+            <a href = "suporte.html">Suporte</a> | <a href="ajuda.html">Ajuda</a> | <a href="contato.html">Contato</a> <br/>
+            Desenvolvido &copy ...
+        </footer>
+    </div>
+</html>
