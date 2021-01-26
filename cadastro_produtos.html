@@ -37,22 +37,30 @@
                         <fieldset>
                             <legend>Cadastre seus produtos</legend>
                             
-                            Descrição do produto:<input type="text" name="descricao_produto" id="descricao_produto" placeholder="Nome do produto"/>
-                            <br />
-                            Preço do produto:<input type="number" name="preco_produto" id="preco_produto" placeholder="Preço do produto"/>
-                            <br />
-                            Tipo do produto:<select>
-                                <option label="selecionar">::Selecione um tipo de produto::</option>
-                                <option value="1">Gado Bovino</option>
-                                <option value="2">Gado Suino</option>
-                                <option value="3">Equinos</option>
-                                <option value="4">Frutas</option>
-                                <option value="5">Vegetais</option>
-                                <option value="6">Vegetais</option>
-                                <option value="7">Outro</option>
-                            </select>
-                            <br />
-                            Imagem do produto:<input type="file" name="imagem_produto" id="imagem_produto" accept=".jpg, .jpeg"/>
+                            <div class="input-group input-group-sm mb-3">
+                                <input type="text" class="form-control" name="descricao_produto" placeholder="Nome do produto" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <input type="text" class="form-control" name="preco_produto" id="preco_produto" placeholder="Preço do produto" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="tipo_produto" name="tipo_produto">
+                                    <option label="">Selecione um tipo de produto</option>
+                                    <option value="1">Gado Bovino</option>
+                                    <option value="2">Gado Suino</option>
+                                    <option value="3">Equinos</option>
+                                    <option value="4">Frutas</option>
+                                    <option value="5">Vegetais</option>
+                                    <option value="6">Vegetais</option>
+                                    <option value="7">Outro</option>
+                                </select>
+                            </div> 
+                            <div class="input-group input-group-sm mb-3">
+                                <label for = "imagem_produto">Imagem do produto</label><br/>
+                                <input type="file" class="form-control" name="imagem_produto" id="imagem_produto" accept=".jpg, .jpeg" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <button type="button" class="btn btn-success">Confirmar</button>
+                            <button type="reset" class="btn btn-danger">Limpar</button>
                         </fieldset>
                     </form>
                 </main>

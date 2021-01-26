@@ -83,3 +83,9 @@ fieldset {
   padding-right: 0.75em;
   border: 2px groove (internal value);
 }
+
+main{
+	margin-left: 13%;
+	margin-right: 15%;
+	margin-top: 5%;
+}
