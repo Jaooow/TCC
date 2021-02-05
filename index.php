@@ -9,12 +9,23 @@
         <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet"/>
         <link rel="stylesheet" type="text/css" href="estilos/style.css">
         <script src='js/jquery-3.5.1.min.js'></script>
-        <script src='js/funcoes.js'></script>
-
         <script>
             $('modal').on('shown.bs.modal', function () {
             $('#meuInput').trigger('focus')
-            })
+            });
+
+            $(document).ready(function(){
+              $("#cadastra").click(function(){
+                sessionStorage.setItem("nome", $("#inputNome").val());
+                sessionStorage.setItem("email", $("#Email").val());
+                sessionStorage.setItem("endereco", $("#inputAddress").val());
+                sessionStorage.setItem("numero", $("#numero").val());
+                sessionStorage.setItem("cidade", $("#inputCity").val());
+                sessionStorage.setItem("estado", $("#inputEstado").val());
+                sessionStorage.setItem("cep", $("#inputCEP").val());
+                $("#modalExemplo").fadeOut();
+              });
+            });
         </script>
     </head>
     <div class="container-fluid">
@@ -24,24 +35,20 @@
                     <figure>
                         <img src="imagens/logo.png" alt="Logo" name = "logo" width="100px" height="60px">
                     </figure>
-                    <ul>
-                        <li> | </li>
-                        <li><a href = ""> Contato </a></li>
-                        <li> | </li>
-                    </ul>
                 </nav>
             </header>
             <div class="container-body">
                 <main>
+                  <div id="teste"></div>
                     <h1>Bem-Vindo (a)!</h1>
                     <h3><a>Cadastre-se</a> ou faça seu <a>Login</a>!</h3>
                         <!-- Botão para acionar modal -->
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalExemplo">
-                           Cadastro
+                            Cadastro
                         </button>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalLogin">
-                          Login
-                       </button>
+                          logar
+                      </button>
                         
                         <!-- Modal -->
                         <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -58,56 +65,44 @@
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="inputEmail4">Nome</label>
-                                            <input type="text" class="form-control" id="inputNome" placeholder="Nome de usuario">
+                                            <input type="text" class="form-control" id="inputNome" required="required" placeholder="Insira seu nome aqui!!">
                                           </div>
                                           <div class="form-group col-md-6">
                                             <label for="inputEmail4">Email</label>
-                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                            <input type="email" class="form-control" id="Email" required="required" placeholder="Email">
                                           </div>
                                           <div class="form-group col-md-6">
                                             <label for="inputPassword4">Senha</label>
-                                            <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+                                            <input type="password" class="form-control" id="inputPassword" required="required" placeholder="Senha">
                                           </div>
                                         </div>
                                         <div class="form-group">
                                           <label for="inputAddress">Endereço</label>
-                                          <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
+                                          <input type="text" class="form-control" id="inputAddress" required="required" placeholder="Rua dos Bobos">
                                         </div>
                                         <div class="form-group">
-                                          <label for="inputAddress2">Endereço 2</label>
-                                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
+                                          <label for="inputAddress">Numero do local</label>
+                                          <input type="text" class="form-control" id="numero" required="required">
                                         </div>
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="inputCity">Cidade</label>
-                                            <input type="text" class="form-control" id="inputCity">
+                                            <input type="text" class="form-control" required="required" id="inputCity">
                                           </div>
                                           <div class="form-group col-md-4">
                                             <label for="inputEstado">Estado</label>
-                                            <select id="inputEstado" class="form-control">
-                                              <option selected>Escolher...</option>
-                                              <option>...</option>
-                                            </select>
+                                            <input type="text" id="inputEstado" required="required" placeholder="Estado" class="form-control"/>
                                           </div>
                                           <div class="form-group col-md-2">
                                             <label for="inputCEP">CEP</label>
-                                            <input type="text" class="form-control" id="inputCEP">
+                                            <input type="number" required="required" placeholder="CEP" class="form-control" id="inputCEP">
                                           </div>
                                         </div>
-                                        <div class="form-group">
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                            <label class="form-check-label" for="gridCheck">
-                                              Confimar Dados
-                                            </label>
-                                          </div>
-                                        </div>
-                                        
+                                        <div class="modal-footer">
+                                          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Limpar</button>
+                                          <button type="button" id="cadastra" class="btn btn-success">Cadastrar</button>
+                                      </div>
                                       </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-success">Salvar mudanças</button>
                                 </div>
                             </div>
                             </div>
@@ -128,15 +123,15 @@
                                       <div class="form-row">
                                         <div class="form-group col-md-6">
                                           <label for="inputEmail4">Email</label>
-                                          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required="required">
+                                          <input type="email" class="form-control" required="required" id="inputEmail" placeholder="Email">
                                         </div>
                                         <div class="form-group col-md-6">
                                           <label for="inputPassword4">Senha</label>
-                                          <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" required="required">
+                                          <input type="password" class="form-control" required="required" id="inputPassword" placeholder="Senha">
                                         </div>
                                       </div>
                                       <div class="modal-footer">
-                                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Limpar</button>
                                         <button type="submit" class="btn btn-success">Logar</button>
                                     </div>
                                     </form>

@@ -17,25 +17,33 @@
                         <img src="imagens/logo.png" alt="Logo" name = "logo" width="100px" height="60px">
                     </figure>
                     <ul>
+                        <li><a href = "cadastro_produtos.html"> Cadastrar Produtos </a></li>
+                        <li> | </li>
                         <li><a href = "procurar_produtos.html"> Procurar Produtos  </a></li>
                         <li> | </li>
                         <li><a href = "procurar_produtores.html"> Procurar Produtores  </a></li>
                         <li> | </li>
                         <li><a href = "pedidos.html"> Meus Pedidos   </a></li>
+                        <li> | </li>
+                        <li><a href = "perfil.html"> Perfil   </a></li>
+                        <li> | </li>
+                        <li><a href = "logout.html"> Sair   </a></li>
                     </ul>
                 </nav>
             </header>
             <div class="container-body">
                 <main>
                     <br/>
+                    <form method="POST" action="solicitacao_produtos.html">
                     <h6>Tem certeza que os produtos estão corretos?</h6>
                     <ul class="list-group">
-                        <li class="list-group-item">Boi, 3 Unidades!</li>
-                        <li class="list-group-item">Porco, 5 Unidades</li>
+                        <li class="list-group-item">Boi, 5 Unidades!</li>
+                        <li class="list-group-item">Porco, 3 Unidades</li>
                     </ul>
                     <br/>
-                    <button type="button" class="btn btn-success">Confirmar</button>
-                    <button type="button" class="btn btn-danger">Voltar</button>
+                    <button type="submit" class="btn btn-success">Confirmar</button>
+                    <button type="button" href="procurar_produtos.html" class="btn btn-danger">Voltar</button>
+                    </form>
                 </main>
             </div>
         </body>
