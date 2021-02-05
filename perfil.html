@@ -19,10 +19,11 @@
                 var estado=sessionStorage.getItem("estado");
                 var cep=sessionStorage.getItem("cep");
 
-                var conteudo="<li>Nome: "+nome+"</li><li>Email: "+email+"</li><li>Endereço: "+endereco+"</li><li>Numero: "+numero+"</li><li>Cidade: "+cidade+"</li><li>Estado: "+estado+"</li><li>Cep: "+cep+"</li>";
+                var conteudo="<li class='list-group-item'>Nome: "+nome+"</li><li class='list-group-item'>Email: "+email+"</li><li class='list-group-item'>Endereço: "+endereco+"</li><li class='list-group-item'>Numero: "+numero+"</li><li class='list-group-item'>Cidade: "+cidade+"</li><li class='list-group-item'>Estado: "+estado+"</li><li class='list-group-item'>CEP: "+cep+"</li>";
                 $("#recebe_dados").html(conteudo);
             });
         </script>
+        
     </head>
     <div class="container-fluid">
         <body>
@@ -53,8 +54,11 @@
             <div class="container-body">
                 <main>
                    <div>
-                       <ul id="recebe_dados">
-                       </ul>
+                        <p>
+                        <img src="imagens/avatarH.png" alt="avatar" name = "avatar"  width="120px" height="120px"/>
+                        </p>
+                        <ul class="list-group" id="recebe_dados">
+                        </ul>
                    </div>
                 </main>
             </div>
