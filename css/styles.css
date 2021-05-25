@@ -1,6 +1,6 @@
 /* Gerais */
 body{
-    font-family: 'Roboto', arial;
+    font-family: 'Roboto', arial, sans-serif;
 }
 .row{
     margin: 0;
@@ -12,9 +12,17 @@ p, li{
     color: #444;
     font-size: 14px;
 }
+
+/*Ancora*/
+
+.ancora{
+    transition-delay: 5s;
+}
+
+
 /* NavBar */
 header, .navbar{
-    background-color: #00807A;
+    background-color: #1C9997;
 }
 #nav-container{
     padding-top: 0;
@@ -40,6 +48,10 @@ header, .navbar{
 .container-fluid{
     padding: 0;
 }
+#mainSlider img{
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 5);
+}
 #mainSlider .carousel-inner, #mainSlider .carousel-item{
     height: 90vh;
 }
@@ -48,8 +60,12 @@ header, .navbar{
 }
 #mainSlider .carousel-caption h2{
     font-size: 50px;
+    font-weight: 300;
     margin: 30px;
+    color:#FFF
+
 }
+
 #mainSlider .carousel-caption p{
     font-size: 22px;
     font-weight: 300;
@@ -131,17 +147,124 @@ header, .navbar{
 .service-box:hover > i, .service-box:hover > h4{
     color: #7AB4AD;
 }
-/* Dados */
-.circle-box div{
-    padding: 0 40px;
-}
-.progressbar-text{
-    font-weight: bold;
-    font-size: 32px;
-}
-#data-area{
-    color: #FFF;
+
+/* Footer */
+#contact-area{
     text-align: center;
-    font-size: 26px;
-    margin-top: 20px;
+    background-color: #F9F9F9;
+}
+
+.contact-box{
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #1C9997;
+}
+
+.contact-box i{
+    color: #444;
+    border: 1px solid #444;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-box p{
+    font-size: 16px;
+}
+
+.contact-title{
+    font-weight: bold;
+    color: #1C9997
+}
+/*Copy*/
+
+#copy-area{
+background-color: #F1F1F1;
+}
+
+#copy-area .container{
+    padding: 10px 0;
+    text-align: center;
+}
+
+#copy-area .container p{
+    margin-bottom: 0;
+}
+
+#copy-area .container a{
+    font-weight: bold;
+    color:#444
+}
+
+#copy-area .container a:hover{
+    text-decoration: none;
+    color: #1C9997
+}
+
+/*Responsive*/
+
+@media(max-width: 768px) {
+    /*Geral*/
+    .container{
+        padding: 20px 0;
+    }
+    /*Slider*/
+    #mainSlider .carousel-inner, #mainSlider .carousel-item{
+        height: auto;
+    }
+    #mainSlider .carousel-caption h2{
+        font-size: 28px;
+    }
+    #mainSlider .carousel-caption p{
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    .carousel-caption{
+        left:10%;
+        right:10%;
+    }
+    /*About*/
+    #about-area img{
+        margin-top: 100px;
+    }
+}
+
+@media(max-width: 425px){
+    /*Sldier*/
+    #mainSlider{
+        margin-top: 80px;
+    }
+    
+    #mainSlider .carousel-caption{
+        top:5px;
+    }
+
+    #mainSlider .carousel-caption h2{
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    #mainSlider .carousel-caption p{
+        display: none;
+    }
+
+    .carousel-caption .main-btn{
+        font-size:14px;
+    }
+    /*About*/
+    .main-title{
+        font-size: 30px;
+    }
+    #about-area img{
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    /*Contact*/
+    .contact-box{
+        border: none;
+        margin: 0;
+    }
 }
