@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 21-Maio-2021 às 00:06
+-- Data de Criação: 03-Jun-2021 às 15:35
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -47,6 +47,36 @@ INSERT INTO `adm` (`id_adm`, `email`, `senha`, `tipo_de_usuario`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `fotos`
+--
+
+CREATE TABLE IF NOT EXISTS `fotos` (
+  `foto` longblob NOT NULL,
+  `id_foto` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_produto` int(11) NOT NULL,
+  PRIMARY KEY (`id_foto`),
+  KEY `cod_produto` (`cod_produto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produtos`
+--
+
+CREATE TABLE IF NOT EXISTS `produtos` (
+  `nome` varchar(300) NOT NULL,
+  `preco` float NOT NULL,
+  `descricao` varchar(1000) NOT NULL,
+  `id_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_vendendor` int(11) NOT NULL,
+  PRIMARY KEY (`id_produto`),
+  KEY `cod_vendendor` (`cod_vendendor`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuarios`
 --
 
@@ -59,7 +89,23 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `fotos`
+--
+ALTER TABLE `fotos`
+  ADD CONSTRAINT `fotos_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`);
+
+--
+-- Limitadores para a tabela `produtos`
+--
+ALTER TABLE `produtos`
+  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`cod_vendendor`) REFERENCES `usuarios` (`id_usuario`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
