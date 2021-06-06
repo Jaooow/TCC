@@ -4,7 +4,7 @@
         <!-- Meta tags Obrigatórias -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Nome site</title>
+        <title>Nome do site</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
@@ -25,24 +25,50 @@
     <body>
         <header>
             <!-- NavBar -->
-            <div class="container" id="nav-container">
-                <nav class = "navbar navbar-expand-lg fixed-top">
-                    <a href="img/logo.png" class="navbar-brand">
-                        <img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
-                        aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class = "navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-                        <div class ="navbar-nav">
-                            <a class="nav-item nav-link" id="home-menu">Home</a>
-                            <a class="nav-item nav-link" id="about-menu">Sobre Nós</a>
-                            <a class="nav-item nav-link" id="home-menu">Contato</a>
-                            <a class="nav-item nav-link" id="home-menu" href="#" data-toggle="modal" data-target="#modal_login">Login</a>
-                            <a class="nav-item nav-link" id="home-menu" href="#" data-toggle="modal" data-target="#modal_cadastro">Cadastro</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+			<?php
+				if(isset($_SESSION["tipo_usuario"])){
+					echo'<div class="container" id="nav-container">
+						<nav class = "navbar navbar-expand-lg fixed-top">
+							<a href="img/logo.png" class="navbar-brand">
+								<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+								aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+								<span class = "navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+								<div class ="navbar-nav">
+									<a class="nav-item nav-link">Sobre Nós</a>
+									<a class="nav-item nav-link">Contato</a>
+									<a class="nav-item nav-link" id="home-menu" href="#" data-toggle="modal" data-target="#modal_login">Login</a>
+									<a class="nav-item nav-link" id="home-menu" href="#" data-toggle="modal" data-target="#modal_cadastro">Cadastro</a>
+								</div>
+							</div>
+						</nav>
+					</div>';
+				}
+				else{
+					if($_SESSION["tipo_usuario"]==0){
+						echo'<div class="container" id="nav-container">
+						<nav class = "navbar navbar-expand-lg fixed-top">
+							<a href="img/logo.png" class="navbar-brand">
+								<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+								aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+								<span class = "navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+								<div class ="navbar-nav">
+									<a class="nav-item nav-link">Home</a>
+									<a class="nav-item nav-link">Procurar</a>
+									<a class="nav-item nav-link">Negociações</a>
+									<a class="nav-item nav-link">Sobre nós</a>
+								</div>
+							</div>
+						</nav>
+					</div>';
+					}
+				}
+			?>
         </header>

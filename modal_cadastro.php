@@ -29,5 +29,5 @@
         <button type="button" id="cadastrar" class="btn btn-primary">Cadastrar</button>
       </div>
     </div>
-  </div>
 </div>
+  </div>
