@@ -204,6 +204,41 @@ background-color: #F1F1F1;
     color: #1C9997
 }
 
+/*Login*/
+#login_area{
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 32px;
+    padding:80px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FFF;
+}
+#login_area div{
+    margin-bottom: 6px;
+}
+#login_area h2{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+#login_area i{
+    font-size: 24px;
+}
+
+#login_area .main-btn{
+    margin-top: 15px;
+    width: 100%;  
+}
+
+#login_area .underline{
+    border-top: 2px solid #333;
+    width: 100%;
+    margin-bottom: 12px;
+}
 /*Responsive*/
 
 @media(max-width: 768px) {
