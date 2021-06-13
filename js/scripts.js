@@ -8,7 +8,7 @@ $(document).ready(function(){
 		});
 	}
 	
-	$("#logar").click(){
+	$("#logar").click(function(){
 		var dados= {email: $("#email_login").val(),
                      senha: $("#senha_login").val()};
 					 
@@ -20,7 +20,7 @@ $(document).ready(function(){
 				window.location.href="home.php";
 			}
 		});
-	}
+	});
 	
 	function confirmar_senha(){
 		var senha = $("#senha").val(), confirma_senha = $("#confirma_senha").val();

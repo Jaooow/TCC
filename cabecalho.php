@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -26,9 +29,9 @@
         <header>
             <!-- NavBar -->
 			<?php
-				if(isset($_SESSION["tipo_usuario"])){
+				if(!isset($_SESSION["tipo_usuario"])){
 					echo'<div class="container" id="nav-container">
-						<nav class = "navbar navbar-expand-lg fixed-top">
+						<nav class = "navbar navbar-expand-lg">
 							<a href="img/logo.png" class="navbar-brand">
 								<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
 							</a>
