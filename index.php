@@ -4,6 +4,7 @@
     <main>
         <div class = "container-fluid">
             <!--Slider-->
+            <a class = "ancora" name="home"></a>
             <div id="mainSlider" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
@@ -13,7 +14,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="img/bolo_wallpaper.jpg" class="d-block w-100" alt="Bolos e Doces">
-                        <div class = "carousel-caption d-none d-md-block">
+                        <div class = "carousel-caption  d-md-block">
                             <h2>Bolos e Salgados</h2>
                             <p>Visite Nossos Parceiros!</p>
                             <a href="#" class="main-btn">Visitar</a>
@@ -21,7 +22,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="img/salgado_wallpaper.png" class="d-block w-100" alt="Salgados">
-                        <div class = "carousel-caption d-none d-md-block">
+                        <div class = "carousel-caption  d-md-block">
                             <h2>Salgados</h2>
                             <p>Visite Nossos Parceiros!</p>
                             <a href="#" class="main-btn">Visitar</a>
@@ -29,7 +30,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="img/verdura_wallpaper.jpg" class="d-block w-100" alt="Verduras e Legumes">
-                        <div class = "carousel-caption d-none d-md-block">
+                        <div class = "carousel-caption  d-md-block">
                             <h2>Verduras e Legumes</h2>
                             <p>Visite Nossos Parceiros!</p>
                             <a href="#" class="main-btn">Visitar</a>
@@ -46,13 +47,14 @@
                 </a>
             </div>
             <!--Sobre Nós-->
+            <a class = "ancora" name="about"></a>
             <div id="about-area">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <h3 class ="main-title">Sobre Nós</h3>
                         </div>
-						<div class="col-md-6">
+                        <div class="col-md-6">
                             <img class="img-fluid" src="img/agencia.jpg" alt="Sobre Nós">
                         </div>
                         <div class="col-md-6">
@@ -72,6 +74,7 @@
                 </div>
             </div>
             <!--Serviços da Empresa-->
+            <a class = "ancora" name="services"></a>
             <div id="services-area">
                 <div class="container">
                     <div class="row">
@@ -93,14 +96,34 @@
                             <h4>Parceiros</h4>
                             <p>Vire um parceiro e comece a alavancar seu pequeno negócio sem custo algum.</p>
                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
-
+            <!-- Contato -->
+            <a class = "ancora" name="contact"></a>
+            <div id="contact-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="main-title">Entre em Contato Conosco</h3>
+                        </div>
+                        <div class="col-md-4 contact-box">
+                            <i class="fas fa-phone"></i>
+                            <p><span class ="contact-title">Ligue Para:</span> (16) 99999-9999</p>
+                        </div>
+                        <div class="col-md-4 contact-box">
+                            <i class="fas fa-envelope"></i>
+                            <p><span class ="contact-title">Email:</span> tcc_cjl@outlook.com</p>
+                        </div>
+                        <div class="col-md-4 contact-box">
+                            <i class="fab fa-instagram"></i>
+                            <p><span class ="contact-title">@</span>nomempresa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 <?php
-	include "modal_cadastro.php";
-	include "modal_login.php";
-	include "rodape.html";
+	include "rodape.php";
 ?>
