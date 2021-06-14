@@ -8,7 +8,7 @@
 			<input class="form-control" type="text" name="procurar" id="procurar" placeholder="Pesquise pelo produto, comerciante, região !"/>
 			<button type="button" id="submeter_procura">Procurar</button> 
 		</form>
-		<div id="lista de produtos"></div>
+		<div id="lista_de_produtos"></div>
 	</body>
 	<?php
 		include "inc/footer.inc";
