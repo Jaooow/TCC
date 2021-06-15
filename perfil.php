@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include "cabecalho.php";
 ?>
 <main>
@@ -8,11 +7,11 @@
 			<img src="img/avatar.png" alt="avatar" name = "avatar"/>
 
 			<ul class="list-group">
-				<li class="list-group-item disabled"><i class="fas fa-user"></i><span id="nome_perfil">Nome</span></li>
-				<li class="list-group-item"><i class="fas fa-envelope"></i><span id="email_perfil">Email</span></li>
-				<li class="list-group-item"><i class="fas fa-id-card"></i><span id="documentacao">Cargo</span></li>
-				<li class="list-group-item"><i class="far fa-chart-bar"></i><span id="tipo_negocio">Negócio</span></li>
-				<li class="list-group-item"><i class="fas fa-folder-open "></i><span id="documentacao">Documentação</span></li>
+				<li class="list-group-item disabled"><i class="fas fa-user"></i>Nome:<span id="nome_perfil"></span></li>
+				<li class="list-group-item"><i class="fas fa-envelope"></i>Email:<span id="email_perfil"></span></li>
+				<li class="list-group-item"><i class="fas fa-id-card"></i>Cargo:<span id="cargo"></span> <button id="mudar_cargo" class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal_cargo">Mudar cargo</button></li>
+				<li class="list-group-item"><i class="far fa-chart-bar"></i>Negócio:<span id="tipo_negocio"></span></li>
+				<li class="list-group-item"><i class="fas fa-folder-open "></i>Documentação:<span id="documentacao"></span></li>
 			</ul>
 				<button type="button" class="btn btn-warning">Alterar</button>
 

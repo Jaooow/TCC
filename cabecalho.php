@@ -25,6 +25,7 @@
 		<script src="js/scripts.js"></script>
 		<script src="js/script_procurar_produtos.js"></script>
 		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/script_perfil.js"></script>
     </head>
     <body>
         <header>
@@ -73,6 +74,7 @@
 										<a class="nav-item nav-link">Home</a>
 										<a class="nav-item nav-link">Procurar</a>
 										<a class="nav-item nav-link">Negociações</a>
+										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
 										<a class="nav-item nav-link">Sobre nós</a>
 									</div>
 								</div>

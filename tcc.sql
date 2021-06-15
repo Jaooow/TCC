@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 03-Jun-2021 às 15:35
+-- Data de Criação: 15-Jun-2021 às 02:56
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -68,11 +68,18 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `nome` varchar(300) NOT NULL,
   `preco` float NOT NULL,
   `descricao` varchar(1000) NOT NULL,
+  `cod_vendedor` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
-  `cod_vendendor` int(11) NOT NULL,
   PRIMARY KEY (`id_produto`),
-  KEY `cod_vendendor` (`cod_vendendor`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `cod_vendendor` (`cod_vendedor`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`nome`, `preco`, `descricao`, `cod_vendedor`, `id_produto`) VALUES
+('rb', 34, 'ev', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -89,7 +96,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `id_usuario`) VALUES
+(' gh ', 'gh ', 'ertb', 'ertb', 1, 1);
 
 --
 -- Constraints for dumped tables
@@ -105,7 +119,7 @@ ALTER TABLE `fotos`
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`cod_vendendor`) REFERENCES `usuarios` (`id_usuario`);
+  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
