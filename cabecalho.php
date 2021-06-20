@@ -57,7 +57,7 @@
 					</div>';
 				}
 				else{
-					if($_SESSION["tipo_usuario"]==0){
+					if($_SESSION["tipo_usuario"]==0 || $_SESSION["cargo1"]==1){
 						echo'
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
@@ -75,7 +75,15 @@
 										<a class="nav-item nav-link">Procurar</a>
 										<a class="nav-item nav-link">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
-										<a class="nav-item nav-link">Sobre nós</a>
+										<a class="nav-item nav-link">Sobre nós</a>';
+										if($_SESSION["cargo"]==2){
+										echo'<a class="nav-item nav-link">
+											<select id="mudar_cargo" name="mudar_cargo">
+												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>
+												<option href="alterar_cabecalho.php?id=2" value="">Alterar para usuario Vendedor</option>
+											</select>
+										</li>';
+									}
 									</div>
 								</div>
 							</nav>

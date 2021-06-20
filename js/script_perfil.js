@@ -5,7 +5,12 @@ $(document).ready(function(){
 		$.each(r, function(i,v){
 			$("#nome_perfil").html(v.nome);
 			$("#email_perfil").html(v.email);
-			$("#cargo").html(v.tipo_de_negocio);
+			if(v.tipo_de_usuario==1){
+				$("#cargo").html("Cliente");
+			}
+			else{
+				$("#cargo").html("Cliente/Vendedor");
+			}
 		});
 	});
 });

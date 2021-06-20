@@ -47,6 +47,8 @@
             $l = mysqli_fetch_assoc($resultado);
 			header("Location: procurar_produtos.php");
 			$_SESSION["id_usuario"]=$l["id_usuario"];
+			$_SESSION["cargo1"]=1;
+			$_SESSION["cargo2"]=$l["cargo"]
             echo 1;
         }
         else {
