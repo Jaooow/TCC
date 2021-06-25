@@ -5,6 +5,7 @@ $(document).ready(function(){
 		$.each(r, function(i,v){
 			$("#nome_perfil").html(v.nome);
 			$("#email_perfil").html(v.email);
+			console.log(v.tipo_de_usuario);
 			if(v.tipo_de_usuario==1){
 				$("#cargo").html("Cliente");
 			}

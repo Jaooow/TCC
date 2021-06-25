@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 15-Jun-2021 às 02:56
+-- Data de Criação: 25-Jun-2021 às 04:51
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -105,6 +105,23 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `id_usuario`) VALUES
 (' gh ', 'gh ', 'ertb', 'ertb', 1, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vendedores`
+--
+
+CREATE TABLE IF NOT EXISTS `vendedores` (
+  `id_vendedores` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_negocio` int(11) NOT NULL,
+  `cnpj` varchar(300) DEFAULT NULL,
+  `documentacao` longblob,
+  `cod_vendedor` int(11) NOT NULL,
+  PRIMARY KEY (`id_vendedores`),
+  UNIQUE KEY `cod_vendedor` (`cod_vendedor`),
+  UNIQUE KEY `cnpj` (`cnpj`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 --
 -- Constraints for dumped tables
 --
@@ -120,6 +137,12 @@ ALTER TABLE `fotos`
 --
 ALTER TABLE `produtos`
   ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`);
+
+--
+-- Limitadores para a tabela `vendedores`
+--
+ALTER TABLE `vendedores`
+  ADD CONSTRAINT `vendedores_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

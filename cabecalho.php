@@ -26,6 +26,7 @@
 		<script src="js/script_procurar_produtos.js"></script>
 		<script src="js/jquery-3.5.1.min.js"></script>
 		<script src="js/script_perfil.js"></script>
+		<script src="js/script_mudar_cargo.js"></script>
     </head>
     <body>
         <header>
@@ -57,7 +58,7 @@
 					</div>';
 				}
 				else{
-					if($_SESSION["tipo_usuario"]==0 || $_SESSION["cargo1"]==1){
+					if($_SESSION["cargo"]==1){
 						echo'
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
@@ -76,7 +77,7 @@
 										<a class="nav-item nav-link">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
 										<a class="nav-item nav-link">Sobre nós</a>';
-										if($_SESSION["cargo"]==2){
+										if($_SESSION["tipo_usuario"]>1){
 										echo'<a class="nav-item nav-link">
 											<select id="mudar_cargo" name="mudar_cargo">
 												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>
@@ -84,7 +85,39 @@
 											</select>
 										</li>';
 									}
-									</div>
+									echo'</div>
+								</div>
+							</nav>
+						</div>';
+					}
+					else{
+						echo'
+						<!-- NavBar -->
+						<div class="container" id="nav-container">
+							<nav class = "navbar navbar-expand-lg fixed-top navbar-dark">
+								<a href="img/logo.png" class="navbar-brand">
+									<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
+								</a>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+									aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+									<span class = "navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+									<div class ="navbar-nav">
+										<a class="nav-item nav-link">Home/negocioações</a>
+										<a class="nav-item nav-link">Cadastrar Produtos</a>
+										<a class="nav-item nav-link">Meus Produtos</a>
+										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
+										<a class="nav-item nav-link">Sobre nós</a>';
+										if($_SESSION["tipo_usuario"]>1){
+										echo'<a class="nav-item nav-link">
+											<select id="mudar_cargo" name="mudar_cargo">
+												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>
+												<option href="alterar_cabecalho.php?id=2" value="">Alterar para usuario Vendedor</option>
+											</select>
+										</li>';
+									}
+									echo'</div>
 								</div>
 							</nav>
 						</div>';

@@ -5,7 +5,6 @@
     $senha=$_POST["senha"];
 	$tipo_de_negocio="Ausente";
 	$tipo_de_usuario=1;
-	$cargo=1;
     $senha=md5($senha);
 
     $insert= "INSERT INTO usuarios(
@@ -13,21 +12,19 @@
                                     email,
                                     senha,
 									tipo_de_negocio,
-									tipo_de_usuario,
-									cargo
+									tipo_de_usuario
                                 ) VALUES (
                                     ?,
                                     ?,
                                     ?,
                                     ?,
-                                    ?,
-									?
+                                    ?
                                 )";
 
 
 if($stmt = mysqli_prepare($con, $insert)) { 
 
-    mysqli_stmt_bind_param($stmt, "ssssss", $nome, $email, $senha, $tipo_de_negocio, $tipo_de_usuario, $cargo);
+    mysqli_stmt_bind_param($stmt, "ssssss", $nome, $email, $senha, $tipo_de_negocio, $tipo_de_usuario);
     
 
     mysqli_stmt_execute($stmt);
