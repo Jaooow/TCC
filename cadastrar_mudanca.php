@@ -19,16 +19,15 @@
 									tipo_de_usuario='$tipo_de_usuario'
                                  WHERE 
 									id_usuario = '$id'
-                                )";
-	 echo mysqli_query($con, $update)or die(mysqli_error($con));
-	 
-	$tipo_de_negocio=$_POST["tipo_de_negocio"];
+                                ";
+	mysqli_query($con, $update)or die(mysqli_error($con));
+	
     $cnpj=$_POST["cnpj"];
     $documento=$_POST["documento"];
 	
 
     $insert= "INSERT INTO vendedores(
-									tipo_de_negocio,
+									tipo_negocio,
 									cnpj,
 									documentacao,
 									cod_vendedor
@@ -42,7 +41,7 @@
 
 if($stmt = mysqli_prepare($con, $insert)) { 
 
-    mysqli_stmt_bind_param($stmt, "ssssss", $tipo_de_negocio, $cnpj, $cnpj, $documento, $id);
+    mysqli_stmt_bind_param($stmt, "ssss", $tipo_de_negocio, $cnpj, $documento, $id);
     
 
     mysqli_stmt_execute($stmt);
