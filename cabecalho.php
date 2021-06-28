@@ -71,11 +71,11 @@
 								</button>
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
-										<a class="nav-item nav-link">Home</a>
-										<a class="nav-item nav-link">Procurar</a>
-										<a class="nav-item nav-link">Negociações</a>
+										<a class="nav-item nav-link" href="">Home</a>
+										<a class="nav-item nav-link" href="">Procurar</a>
+										<a class="nav-item nav-link" href="">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
-										<a class="nav-item nav-link">Sobre nós</a>';
+										<a class="nav-item nav-link" href="">Sobre nós</a>';
 										if($_SESSION["tipo_usuario"]>1){
 										echo'<a class="nav-item nav-link">
 											<select id="mudar_cargo" name="mudar_cargo">
@@ -103,11 +103,11 @@
 								</button>
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
-										<a class="nav-item nav-link">Home/negocioações</a>
-										<a class="nav-item nav-link">Cadastrar Produtos</a>
-										<a class="nav-item nav-link">Meus Produtos</a>
+										<a class="nav-item nav-link" href="">Home/negocioações</a>
+										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
+										<a class="nav-item nav-link" href="">Meus Produtos</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
-										<a class="nav-item nav-link">Sobre nós</a>';
+										<a class="nav-item nav-link" href="">Sobre nós</a>';
 										if($_SESSION["tipo_usuario"]>1){
 										echo'<a class="nav-item nav-link">
 											<select id="mudar_cargo" name="mudar_cargo">

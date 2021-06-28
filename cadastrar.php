@@ -24,7 +24,7 @@
 
 if($stmt = mysqli_prepare($con, $insert)) { 
 
-    mysqli_stmt_bind_param($stmt, "ssssss", $nome, $email, $senha, $tipo_de_negocio, $tipo_de_usuario);
+    mysqli_stmt_bind_param($stmt, "sssss", $nome, $email, $senha, $tipo_de_negocio, $tipo_de_usuario);
     
 
     mysqli_stmt_execute($stmt);
