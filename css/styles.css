@@ -311,6 +311,29 @@ background-color: #F1F1F1;
     margin-right: 20vw;
     margin-left: 20vw;
 }
+
+/* Mudar Cargo*/
+#mudar_cargo{
+    margin-top: 50px;
+}
+.alter_button{
+    background-color: #1C9997;
+    color: #FFF;
+    text-transform: uppercase;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    transition: .5s;
+}
+
+.alter_button:hover{
+    text-decoration: none;
+    color: #000;
+    background-color: transparent;
+    border-color: #1C9997;
+}
 /*Responsive*/
 
 @media(max-width: 768px) {

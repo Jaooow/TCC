@@ -3,22 +3,27 @@
 ?>
 <main>
 	<div class = "container">
-		<form class="form-control">
-			<label for="tipo_de_negocio">Tipo de Negocio:</label>
-			<select id="tipo_de_negocio_select" name="tipo_de_negocio" class="select">
-				<option value="1">Autonomo</option>
-				<option value="2">Micro produtor / Micro empresario</option>
-				<option value="3">Produtor ou vendedor de meio/alto porte</option>
-			</select>
-			<br />
-			<label for="cnpj">CNPJ (caso tenha):</label>
-			<input type="number" id="cnpj" name="cnpj" />
-			<br />
-			<label for="documento">Documentação(caso tenha):</label>
-			<input type="file" accept=".docx,.pdf" id="documento" name="documento" />
-			<br />
-			<a class="btn btn-primary" id="cadastrar_mudanca" name="cadastrar_mudanca">Mudar</a>
-		</form>
+		<div id = "mudar_cargo">
+			<form action="cadastrar_mudanca.php" methhod="POST">
+				<div class="form-group">
+					<label for="tipo_de_negocio">Tipo de Negocio</label>
+					<select class="form-control" id="tipo_de_negocio_select" name="tipo_de_negocio">
+					<option value="1">Autonomo</option>
+					<option value="2">Micro Produtor / Micro Empresario</option>
+					<option value="3">Produtor ou vendedor de meio/alto porte</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ (Caso Tenha)">
+				</div>
+				<div class="documento">
+					<label for="documento">Documentação (Caso Tenha):</label>
+					<input type="file" accept=".docx,.pdf" class="form-control-file" name="documento" id="documento">
+				</div>
+				</br>
+				<input type="button" value="Entrar" class = "alter_button">
+			</form>
+		</div>
 	</div>
 </main>
 <script src="js/script_mudar_cargo.js"></script>
