@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 27-Jun-2021 às 04:26
+-- Data de Criação: 29-Jun-2021 às 17:15
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `fotos` (
   `cod_produto` int(11) NOT NULL,
   PRIMARY KEY (`id_foto`),
   KEY `cod_produto` (`cod_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -72,14 +72,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_produto`),
   KEY `cod_vendendor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Extraindo dados da tabela `produtos`
---
-
-INSERT INTO `produtos` (`nome`, `preco`, `descricao`, `cod_vendedor`, `id_produto`) VALUES
-('rb', 34, 'ev', 1, 3);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 -- --------------------------------------------------------
 
@@ -96,14 +89,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Extraindo dados da tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `id_usuario`) VALUES
-(' gh ', 'gh ', 'ertb', 'ertb', 1, 1);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -113,14 +99,14 @@ INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_us
 
 CREATE TABLE IF NOT EXISTS `vendedores` (
   `id_vendedores` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo_negocio` int(11) NOT NULL,
+  `tipo_negocio` varchar(300) NOT NULL,
   `cnpj` varchar(300) DEFAULT NULL,
   `documentacao` longblob,
   `cod_vendedor` int(11) NOT NULL,
   PRIMARY KEY (`id_vendedores`),
-  UNIQUE KEY `cod_vendedor` (`cod_vendedor`),
-  UNIQUE KEY `cnpj` (`cnpj`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  UNIQUE KEY `cnpj` (`cnpj`),
+  KEY `cod_vendedor` (`cod_vendedor`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Constraints for dumped tables
@@ -142,7 +128,7 @@ ALTER TABLE `produtos`
 -- Limitadores para a tabela `vendedores`
 --
 ALTER TABLE `vendedores`
-  ADD CONSTRAINT `vendedores_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`);
+  ADD CONSTRAINT `vendedores_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

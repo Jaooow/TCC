@@ -18,9 +18,8 @@ $(document).ready(function(){
                      documento: $("#documento").val()};
 					 console.log("oi");
 		$.post("cadastrar_mudanca.php", dados, function(){
-			console.log("mudança feita com sucesso!!");
-			//window.location.href = "perfil.php";
-			//console.log(r);
+			alert("mudança feita com sucesso!!");
+			window.location.href = "perfil.php";
 		})
 	});
 });

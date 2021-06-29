@@ -6,7 +6,7 @@
 		header("Location: procurar_produtos.php");
 	}
 	else{
-		$_SESSION["cargo"]=2
+		$_SESSION["cargo"]=2;
 		header("Location: perfil.php");
 	}
 ?>

@@ -1,7 +1,7 @@
 <?php
 	session_start();
     include "conexao.php";
-    
+    $tipo_de_negocio=$_POST["tipo_de_negocio"];
 	if($_POST["tipo_de_negocio"]==1){
 		$tipo_de_negocio="Autonomo";
 	}
@@ -13,6 +13,7 @@
 	}
 	$tipo_de_usuario=2;
 	$id=$_SESSION["id_usuario"];
+	$_SESSION["tipo_de_usuario"]=2;
 	
     $update= "UPDATE usuarios SET
 									tipo_de_negocio='$tipo_de_negocio',

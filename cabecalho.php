@@ -35,7 +35,7 @@
 					echo'
 					<!-- NavBar -->
 					<div class="container" id="nav-container">
-						<nav class = "navbar navbar-expand-lg fixed-top navbar-dark">
+						<nav class = "navbar navbar-expand-lg navbar-dark">
 							<a href="img/logo.png" class="navbar-brand">
 								<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
 							</a>
@@ -77,12 +77,18 @@
 										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
-										echo'<a class="nav-item nav-link">
-											<select id="mudar_cargo" name="mudar_cargo">
-												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>
-												<option href="alterar_cabecalho.php?id=2" value="">Alterar para usuario Vendedor</option>
-											</select>
-										</li>';
+										echo'<div class="nav-item nav-link">
+												<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+													alterar usuario
+												</a>
+												</p>
+												<div class="collapse" id="collapseExample">
+													<div class="card card-body">
+														<a class="text-dark" href="alterar_cabecalho.php?id=1">Alterar para usuario Cliente</a>
+														<a class="text-dark" href="alterar_cabecalho.php?id=2">Alterar para usuario Vendedor</a>
+													</div>
+												</div>
+											</div>';
 									}
 									echo'</div>
 								</div>
@@ -93,7 +99,7 @@
 						echo'
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
-							<nav class = "navbar navbar-expand-lg fixed-top navbar-dark">
+							<nav class = "navbar navbar-expand-lg navbar-dark">
 								<a href="img/logo.png" class="navbar-brand">
 									<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
 								</a>
@@ -109,12 +115,19 @@
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
-										echo'<a class="nav-item nav-link">
-											<select id="mudar_cargo" name="mudar_cargo">
-												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>
-												<option href="alterar_cabecalho.php?id=2" value="">Alterar para usuario Vendedor</option>
-											</select>
-										</li>';
+											
+											echo'<div class="text-dark nav-item nav-link">
+												<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+													alterar usuario
+												</a>
+												</p>
+												<div class="collapse" id="collapseExample">
+													<div class="card card-body">
+														<a class="text-dark" href="alterar_cabecalho.php?id=1">Alterar para usuario Cliente</a>
+														<a class="text-dark" href="alterar_cabecalho.php?id=2">Alterar para usuario Vendedor</a>
+													</div>
+												</div>
+											</div>';
 									}
 									echo'</div>
 								</div>
