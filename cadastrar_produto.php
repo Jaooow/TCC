@@ -1,11 +1,11 @@
 <?php
+	session_start();
     include "conexao.php";
     $nome_produto=$_POST["nome_produto"];
     $descricao=$_POST["descricao"];
     $preco=$_POST["preco"];
 	$foto=$_POST["foto"];
-	$id=$_SESSION["tipo_usuario"];
-	$verificar="nao foi nenhum"
+	$id=$_SESSION["tipo_de_usuario"];
 	
     $insert= "INSERT INTO produtos(
                                     nome,
@@ -21,8 +21,7 @@
 
 
 	if($stmt = mysqli_prepare($con, $insert)) { 
-		$verificar="foi 1";
-		mysqli_stmt_bind_param($stmt, "ssss", $nome_produto, $descricao, $preco, $id);
+		mysqli_stmt_bind_param($stmt, "ssss", $nome_produto, $preco,$descricao, $id);
 		
 
 		mysqli_stmt_execute($stmt);
@@ -40,8 +39,7 @@
                                     ?
                                 )";
 	
-	if($stmt = mysqli_prepare($con, $insert)) { 
-	$verificar+=" foi 2";
+	if($stmt = mysqli_prepare($con, $insert)) {
 
     mysqli_stmt_bind_param($stmt, "ss", $foto, $id);
     

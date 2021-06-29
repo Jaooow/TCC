@@ -13,7 +13,7 @@ $(document).ready(function(){
 	
 	
 	$("#cadastrar_produto").click(function(){
-		if($("#nome_produto").val() || $("#descricao").val() || $("#preco").val() || $("#foto").val()){
+		if($("#nome_produto").val()=="" || $("#descricao").val()=="" || $("#preco").val()==""){
 			$("#msg").html("Todos os campos (Nome, descrição, preço e foto) devem der preenchidos devidamente, veja se estao devidamente preenchidos!!");
 		}
 		else{

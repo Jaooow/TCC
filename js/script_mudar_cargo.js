@@ -16,10 +16,11 @@ $(document).ready(function(){
 		var dados= { tipo_de_negocio: $("#tipo_de_negocio_select").val(),
 					 cnpj: $("#cnpj").val(),
                      documento: $("#documento").val()};
-		$.post("cadastrar_mudanca.php", dados, function(r){
+					 console.log("oi");
+		$.post("cadastrar_mudanca.php", dados, function(){
 			console.log("mudança feita com sucesso!!");
 			//window.location.href = "perfil.php";
-			console.log(r);
+			//console.log(r);
 		})
 	});
 });

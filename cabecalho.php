@@ -31,7 +31,7 @@
         <header>
             <!-- NavBar -->
 			<?php
-				if(!isset($_SESSION["tipo_usuario"])){
+				if(!isset($_SESSION["tipo_de_usuario"])){
 					echo'
 					<!-- NavBar -->
 					<div class="container" id="nav-container">
@@ -61,7 +61,7 @@
 						echo'
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
-							<nav class = "navbar navbar-expand-lg fixed-top navbar-dark">
+							<nav class = "navbar navbar-expand-lg navbar-dark">
 								<a href="img/logo.png" class="navbar-brand">
 									<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
 								</a>
@@ -74,9 +74,9 @@
 										<a class="nav-item nav-link" href="">Home</a>
 										<a class="nav-item nav-link" href="">Procurar</a>
 										<a class="nav-item nav-link" href="">Negociações</a>
-										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
+										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>';
-										if($_SESSION["tipo_usuario"]>1){
+										if($_SESSION["tipo_de_usuario"]>1){
 										echo'<a class="nav-item nav-link">
 											<select id="mudar_cargo" name="mudar_cargo">
 												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>
@@ -108,7 +108,7 @@
 										<a class="nav-item nav-link" href="">Meus Produtos</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>';
-										if($_SESSION["tipo_usuario"]>1){
+										if($_SESSION["tipo_de_usuario"]>1){
 										echo'<a class="nav-item nav-link">
 											<select id="mudar_cargo" name="mudar_cargo">
 												<option href="alterar_cabecalho.php?id=1" value="">Alterar para usuario Cliente</option>

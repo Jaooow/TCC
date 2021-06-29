@@ -48,7 +48,7 @@
 			header("Location: procurar_produtos.php");
 			$_SESSION["id_usuario"]=$l["id_usuario"];
 			$_SESSION["cargo"]=1;
-			$_SESSION["tipo_de_usuario"]=$l["tipo_de_usuario"]
+			$_SESSION["tipo_de_usuario"]=$l["tipo_de_usuario"];
             echo 1;
         }
         else {

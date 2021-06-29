@@ -3,7 +3,7 @@
 ?>
 <main>
 	<div class = "container">
-		<form class="form-control">
+		<form>
 			<label for="nome_produto">Nome do Produto:</label>
 			<input type="text" id="nome_produto" name="nome_produto" class="form-control"/>
 			<br />
@@ -16,9 +16,9 @@
 			<label for="foto">Foto do Produto:</label>
 			<input type="file" accept=".jpg,.jpeg,.png,.pdf" id="foto" name="foto" />
 			<br />
-			<div id="msg" class="text-danger bg-dark"></div>
+			<div id="msg" class="text-danger"></div>
 			<br />
-			<button class="btn btn-primary" id="cadastrar_produto" name="cadastrar_produto">Cadastrar</button>
+			<button type="button" class="btn btn-primary" id="cadastrar_produto" name="cadastrar_produto">Cadastrar</button>
 			<button type="reset" class="btn btn-secondary" id="limpar" name="limpar">limpar</button>
 		</form>
 	</div>

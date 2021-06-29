@@ -21,7 +21,7 @@
 					<input type="file" accept=".docx,.pdf" class="form-control-file" name="documento" id="documento">
 				</div>
 				</br>
-				<input type="button" value="Entrar" class = "alter_button">
+				<input type="button" id="cadastrar_mudanca" name="cadastrar_mudanca" value="mudar" class = "alter_button">
 			</form>
 		</div>
 	</div>
