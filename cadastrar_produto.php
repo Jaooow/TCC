@@ -5,7 +5,8 @@
     $descricao=$_POST["descricao"];
     $preco=$_POST["preco"];
 	$foto=$_POST["foto"];
-	$id=$_SESSION["tipo_de_usuario"];
+	$id=$_SESSION["id_usuario"];
+	
 	
     $insert= "INSERT INTO produtos(
                                     nome,
@@ -22,7 +23,7 @@
 
 	if($stmt = mysqli_prepare($con, $insert)) { 
 		mysqli_stmt_bind_param($stmt, "ssss", $nome_produto, $preco,$descricao, $id);
-		
+			
 
 		mysqli_stmt_execute($stmt);
 	  
@@ -50,5 +51,4 @@
 }
    
 mysqli_close($con);
-echo $verificar;
 ?>

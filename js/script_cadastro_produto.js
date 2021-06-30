@@ -4,8 +4,8 @@ $(document).ready(function(){
 					 descricao: $("#descricao").val(),
                      preco: $("#preco").val(),
 					 foto: $("#foto").val()};
+					 console.log("teste produto");
 		$.post("cadastrar_produto.php", dados, function(d){
-			console.log(d);
 			alert("Produto cadastrado com sucesso!!!");
 			$("#limpar").click();
 		});

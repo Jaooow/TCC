@@ -75,7 +75,8 @@
 										<a class="nav-item nav-link" href="">Procurar</a>
 										<a class="nav-item nav-link" href="">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>
-										<a class="nav-item nav-link" href="">Sobre nós</a>';
+										<a class="nav-item nav-link" href="">Sobre nós</a>
+										<a class="nav-item nav-link" href="logout.php">Sair</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
 										echo'<div class="nav-item nav-link">
 												<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -113,7 +114,8 @@
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" href="">Meus Produtos</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
-										<a class="nav-item nav-link" href="">Sobre nós</a>';
+										<a class="nav-item nav-link" href="">Sobre nós</a>
+										<a class="nav-item nav-link" href="logout.php">Sair</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
 											
 											echo'<div class="text-dark nav-item nav-link">
