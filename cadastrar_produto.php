@@ -5,7 +5,7 @@
     $descricao=$_POST["descricao"];
     $preco=$_POST["preco"];
 	$foto=$_POST["foto"];
-	$id=$_SESSION["tipo_de_usuario"];
+	$id=$_SESSION["id_usuario"];
 	
     $insert= "INSERT INTO produtos(
                                     nome,
@@ -50,5 +50,4 @@
 }
    
 mysqli_close($con);
-echo $verificar;
 ?>
