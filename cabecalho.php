@@ -7,7 +7,7 @@
         <!-- Meta tags Obrigatórias -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Nome do site</title>
+        <title>IFyou | Comercio Online</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
@@ -37,7 +37,7 @@
 					<div class="container" id="nav-container">
 						<nav class = "navbar navbar-expand-lg navbar-dark">
 							<a href="img/logo.png" class="navbar-brand">
-								<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
+								<img  id="logo" src="img/Logo.png"  href = "index.php" alt="Logo Site" href="index.html"> IFyou
 							</a>
 							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
 								aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
 						<div class="container" id="nav-container">
 							<nav class = "navbar navbar-expand-lg navbar-dark">
 								<a href="img/logo.png" class="navbar-brand">
-									<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
+									<img  id="logo" src="img/Logo.png" href = "index.php"  alt="Logo Site" href="index.php"> IFyou
 								</a>
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
 									aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,27 +71,28 @@
 								</button>
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
-										<a class="nav-item nav-link" href="">Home</a>
-										<a class="nav-item nav-link" href="">Procurar</a>
+										<a class="nav-item nav-link" href="index.php">Home</a>
+										<a class="nav-item nav-link" href="procurar_produtos.php">Procurar</a>
 										<a class="nav-item nav-link" href="">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>
 										<a class="nav-item nav-link" href="logout.php">Sair</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
-										echo'<div class="nav-item nav-link">
-												<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-													alterar usuario
-												</a>
-												</p>
-												<div class="collapse" id="collapseExample">
-													<div class="card card-body">
-														<a class="text-dark" href="alterar_cabecalho.php?id=1">Alterar para usuario Cliente</a>
-														<a class="text-dark" href="alterar_cabecalho.php?id=2">Alterar para usuario Vendedor</a>
-													</div>
-												</div>
-											</div>';
+										echo'
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle nav-drop" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Alterar Usuário
+											</a>
+											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+												<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=1">Usuário Cliente</a>
+												<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=2">Usuário Vendedor</a>
+												<div class="dropdown-divider"></div>
+											</div>
+										</li>';
 									}
-									echo'</div>
+									echo'
+										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+									</div>
 								</div>
 							</nav>
 						</div>';
@@ -102,7 +103,7 @@
 						<div class="container" id="nav-container">
 							<nav class = "navbar navbar-expand-lg navbar-dark">
 								<a href="img/logo.png" class="navbar-brand">
-									<img  id="logo" src="img/Logo.png" alt="Logo Site" href="index.html"> Nome Empresa
+									<img  id="logo" src="img/Logo.png" href = "index.php" alt="Logo Site" href="index.html"> IFyou
 								</a>
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
 									aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,28 +111,33 @@
 								</button>
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
-										<a class="nav-item nav-link" href="">Home/negocioações</a>
+										<a class="nav-item nav-link" href="">Home/Negocioações</a>
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" href="">Meus Produtos</a>
+<<<<<<< HEAD
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>
 										<a class="nav-item nav-link" href="logout.php">Sair</a>';
+=======
+										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>';
+>>>>>>> ecc78965fe83040fecae152f088e0efb408bef07
 										if($_SESSION["tipo_de_usuario"]>1){
 											
-											echo'<div class="text-dark nav-item nav-link">
-												<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-													alterar usuario
+											echo'
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle nav-drop" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Alterar Usuário
 												</a>
-												</p>
-												<div class="collapse" id="collapseExample">
-													<div class="card card-body">
-														<a class="text-dark" href="alterar_cabecalho.php?id=1">Alterar para usuario Cliente</a>
-														<a class="text-dark" href="alterar_cabecalho.php?id=2">Alterar para usuario Vendedor</a>
-													</div>
+												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+													<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=1">Usuário Cliente</a>
+													<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=2">Usuário Vendedor</a>
+													<div class="dropdown-divider"></div>
 												</div>
-											</div>';
+											</li>';
 									}
-									echo'</div>
+									echo'
+										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+									</div>
 								</div>
 							</nav>
 						</div>';

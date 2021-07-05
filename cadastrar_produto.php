@@ -7,7 +7,6 @@
 	$foto=$_POST["foto"];
 	$id=$_SESSION["id_usuario"];
 	
-	
     $insert= "INSERT INTO produtos(
                                     nome,
                                     preco,

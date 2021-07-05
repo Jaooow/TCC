@@ -3,14 +3,14 @@
 ?>
 <main>
 	<div class = "container">
-		<div id = "mudar_cargo">
+		<div id = "mudar_cargo">	
 			<form action="cadastrar_mudanca.php" methhod="POST">
 				<div class="form-group">
-					<label for="tipo_de_negocio">Tipo de Negocio</label>
+					<label for="tipo_de_negocio"><h3>Tipo de Negocio</h3></label>
 					<select class="form-control" id="tipo_de_negocio_select" name="tipo_de_negocio">
 					<option value="1">Autonomo</option>
 					<option value="2">Micro Produtor / Micro Empresario</option>
-					<option value="3">Produtor ou vendedor de meio/alto porte</option>
+					<option value="3">Produtor ou vendedor de Meio/Alto Porte</option>
 					</select>
 				</div>
 				<div class="form-group">
