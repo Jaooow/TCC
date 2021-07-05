@@ -113,14 +113,10 @@
 									<div class ="navbar-nav">
 										<a class="nav-item nav-link" href="">Home/Negocioações</a>
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
-										<a class="nav-item nav-link" href="">Meus Produtos</a>
-<<<<<<< HEAD
+										<a class="nav-item nav-link" href="lista_produtos_vendedor.php">Meus Produtos</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
 										<a class="nav-item nav-link" href="">Sobre nós</a>
 										<a class="nav-item nav-link" href="logout.php">Sair</a>';
-=======
-										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>';
->>>>>>> ecc78965fe83040fecae152f088e0efb408bef07
 										if($_SESSION["tipo_de_usuario"]>1){
 											
 											echo'
