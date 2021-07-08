@@ -1,6 +1,6 @@
 /* Gerais */
 body{
-    font-family: 'Roboto', arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .row{
     margin: 0;
@@ -54,7 +54,7 @@ header, .navbar{
     padding-bottom: 0;
 }
 #logo{
-    width: 55px;
+    width: 100px;
 }
 .navbar-brand{
     padding: 0;
@@ -233,10 +233,10 @@ background-color: #F1F1F1;
 #login_area{
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 32px;
+    margin-top: 10vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-bottom: 30vh;
     padding:80px;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.9);
@@ -254,6 +254,11 @@ background-color: #F1F1F1;
     font-size: 24px;
 }
 
+#login_area a{
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: none;
+}
 #login_area .main-btn{
     margin-top: 15px;
     width: 100%;  
@@ -306,34 +311,99 @@ background-color: #F1F1F1;
 }
 
 /* Procurar Produtos */
-
-#procurar-produtos{
-    margin-top: 10%;
-    margin-bottom: 20px;
-    margin-right: 10%;
-    text-align: right;
+#procurar-produtos .container{
+    padding-bottom:0px;
 }
 
-#procurar-produtos i{
-    font-size: 28px;
-    margin:0;
+#filtragem_produtos .container{
+    padding:0px
+}
+.tabela-produtos {
+    background: rgb(241,241,241);
+    background: linear-gradient(0deg, rgba(241,241,241,1) 70%, rgba(255,255,255,1) 100%);
 }
 
-/* Tabela Produtos */
-#tabela-produtos{
-    margin-top:30px;
-    margin-right: 10vw;
-    margin-left: 10vw;
+.tabela-produtos i{
+    font-size: 15px;
+    border: 1px solid #333;
+    padding: 8px;
+    border-radius: 50%;
+}
+.tabela-produtos h6 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.preco_produto {
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
+.info_produto {
+    font-size: 1em;
+}
+.preco_produto:hover {
+    color: #1C9997;
+    transition: 0.3s;
+}
+
+.secao_produtos:hover {
+    color: red;
+    transition: 0.3s;
+}
+
+.produto_vendedor{
+    font-size: 1em;
+}
+.produto_vendedor:hover{
+    color: #000;
+}
+
+
+
+.main-title-search{
+    color:#444;
+    margin: 0 0 60px 0;
+    font-size: 40px;
     text-align: center;
-    margin-bottom: 25vh;;
+}
+/*.main-title-search::after{
+    content: "";
+    border-top: 2px solid #333;
+    width: 15%;
+    position: absolute;
+    top: 60px;
+    left: 42.5%;
+}*/
+
+.card-body {
+    text-align: center;
 }
 
-.underline-table{
-    margin:0;
-    border-bottom: 1px solid #444;
-    margin-right: 20vw;
-    margin-left: 20vw;
+.card {
+    overflow: hidden;
 }
+
+.card img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.card:hover  img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.underline{
+    border-bottom: 2px solid #333;
+    width: 90%;
+    margin: 0 auto;
+}
+/* Tabela Produtos */
+
 
 /* Mudar Cargo*/
 #mudar_cargo{
@@ -437,5 +507,60 @@ background-color: #F1F1F1;
     }
     #mudar_cargo h3{
         font-size: 27px;
+    }
+
+    /*Login*/
+    #login_area{
+        margin-top: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-bottom: 20vh;
+        padding:80px;
+    }
+    #login_area div{
+        margin-bottom: 6px;
+    }
+    #login_area h2{
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    #login_area i{
+        font-size: 24px;
+    }
+
+    #login_area .main-btn{
+        margin-top: 15px;
+        width: 100%;  
+    }
+
+    #login_area .underline{
+        border-top: 2px solid #333;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    /*Produtos Serach*/
+    .main-title-search{
+        font-size: 30px;
+    }
+    .main-title-search::after{
+        content: "";
+        border-top: 2px solid #333;
+        width: 15%;
+        position: absolute;
+        top: 40px;
+        left: 42.5%;
+    }
+
+    .card {
+        margin-bottom: 50px;
+    }
+
+    #procurar-produtos button{
+        margin-top: 10px;
+    }
+
+    .underline{
+        margin-bottom: 5vh;
     }
 }

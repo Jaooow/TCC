@@ -7,6 +7,7 @@
         <!-- Meta tags Obrigatórias -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" type="imagem/png" href="img/favicon.png" />
         <title>IFyou | Comercio Online</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,8 +18,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <!--Fonte Awersome-->
         <script src="https://kit.fontawesome.com/827d4800d4.js" crossorigin="anonymous"></script>
-        <!-- Progress Bar-->
-        <script src="js/progressbar.min.js"></script>
+        <!-- Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
         <!--Paralax -->
         <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 		<!--Scipt usado-->
@@ -36,7 +39,7 @@
 					<!-- NavBar -->
 					<div class="container" id="nav-container">
 						<nav class = "navbar navbar-expand-lg navbar-dark">
-							<a href="img/logo.png" class="navbar-brand">
+							<a href="index.php" class="navbar-brand">
 								<img  id="logo" src="img/Logo.png"  href = "index.php" alt="Logo Site" href="index.html"> IFyou
 							</a>
 							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
@@ -62,7 +65,7 @@
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
 							<nav class = "navbar navbar-expand-lg navbar-dark">
-								<a href="img/logo.png" class="navbar-brand">
+								<a href="index.php" class="navbar-brand">
 									<img  id="logo" src="img/Logo.png" href = "index.php"  alt="Logo Site" href="index.php"> IFyou
 								</a>
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
@@ -75,7 +78,6 @@
 										<a class="nav-item nav-link" href="procurar_produtos.php">Procurar</a>
 										<a class="nav-item nav-link" href="">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>
-										<a class="nav-item nav-link" href="">Sobre nós</a>
 										<a class="nav-item nav-link" href="logout.php">Sair</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
 										echo'
@@ -86,7 +88,7 @@
 											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 												<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=1">Usuário Cliente</a>
 												<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=2">Usuário Vendedor</a>
-												<div class="dropdown-divider"></div>
+												
 											</div>
 										</li>';
 									}
@@ -102,7 +104,7 @@
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
 							<nav class = "navbar navbar-expand-lg navbar-dark">
-								<a href="img/logo.png" class="navbar-brand">
+								<a href="index.php" class="navbar-brand">
 									<img  id="logo" src="img/Logo.png" href = "index.php" alt="Logo Site" href="index.html"> IFyou
 								</a>
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
@@ -127,7 +129,7 @@
 												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 													<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=1">Usuário Cliente</a>
 													<a class="dropdown-item text-dark" href="alterar_cabecalho.php?id=2">Usuário Vendedor</a>
-													<div class="dropdown-divider"></div>
+													
 												</div>
 											</li>';
 									}
