@@ -315,8 +315,16 @@ background-color: #F1F1F1;
     padding-bottom:0px;
 }
 
+.products-area .container{
+    padding-bottom:0px;
+}
+
 #filtragem_produtos .container{
     padding:0px
+}
+
+.filtragem_produtos label{
+    margin-top: 5vh;
 }
 .tabela-produtos {
     background: rgb(241,241,241);
@@ -359,7 +367,12 @@ background-color: #F1F1F1;
     color: #000;
 }
 
-
+.title_produtos {
+    font-size: 40px;
+    color: #333;
+    text-align: left;
+    padding: 2px;
+}
 
 .main-title-search{
     color:#444;
@@ -398,8 +411,8 @@ background-color: #F1F1F1;
 }
 
 .underline{
-    border-bottom: 2px solid #333;
-    width: 90%;
+    border-bottom: 1px solid #d1d1d1;
+    width: 100%;
     margin: 0 auto;
 }
 /* Tabela Produtos */
