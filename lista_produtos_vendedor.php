@@ -3,13 +3,13 @@
 
     include "conexao.php";
 
-    $select="SELECT id_produto, nome.produtos as nome_produto, descricao, preco, foto FROM fotos inner join produtos on cod_produto=id_produto inner join usuarios on cod_vendedor=id_usuario WHERE id_usuario=".$_SESSION["id_usuario"]."";
+    $select="SELECT id_produto, produtos.nome as nome_produto, descricao, preco, foto FROM fotos inner join produtos on cod_produto=id_produto inner join usuarios on cod_vendedor=id_usuario WHERE id_usuario=".$_SESSION["id_usuario"]."";
     $res = mysqli_query($con, $select) or die(mysqli_error($con));
     while($linha=mysqli_fetch_assoc($res)){
         echo '<div class="container">
 	<table class="text-center table table-dark table-bordered table-responsive">
 		<tr>
-			<td scope="col" colspan="3">'.$linha["foto"].'</td>
+			<td scope="col" rowspan="3">'.$linha["foto"].'</td>
 			<td scope="col">Nome: '.$linha["nome_produto"].'</td>
 		</tr>
 		<tr>
