@@ -16,7 +16,6 @@ $(document).ready(function(){
 		var dados= { tipo_de_negocio: $("#tipo_de_negocio_select").val(),
 					 cnpj: $("#cnpj").val(),
                      documento: $("#documento").val()};
-					 console.log("oi");
 		$.post("cadastrar_mudanca.php", dados, function(){
 			alert("mudança feita com sucesso!!");
 			window.location.href = "perfil.php";
