@@ -13,7 +13,7 @@
                     </div>
 					<div class="col-md-11">
 						<div class="input-group">
-							<input type="email" class="form-control input-produtos" id="procurar_produto" aria-describedby="Procurar Produto" placeholder="Procurar Produtos">
+							<input type="email" class="form-control input-produtos" id="procurar_produto" aria-describedby="Procurar Produto" placeholder="Procurar por produtos e marcas">
 						</div>
 					</div>
 					<div class="col-md-1">
@@ -110,7 +110,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<!-- Nome Produto -->
 						<h6>Bola de Vôlei</h6>
 						<!-- Informação -->
@@ -119,7 +119,7 @@
 						<i class="fas fa-phone"></i> (99)99999-9999
 						<p class="produto_vendedor">Vendedor: João Pedro Catarina Conçolaro</p>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-5">
 						<!-- Preço -->
 						<p class = "preco_produto">R$ 150,00</p>
 						<br/>

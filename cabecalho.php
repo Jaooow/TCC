@@ -77,8 +77,7 @@
 										<a class="nav-item nav-link" href="index.php">Home</a>
 										<a class="nav-item nav-link" href="procurar_produtos.php">Procurar</a>
 										<a class="nav-item nav-link" href="">Negociações</a>
-										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>
-										<a class="nav-item nav-link" href="logout.php">Sair</a>';
+										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
 										echo'
 										<li class="nav-item dropdown">
@@ -117,8 +116,7 @@
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" href="lista_produtos_vendedor.php">Meus Produtos</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.html">Perfil</a>
-										<a class="nav-item nav-link" href="">Sobre nós</a>
-										<a class="nav-item nav-link" href="logout.php">Sair</a>';
+										<a class="nav-item nav-link" href="">Sobre nós</a>';
 										if($_SESSION["tipo_de_usuario"]>1){
 											
 											echo'

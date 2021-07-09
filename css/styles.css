@@ -76,6 +76,7 @@ header, .navbar{
 #mainSlider img{
     opacity: 0.9;
     background: rgba(0, 0, 0, 5);
+
 }
 #mainSlider .carousel-inner, #mainSlider .carousel-item{
     height: 90vh;
@@ -271,45 +272,74 @@ background-color: #F1F1F1;
 }
 
 /* Perfil */
-#perfil img{
+
+#perfil .container {
+    padding: 0px;
+    margin-bottom: 33vh;
+}
+
+#perfil .img_perfil{
     width: 120px;
     right: 120px;
+    margin-bottom: 6px;
+}
+
+.img_perfil:hover{
+    opacity: 0.4;
 }
 
 #perfil i{
-    font-size: 24px;
-    padding: 4px;
-    margin: 0;
-}
-
-#perfil a{
-    background-color: #65DAF9;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 30px;
-    color: #000;
-    text-decoration: none;
-}
-
-
-#perfil a:hover{
-   background-color: transparent;
-   color: #000;
-   border: 1px solid #333;
-   text-decoration: none;
-   transition: .5s;
+    font-size: 20px;
+    margin-right: 5px;
 }
 
 #perfil span{
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 10px;
+    font-size: 14px;
+    padding: 5px;
 }
 
-#perfil button{
-    margin-top: 23px;
+#perfil p{
+    font-size: 14px;
+    text-align: left;
 }
 
+#perfil p:hover{
+    color: red;
+}
+#perfil h3{
+    font-size: 30px;
+    color:#333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#perfil ul{
+    margin-bottom: 10px;
+}
+#perfil a{
+    color: #333;
+    text-decoration: none;
+}
+
+#perfil .mudar_cargo {
+    color: #000;
+    text-decoration: none;
+    padding: 8px;
+    padding-bottom: 10px;
+    border-radius: 5%;
+    background-color: #7AB4AD;
+    text-align: center;
+}
+
+#perfil .mudar_cargo:hover {
+    color: #000;
+    transition: 0.3s;
+    background-color: #5e8883;
+}
+
+.perfil_under{
+    margin-top: 10px;
+}
 /* Procurar Produtos */
 #procurar-produtos .container{
     padding-bottom:0px;
