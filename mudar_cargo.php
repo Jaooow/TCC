@@ -14,7 +14,11 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<input type="email" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ (Caso Tenha)">
+					<label for="telefone"><h3>Digite seu nimero de celular com Whatsapp:</h3></label>
+					<input type="text" class="form-control" id="telefone" name="telefone" placeholder="+55(16)xxxxx-xxxx">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ (Caso Tenha)">
 				</div>
 				<div class="documento">
 					<label for="documento">Documentação (Caso Tenha):</label>

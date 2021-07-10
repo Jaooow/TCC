@@ -13,6 +13,18 @@
 			<label for="preco">Preço do Produto:</label>
 			<input type="number" id="preco" name="preco" />
 			<br />
+			<label for="tipo_produto">Tipo de Produto:</label>
+			<select class="form-select" id="tipo_produto">
+				<option value="Roupas">Roupas</option>
+				<option value="Doces">Doces</option>
+				<option value="Comidas">Comidas</option>
+				<option value="Esportes">Esportes</option>
+				<option value="Verduras/Legumes">Verduras/Legumes</option>
+			</select>
+			<br />
+			<label for="quantidade">Quantidade:</label>
+			<input type="number" id="quantidade" name="quantidade" />
+			<br />
 			<label for="foto">Foto do Produto:</label>
 			<input type="file" accept=".jpg,.jpeg,.png,.pdf" id="foto" name="foto" />
 			<br />

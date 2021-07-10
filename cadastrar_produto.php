@@ -5,23 +5,29 @@
     $descricao=$_POST["descricao"];
     $preco=$_POST["preco"];
 	$foto=$_POST["foto"];
+	$tipo_produto=$_POST["tipo_produto"];
+	$quatidade=$_POST["quantidade"];
 	$id=$_SESSION["id_usuario"];
 	
     $insert= "INSERT INTO produtos(
                                     nome,
                                     preco,
                                     descricao,
-									cod_vendedor
+									cod_vendedor,
+									tipo_produto, 
+									quantidade
                                 ) VALUES (
                                     ?,
                                     ?,
                                     ?,
-                                    ?
+                                    ?,
+									?,
+									?
                                 )";
 
 
 	if($stmt = mysqli_prepare($con, $insert)) { 
-		mysqli_stmt_bind_param($stmt, "ssss", $nome_produto, $preco,$descricao, $id);
+		mysqli_stmt_bind_param($stmt, "ssssss", $nome_produto, $preco,$descricao, $id, $tipo_produto, $quantidade);
 			
 
 		mysqli_stmt_execute($stmt);

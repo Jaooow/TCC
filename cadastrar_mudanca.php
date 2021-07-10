@@ -25,24 +25,27 @@
 	
     $cnpj=$_POST["cnpj"];
     $documento=$_POST["documento"];
+	$telefone=$_POST["telefone"];
 	
 
     $insert= "INSERT INTO vendedores(
 									tipo_negocio,
 									cnpj,
 									documentacao,
-									cod_vendedor
+									cod_vendedor,
+									telefone
                                 ) VALUES (
                                     ?,
                                     ?,
                                     ?,
-                                    ?
+                                    ?,
+									?
                                 )";
 
 
 if($stmt = mysqli_prepare($con, $insert)) { 
 
-    mysqli_stmt_bind_param($stmt, "ssss", $tipo_de_negocio, $cnpj, $documento, $id);
+    mysqli_stmt_bind_param($stmt, "sssss", $tipo_de_negocio, $cnpj, $documento, $id, $telefone);
     
 
     mysqli_stmt_execute($stmt);
