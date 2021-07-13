@@ -92,7 +92,7 @@
 										</li>';
 									}
 									echo'
-										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+										<a class="nav-item nav-link" id="logout" href="logout.php">Sair</a>
 									</div>
 								</div>
 							</nav>

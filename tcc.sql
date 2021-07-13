@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 10-Jul-2021 às 20:08
+-- Data de Criação: 13-Jul-2021 às 07:13
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 
 INSERT INTO `produtos` (`nome`, `preco`, `tipo_produto`, `descricao`, `quantidade`, `cod_vendedor`, `id_produto`) VALUES
 ('dsfg', 345, '', 'sdfg', 0, 7, 19),
-('abacaxi ', 5, '', 'abacaxi doce ', 0, 8, 20);
+('abacaxi ', 5, 'COMIDAS', 'abacaxi doce ', 0, 8, 20);
 
 -- --------------------------------------------------------
 
@@ -131,6 +131,7 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
   `tipo_negocio` varchar(300) NOT NULL,
   `cnpj` varchar(300) DEFAULT NULL,
   `documentacao` longblob,
+  `regiao` varchar(300) NOT NULL,
   `cod_vendedor` int(11) NOT NULL,
   PRIMARY KEY (`id_vendedores`),
   UNIQUE KEY `cnpj` (`cnpj`),
@@ -141,10 +142,10 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
 -- Extraindo dados da tabela `vendedores`
 --
 
-INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao`, `cod_vendedor`) VALUES
-(1, 'Autonomo', '83297', '', 7),
-(2, 'Autonomo', '', '', 7),
-(3, 'Autonomo', '88', '', 7);
+INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `cod_vendedor`) VALUES
+(1, 'Autonomo', '83297', '', '', 7),
+(2, 'Autonomo', '', '', '', 7),
+(3, 'Autonomo', '88', '', '', 7);
 
 --
 -- Constraints for dumped tables

@@ -1,15 +1,16 @@
 <?php 
-    header("Content-Type: application/json");
+    //header("Content-Type: application/json");
     include "conexao.php";
 
-    if(!empty($_POST))
+	if(!empty($_POST))
     {
         $id=$_POST["id"];
-		$tabela="":
-        $select="SELECT produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM fotos inner join produtos on cod_produto=id_produto inner join usuarios on cod_vendedor=id_usuario where tipo_produto='$id'";*/
+		$id=strtoupper($id);
+		$tabela="";
+        $select="SELECT produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM fotos inner join produtos on cod_produto=id_produto inner join usuarios on cod_vendedor=id_usuario where tipo_produto='$id'";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
-			$tabela+='<!-- Table Produtos e demais-->
+			$tabela.='<!-- Table Produtos e demais-->
 		<div class="tabela-produtos">
 			<div class="container">
 				<div class="row">
@@ -42,6 +43,7 @@
 		</div>
 		<br />';
 		}
+		echo $tabela;
 	}
     else{
         $select="SELECT nome, preco, descricao, cod_vendedor FROM produtos";

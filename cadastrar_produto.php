@@ -6,6 +6,7 @@
     $preco=$_POST["preco"];
 	$foto=$_POST["foto"];
 	$tipo_produto=$_POST["tipo_produto"];
+	$tipo_produto=strtoupper($tipo_produto);
 	$quatidade=$_POST["quantidade"];
 	$id=$_SESSION["id_usuario"];
 	
