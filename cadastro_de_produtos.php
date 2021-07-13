@@ -3,7 +3,7 @@
 ?>
 <main>
 	<div class = "container">
-		<form>
+		<form method="post">
 			<label for="nome_produto">Nome do Produto:</label>
 			<input type="text" id="nome_produto" name="nome_produto" class="form-control"/>
 			<br />
@@ -30,7 +30,7 @@
 			<br />
 			<div id="msg" class="text-danger"></div>
 			<br />
-			<button type="button" class="btn btn-primary" id="cadastrar_produto" name="cadastrar_produto">Cadastrar</button>
+			<button type="submit" class="btn btn-primary" id="cadastrar_produto" name="cadastrar_produto">Cadastrar</button>
 			<button type="reset" class="btn btn-secondary" id="limpar" name="limpar">limpar</button>
 		</form>
 	</div>

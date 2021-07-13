@@ -7,9 +7,9 @@
 	$foto=$_POST["foto"];
 	$tipo_produto=$_POST["tipo_produto"];
 	$tipo_produto=strtoupper($tipo_produto);
-	$quatidade=$_POST["quantidade"];
+	$quantidade=$_POST["quantidade"];
 	$id=$_SESSION["id_usuario"];
-	
+	echo $nome_produto, $preco,$descricao, $id, $tipo_produto, $quantidade;
     $insert= "INSERT INTO produtos(
                                     nome,
                                     preco,

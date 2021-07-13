@@ -6,8 +6,9 @@ $(document).ready(function(){
 					 foto: $("#foto").val(),
 					 tipo_produto: $("#tipo_produto").val(),
 					 quantidade: $("#quantidade").val()};
+					 console.log(dados);
 		$.post("cadastrar_produto.php", dados, function(d){
-			alert("Produto cadastrado com sucesso!!!");
+			//alert("Produto cadastrado com sucesso!!!");
 			$("#limpar").click();
 		});
 	}
