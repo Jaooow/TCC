@@ -3,7 +3,7 @@
 ?>
 <main>
 	<div class = "container">
-		<form method="post">
+		<form method="post" enctype="multipart/form-data">
 			<label for="nome_produto">Nome do Produto:</label>
 			<input type="text" id="nome_produto" name="nome_produto" class="form-control"/>
 			<br />

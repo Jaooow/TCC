@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 13-Jul-2021 às 07:13
+-- Data de Criação: 15-Jul-2021 às 05:41
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -47,24 +47,30 @@ INSERT INTO `adm` (`id_adm`, `email`, `senha`, `tipo_de_usuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `fotos`
+-- Estrutura da tabela `itens_negocio`
 --
 
-CREATE TABLE IF NOT EXISTS `fotos` (
-  `foto` longblob NOT NULL,
-  `id_foto` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `itens_negocio` (
+  `id_itens` int(11) NOT NULL AUTO_INCREMENT,
   `cod_produto` int(11) NOT NULL,
-  PRIMARY KEY (`id_foto`),
-  KEY `cod_produto` (`cod_produto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+  `cod_vendedor` int(11) NOT NULL,
+  PRIMARY KEY (`id_itens`),
+  KEY `cod_produto` (`cod_produto`),
+  KEY `cod_vendedor` (`cod_vendedor`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Extraindo dados da tabela `fotos`
+-- Estrutura da tabela `negocios`
 --
 
-INSERT INTO `fotos` (`foto`, `id_foto`, `cod_produto`) VALUES
-('', 17, 19),
-('', 18, 20);
+CREATE TABLE IF NOT EXISTS `negocios` (
+  `id_negocio` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`id_negocio`),
+  KEY `cod_usuario` (`cod_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -79,18 +85,11 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `descricao` varchar(1000) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `cod_vendedor` int(11) NOT NULL,
+  `foto` varchar(200) NOT NULL,
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_produto`),
   KEY `cod_vendendor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
-
---
--- Extraindo dados da tabela `produtos`
---
-
-INSERT INTO `produtos` (`nome`, `preco`, `tipo_produto`, `descricao`, `quantidade`, `cod_vendedor`, `id_produto`) VALUES
-('dsfg', 345, '', 'sdfg', 0, 7, 19),
-('abacaxi ', 5, 'COMIDAS', 'abacaxi doce ', 0, 8, 20);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 -- --------------------------------------------------------
 
@@ -115,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `telefone`, `id_usuario`) VALUES
-('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, '', 4),
+('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, '', 4),
 ('amanda', 'amanda@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, '', 5),
 ('jao', 'jao@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, '', 7),
 ('fernando ', 'fernando@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, '', 8);
@@ -152,10 +151,17 @@ INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao
 --
 
 --
--- Limitadores para a tabela `fotos`
+-- Limitadores para a tabela `itens_negocio`
 --
-ALTER TABLE `fotos`
-  ADD CONSTRAINT `fotos_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`);
+ALTER TABLE `itens_negocio`
+  ADD CONSTRAINT `itens_negocio_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`id_vendedores`),
+  ADD CONSTRAINT `itens_negocio_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`);
+
+--
+-- Limitadores para a tabela `negocios`
+--
+ALTER TABLE `negocios`
+  ADD CONSTRAINT `negocios_ibfk_1` FOREIGN KEY (`cod_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Limitadores para a tabela `produtos`
