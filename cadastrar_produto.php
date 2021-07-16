@@ -13,11 +13,11 @@
 	if (!empty($foto["name"])) {
         
         // Largura máxima em pixels
-        $largura = 1000;
+        $largura = 10000;
         // Altura máxima em pixels
-        $altura = 1000;
+        $altura = 10000;
         // Tamanho máximo do arquivo em bytes
-        $tamanho = 1000;
+        $tamanho = 100000000;
         $error = array();
         // Verifica se o arquivo é uma imagem
         if(!preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $foto["type"])){
@@ -82,13 +82,17 @@
 			}
 	   
 			mysqli_close($con);
-			echo 1;
+			header("Location: cadastro_de_produtos.php");
         }
         // Se houver mensagens de erro, exibe-as
         if (count($error) != 0) {
             foreach ($error as $erro) {
-                echo $erro . "<br />";
+                $notifica.= $erro."//";
             }
+			header("Location: cadastro_de_produtos.php?conteudo=$notifica");
         }
     }
+	else{
+		header("Location: cadastro_de_produtos.php?conteudo=Envie uma imagem");
+	}
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 15-Jul-2021 às 05:41
+-- Data de Criação: 16-Jul-2021 às 05:05
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -89,7 +89,18 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_produto`),
   KEY `cod_vendendor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`nome`, `preco`, `tipo_produto`, `descricao`, `quantidade`, `cod_vendedor`, `foto`, `id_produto`) VALUES
+('banana', 1, '', 'banana maçã', 1, 4, 'd3df5af8e44cab7af3b3326183849ad2.jpg', 1),
+('banana2', 2, '', 'banana maçã2', 2, 4, '41d7d2d0498e4ce4cb31c76dd750ecc4.jpg', 2),
+('banana3', 3, '', 'banana maçã3', 3, 4, 'd0567246b8b68e2026ca533832755deb.jpg', 3),
+('banana4', 4, 'COMIDAS', 'banana maçã4', 4, 4, 'e423258a486d7a6c97b7f2d5034f4b85.jpg', 4),
+('banana5', 4, 'COMIDAS', 'banana maçã5', 4, 4, '4fd2245ee0bf6b6cac67df3ae7d505eb.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -103,7 +114,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `senha` varchar(32) NOT NULL,
   `tipo_de_negocio` varchar(300) NOT NULL,
   `tipo_de_usuario` int(11) NOT NULL,
-  `telefone` varchar(20) NOT NULL,
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
@@ -113,11 +123,11 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `telefone`, `id_usuario`) VALUES
-('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, '', 4),
-('amanda', 'amanda@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, '', 5),
-('jao', 'jao@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, '', 7),
-('fernando ', 'fernando@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, '', 8);
+INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `id_usuario`) VALUES
+('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 4),
+('amanda', 'amanda@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, 5),
+('jao', 'jao@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 7),
+('fernando ', 'fernando@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 8);
 
 -- --------------------------------------------------------
 
@@ -131,6 +141,7 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
   `cnpj` varchar(300) DEFAULT NULL,
   `documentacao` longblob,
   `regiao` varchar(300) NOT NULL,
+  `telefone` varchar(100) NOT NULL,
   `cod_vendedor` int(11) NOT NULL,
   PRIMARY KEY (`id_vendedores`),
   UNIQUE KEY `cnpj` (`cnpj`),
@@ -141,10 +152,10 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
 -- Extraindo dados da tabela `vendedores`
 --
 
-INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `cod_vendedor`) VALUES
-(1, 'Autonomo', '83297', '', '', 7),
-(2, 'Autonomo', '', '', '', 7),
-(3, 'Autonomo', '88', '', '', 7);
+INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `telefone`, `cod_vendedor`) VALUES
+(1, 'Autonomo', '83297', '', '', '', 4),
+(2, 'Autonomo', '', '', '', '', 7),
+(3, 'Autonomo', '88', '', '', '', 7);
 
 --
 -- Constraints for dumped tables
@@ -154,8 +165,8 @@ INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao
 -- Limitadores para a tabela `itens_negocio`
 --
 ALTER TABLE `itens_negocio`
-  ADD CONSTRAINT `itens_negocio_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`id_vendedores`),
-  ADD CONSTRAINT `itens_negocio_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`);
+  ADD CONSTRAINT `itens_negocio_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`),
+  ADD CONSTRAINT `itens_negocio_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`id_vendedores`);
 
 --
 -- Limitadores para a tabela `negocios`
