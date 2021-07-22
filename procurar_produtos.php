@@ -4,6 +4,23 @@
 ?>
 <body>
 	<main>
+		<div class="carrinho">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-11">
+
+					</div>
+					<div class="col-md-1">
+						<div class="carrinho-right">
+							<p class = "carrinho-itens">Subtotal</p>
+							<p class = "carrinho-itens_2">R$ 300,00</p>
+							<img src="img/exemplo-card.jpg" alt="">
+							<img src="img/exemplo-card.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- Search Products -->
 		<div id="procurar-produtos">
 			<div class="container">
@@ -11,7 +28,7 @@
 					<div class="col-12">
 						<h3 class ="main-title-search">Encontre Diversos Produtos</h3>
                     </div>
-					<div class="col-md-11">
+					<div class="col-md-10">
 						<div class="input-group">
 							<input type="text" class="form-control input-produtos" id="procurar_produto" aria-describedby="Procurar Produto" placeholder="Procurar por produtos e marcas">
 						</div>

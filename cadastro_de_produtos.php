@@ -3,12 +3,7 @@
 ?>
 <main>
 	<div class = "container">
-		<?php
-			if(isset($_GET["conteudo"])){
-				echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
-			}
-		?>
-		<form method="post" enctype="multipart/form-data" action="cadastrar_produto.php">
+		<form method="post">
 			<label for="nome_produto">Nome do Produto:</label>
 			<input type="text" id="nome_produto" name="nome_produto" class="form-control"/>
 			<br />
@@ -19,7 +14,7 @@
 			<input type="number" id="preco" name="preco" />
 			<br />
 			<label for="tipo_produto">Tipo de Produto:</label>
-			<select class="form-select" id="tipo_produto" name="tipo_produto">
+			<select class="form-select" id="tipo_produto">
 				<option value="Roupas">Roupas</option>
 				<option value="Doces">Doces</option>
 				<option value="Comidas">Comidas</option>
@@ -40,6 +35,7 @@
 		</form>
 	</div>
 </main>
+<script src="js/script_cadastro_produto.js"></script>
 <?php
 	include "rodape.php";
 ?>

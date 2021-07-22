@@ -7,7 +7,7 @@
         $id=$_POST["id"];
 		$id=strtoupper($id);
 		$tabela="";
-        $select="SELECT foto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join usuarios on produtos.cod_vendedor=id_usuario inner join vendedores on vendedores.cod_vendedor=id_usuario where tipo_produto='$id'";
+        $select="SELECT produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM fotos inner join produtos on cod_produto=id_produto inner join usuarios on cod_vendedor=id_usuario where tipo_produto='$id'";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
 			$tabela.='<!-- Table Produtos e demais-->
@@ -16,7 +16,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="card">
-							<img src="fotos/'.$linha["foto"].'" class="card-img-top" alt="Imagem Produto 4">
+							<img src="img/exemplo-card.jpg" class="card-img-top" alt="Imagem Produto 4">
 							<div class=" card-body">
 								<!-- Nome Produto -->
 								<h5 class = "card-title">'.$linha["nome_produto"].'</h5>

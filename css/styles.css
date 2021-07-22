@@ -607,3 +607,35 @@ background-color: #F1F1F1;
         margin-bottom: 5vh;
     }
 }
+
+
+
+.carrinho-right{
+    border-radius:2%;
+    background-color:#F1F1F1;
+    padding: 0.6vw;
+    position:fixed;
+    height: 100vh;
+    text-align: center;
+    border-left: 1px solid #000;
+}
+
+.carrinho-right img{
+   margin: 5px auto;
+   height: 70px;
+}
+.carrinho-right img:hover{
+    background-color: #444;
+ }
+
+.carrinho-right .carrinho-itens {
+    color: #000;
+    margin-top: 2px;
+    padding: 12px;
+    margin-bottom: 0px;
+}
+
+.carrinho-itens_2{
+    color: red;
+   
+}

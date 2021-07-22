@@ -3,17 +3,12 @@ $(document).ready(function(){
 		var dados= { nome_produto: $("#nome_produto").val(),
 					 descricao: $("#descricao").val(),
                      preco: $("#preco").val(),
-					 foto: $("#foto").prop('files'),
+					 foto: $("#foto").val(),
 					 tipo_produto: $("#tipo_produto").val(),
 					 quantidade: $("#quantidade").val()};
 					 console.log(dados);
 		$.post("cadastrar_produto.php", dados, function(d){
-			if(d==1){
-				alert("Produto cadastrado com sucesso!!!");
-			}
-			else{
-				alert(d);
-			}
+			//alert("Produto cadastrado com sucesso!!!");
 			$("#limpar").click();
 		});
 	}
