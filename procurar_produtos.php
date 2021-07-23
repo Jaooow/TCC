@@ -7,16 +7,11 @@
 		<div class="carrinho">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-11">
+					<div class="col-md-10">
 
 					</div>
-					<div class="col-md-1">
-						<div class="carrinho-right">
-							<p class = "carrinho-itens">Subtotal</p>
-							<p class = "carrinho-itens_2">R$ 300,00</p>
-							<img src="img/exemplo-card.jpg" alt="">
-							<img src="img/exemplo-card.jpg" alt="">
-						</div>
+					<div class="col-md-2">
+						
 					</div>
 				</div>
 			</div>
