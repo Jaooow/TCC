@@ -29,6 +29,7 @@
 		<script src="js/script_procurar_produtos.js"></script>
 		<script src="js/jquery-3.5.1.min.js"></script>
 		<script src="js/script_perfil.js"></script>
+		<script src="js/script_carrinho.js"></script>
     </head>
     <body>
         <header>
