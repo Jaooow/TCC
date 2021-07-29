@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 29-Jul-2021 às 03:41
+-- Data de Criação: 29-Jul-2021 às 10:42
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `id_usuario`) VALUES
-('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 4),
+('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Produtor ou vendedor de meio/alto porte', 2, 4),
 ('amanda', 'amanda@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, 5),
 ('jao', 'jao@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 7),
 ('fernando ', 'fernando@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 8);
@@ -142,23 +142,23 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
   `id_vendedores` int(11) NOT NULL AUTO_INCREMENT,
   `tipo_negocio` varchar(300) NOT NULL,
   `cnpj` varchar(300) DEFAULT NULL,
-  `documentacao` longblob,
+  `documentacao` varchar(100) DEFAULT NULL,
   `regiao` varchar(300) NOT NULL,
   `telefone` varchar(100) NOT NULL,
   `cod_vendedor` int(11) NOT NULL,
   PRIMARY KEY (`id_vendedores`),
   UNIQUE KEY `cnpj` (`cnpj`),
   KEY `cod_vendedor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `vendedores`
 --
 
 INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `telefone`, `cod_vendedor`) VALUES
-(1, 'Autonomo', '83297', '', '', '', 4),
 (2, 'Autonomo', '', '', '', '', 7),
-(3, 'Autonomo', '88', '', '', '', 7);
+(3, 'Autonomo', '88', '', '', '', 7),
+(7, 'Produtor ou vendedor de meio/alto porte', '555', '983d839dbb3dc23646828afbe3ea6676.pdf', '', '+5516981108180', 4);
 
 --
 -- Constraints for dumped tables

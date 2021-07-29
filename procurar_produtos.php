@@ -29,7 +29,7 @@
 						</div>
 					</div>
 					<div class="col-md-1">
-						<button type="button" class="btn btn-danger">
+						<button type="button" id="procurar" class="btn btn-danger">
 							<i class="fas fa-search"> Procurar </i>
 						</button>
 					</div>
