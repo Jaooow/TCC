@@ -1,5 +1,5 @@
 <?php 
-    //header("Content-Type: application/json");
+    
     include "conexao.php";
 
 	if(!empty($_POST))
@@ -7,7 +7,7 @@
         $id=$_POST["id"];
 		$id=strtoupper($id);
 		$tabela="";
-        $select="SELECT id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on id_usuario=vendedores.cod_vendedor where tipo_produto='$id'";
+        $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on id_usuario=vendedores.cod_vendedor where tipo_produto='$id'";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
 			$tabela.='<!-- Table Produtos e demais-->
@@ -16,7 +16,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="card">
-							<img src="img/exemplo-card.jpg" class="card-img-top" alt="Imagem Produto 4">
+							<img src="fotos/'.$linha["foto"].'" class="card-img-top" alt="Imagem Produto 4">
 							<div class=" card-body">
 								<!-- Nome Produto -->
 								<h5 class = "card-title">'.$linha["nome_produto"].'</h5>
@@ -37,7 +37,9 @@
 						<p class = "preco_produto">R$ '.$linha["preco"].'</p>
 						<br/>
 						<label for="">Quantidade:</label>
-						<input type="number" id="'.$linha["id_produto"].'" />
+						<input type="number" id="produto'.$linha["id_produto"].'" />
+						<br />
+						<button type="button" value="'.$linha["id_produto"].'">Selecionar quantidade</button>
 						<br />
 						<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 					</div>
@@ -49,7 +51,8 @@
 		echo $tabela;
 	}
     else{
-        $select="SELECT nome, preco, descricao, cod_vendedor FROM produtos";
+		header("Content-Type: application/json");
+        $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on id_usuario=vendedores.cod_vendedor";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
 			$resultado[]= $linha;

@@ -141,4 +141,4 @@
 				}
 			?>
         </header>
-		<!--<button typr="button" href="#" data-toggle="modal" data-target="#modal_carrinho">Abrir carrinho de compras</button>-->
+		<button type="button" href="#" data-toggle="modal" data-target="#modal_carrinho">Abrir carrinho de compras</button>

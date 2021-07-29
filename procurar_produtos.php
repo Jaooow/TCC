@@ -147,7 +147,7 @@
 </body>
 <script src="js/filtrar_produtos.js"></script>
 <?php
-	//include "modal_carrinho.php";
+	include "modal_carrinho.php";
 	include "inc/footer.inc";
 ?>
 </html>
