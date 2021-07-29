@@ -1,12 +1,10 @@
 <?php 
-    header("Content-Type: application/json");
+    //header("Content-Type: application/json");
     include "conexao.php";
-
-		$id=$_POST["id"];
-        $select="SELECT nome FROM produtos WHERE id_produto='$id'";
+        $select="SELECT nome FROM produtos WHERE id_produto='4'";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
-			$resultado[]= $linha;
+			$resultado= $linha["nome"];
 		}
-		echo json_encode($resultado);
+	echo $resultado;
 ?>

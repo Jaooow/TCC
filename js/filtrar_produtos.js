@@ -34,4 +34,6 @@ $(document).ready(function(){
 			$("#tabela_produtos").html(v);
 		});
 	});
+	
+	
 });

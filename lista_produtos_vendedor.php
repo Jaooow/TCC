@@ -9,14 +9,14 @@
 					<h3 class ="main-title-search">Meus Produtos</h3>
 				</div>';
 
-    $select="SELECT id_produto, produtos.nome as nome_produto, descricao, preco, foto FROM fotos inner join produtos on cod_produto=id_produto inner join usuarios on cod_vendedor=id_usuario WHERE id_usuario=".$_SESSION["id_usuario"]."";
+    $select="SELECT id_produto, produtos.nome as nome_produto, descricao, preco, foto FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE id_usuario=".$_SESSION["id_usuario"]."";
     $res = mysqli_query($con, $select) or die(mysqli_error($con));
     while($linha=mysqli_fetch_assoc($res)){
 		echo '<div class="container">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="card">
-							<img src="img/exemplo-card.jpg" class="card-img-top" alt="Imagem Produto 1">
+							<img src="fotos/'.$linha["foto"].'" class="card-img-top" alt="Imagem Produto 1">
 							<div class=" card-body">
 								<h5 class = "card-title">'.$linha["nome_produto"].'</h5>
 							</div>

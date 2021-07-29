@@ -1,3 +1,4 @@
+
 <footer>
     <div id="copy-area">
         <div class="container">
