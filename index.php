@@ -13,23 +13,44 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/bolo_wallpaper.jpg" class="d-block w-100" alt="Bolos e Doces">
+							<?php
+								include "conexao.php";
+								$select="SELECT foto FROM produtos WHERE tipo_produto='COMIDAS' OR tipo_produto='DOCES' ORDER BY RAND() LIMIT 1";
+								$res = mysqli_query($con, $select) or die(mysqli_error($con));
+								while($linha=mysqli_fetch_assoc($res)){
+									echo'<img src="fotos/'.$linha["foto"].'" class="d-block w-100" alt="Bolos e Doces">';
+								}
+							?>
                             <div class = "carousel-caption  d-md-block">
-                                <h2>Bolos e Salgados</h2>
+                                <h2>Bolos, Salgados e alimentos em geral</h2>
                                 <p>Visite Nossos Parceiros!</p>
                                 <a href="#" class="main-btn">Visitar</a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="img/salgado_wallpaper.png" class="d-block w-100" alt="Salgados">
+                           <?php
+								include "conexao.php";
+								$select="SELECT foto FROM produtos WHERE tipo_produto='ESPORTES' ORDER BY RAND() LIMIT 1";
+								$res = mysqli_query($con, $select) or die(mysqli_error($con));
+								while($linha=mysqli_fetch_assoc($res)){
+									echo'<img src="fotos/'.$linha["foto"].'" class="d-block w-100" alt="Esportes">';
+								}
+							?>
                             <div class = "carousel-caption  d-md-block">
-                                <h2>Salgados</h2>
+                                <h2>Esportes</h2>
                                 <p>Visite Nossos Parceiros!</p>
                                 <a href="#" class="main-btn">Visitar</a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="img/verdura_wallpaper.jpg" class="d-block w-100" alt="Verduras e Legumes">
+                           <?php
+								include "conexao.php";
+								$select="SELECT foto FROM produtos WHERE tipo_produto='VERDURAS/LEGUMES' ORDER BY RAND() LIMIT 1";
+								$res = mysqli_query($con, $select) or die(mysqli_error($con));
+								while($linha=mysqli_fetch_assoc($res)){
+									echo'<img src="fotos/'.$linha["foto"].'" class="d-block w-100" alt="Verduras e legumes">';
+								}
+							?>
                             <div class = "carousel-caption  d-md-block">
                                 <h2>Verduras e Legumes</h2>
                                 <p>Visite Nossos Parceiros!</p>

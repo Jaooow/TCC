@@ -29,6 +29,7 @@
 		<script src="js/script_procurar_produtos.js"></script>
 		<script src="js/jquery-3.5.1.min.js"></script>
 		<script src="js/script_perfil.js"></script>
+		<script src="js/filtrar_produtos.js"></script>
 		<!--<script src="js/script_carrinho.js"></script>-->
     </head>
     <body>
@@ -53,7 +54,7 @@
 									<a class="nav-item nav-link" id="about-menu" href="#about">Sobre Nós</a>
 									<a class="nav-item nav-link" id="services-menu" href="#services">Serviços</a>
 									<a class="nav-item nav-link" id="contact-menu" href="#contact">Contato</a>
-									<a class="nav-item nav-link" id="login-menu" href="login.html">Login</a>
+									<a class="nav-item nav-link" id="login-menu" href="login.php">Login</a>
 									<a class="nav-item nav-link" id="cadastro-menu" href="cadastro.html">Cadastro</a>
 								</div>
 							</div>
@@ -99,7 +100,7 @@
 							</nav>
 						</div>';
 					}
-					else{
+					if($_SESSION["cargo"]==2){
 						echo'
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
@@ -138,7 +139,35 @@
 							</nav>
 						</div>';
 					}
+					if($_SESSION["cargo"]==0){
+						echo'
+						<!-- NavBar -->
+						<div class="container" id="nav-container">
+							<nav class = "navbar navbar-expand-lg navbar-dark">
+								<a href="index.php" class="navbar-brand">
+									<img  id="logo" src="img/Logo.png" href = "index.php" alt="Logo Site" href="index.html"> IFyou
+								</a>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+									aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+									<span class = "navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+									<div class ="navbar-nav">
+										<a class="nav-item nav-link" href="adm.php">Inicio</a>
+										<a class="nav-item nav-link" href="index.php">Inicio dos usuarios</a>
+										<a class="nav-item nav-link" href="historico_de_megociacoes.php">Historico de Negociações</a>
+										<a class="nav-item nav-link" href="lista_produtos.php">Lista de Produtos</a>
+										<a class="nav-item nav-link" href="lista_de_usuarios.php">Lista de usuarios</a>
+										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
+										<a class="nav-item nav-link" id="cadastro-menu" href="cadastro.html">Cadastro de Usuarios</a>
+
+										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+									</div>
+								</div>
+							</nav>
+						</div>';
+					}
 				}
 			?>
         </header>
-		<button type="button" href="#" data-toggle="modal" data-target="#modal_carrinho">Abrir carrinho de compras</button>
+		<div id="botao"></div>

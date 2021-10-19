@@ -8,7 +8,9 @@
 			$id=$_POST["id"];
 			$id=strtoupper($id);
 			$tabela="";
-			$select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on id_usuario=vendedores.cod_vendedor where tipo_produto='$id'";
+			$select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
+			inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
+			inner join usuarios on id_usuario=vendedores.cod_vendedor where tipo_produto='$id'";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
 			while($linha=mysqli_fetch_assoc($res)){
 				$tabela.='<!-- Table Produtos e demais-->
@@ -54,7 +56,9 @@
         if($_POST["valor"] && !$_POST["id"]){
 			$valor=strtoupper($_POST["valor"]);
 			$tabela="";
-			$select="SELECT regiao, foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on id_usuario=vendedores.cod_vendedor";
+			$select="SELECT regiao, foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
+			inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
+			inner join usuarios on id_usuario=vendedores.cod_vendedor";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
 			while($linha=mysqli_fetch_assoc($res)){
 				$nome_vendedor=strpos(strtoupper($linha["nome_usuario"]), $valor);

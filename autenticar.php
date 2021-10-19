@@ -4,7 +4,9 @@
     $email=$_POST["email"];
     $senha=$_POST["senha"];
     $senha=md5($senha);
+	$destino=0;
 
+	
     $select="SELECT id_adm FROM adm WHERE email=? and senha=?";
     if($stmt = mysqli_prepare($con, $select)) { 
 
@@ -20,8 +22,10 @@
         if(mysqli_num_rows($resultado) == 1) {
             
             $l = mysqli_fetch_assoc($resultado);
-
-            header("Location: procurar_produtos.php");
+			
+			$_SESSION["cargo"]=0;
+			$_SESSION["tipo_de_usuario"]=0;
+			$destino=1;
         }
         mysqli_stmt_close($stmt);
         
@@ -45,13 +49,20 @@
         if(mysqli_num_rows($resultado) == 1) {
             
             $l = mysqli_fetch_assoc($resultado);
-			header("Location: procurar_produtos.php");
 			$_SESSION["id_usuario"]=$l["id_usuario"];
 			$_SESSION["cargo"]=1;
 			$_SESSION["tipo_de_usuario"]=$l["tipo_de_usuario"];
+			
+			if($destino==0){
+				$destino=2;
+			}
+
             echo 1;
         }
         else {
+			if($destino==0){
+				$destino=3;
+			}
             echo 0;
         }
         mysqli_stmt_close($stmt);
@@ -62,5 +73,19 @@
     }
     mysqli_close($con);
     
+	if($destino==0){
+		header("Location: login.php?id=2");
+	}
   
+	if($destino==1){
+		header("Location: adm.php");
+	}
+	
+	if($destino==2){
+		header("Location: procurar_produtos.php");
+	}
+	
+	if($destino==3){
+		header("Location: login.php?id=1");
+	}
 ?>

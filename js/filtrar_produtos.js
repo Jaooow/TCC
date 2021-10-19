@@ -61,6 +61,7 @@ $(document).ready(function(){
 							input=$("#recebe").html();
 							input+="<div id='item"+id+"'><input type='text' readonly='readonly' value='"+g+"'/><input type='number' name='"+id+"' value='"+q+"'/><button type='button' name='deletar' value='"+id+"'>deletar</button><br /></div>";		
 							$("input[name='produto"+id+"']").val(quant[i]);
+							$("#botao").html('<button type="button" href="#" data-toggle="modal" data-target="#modal_carrinho">Abrir carrinho de compras</button>');
 						console.log(input);
 						$("#recebe").html(input);
 					});			
@@ -99,6 +100,7 @@ $(document).ready(function(){
 						console.log(input);
 						$("#recebe").html(input);
 					});			
+					$("#botao").html('<button type="button" href="#" data-toggle="modal" data-target="#modal_carrinho">Abrir carrinho de compras</button>');
 				}
 				else{
 					var id=$(this).val();
