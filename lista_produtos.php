@@ -1,5 +1,6 @@
 <?php
 	include "cabecalho.php";
+	include "conexao.php";
 ?>
 <main>
 	<label for="filtro_produtos">Filtro:</label>

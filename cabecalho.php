@@ -155,9 +155,9 @@
 									<div class ="navbar-nav">
 										<a class="nav-item nav-link" href="adm.php">Inicio</a>
 										<a class="nav-item nav-link" href="index.php">Inicio dos usuarios</a>
-										<a class="nav-item nav-link" href="historico_de_megociacoes.php">Historico de Negociações</a>
+										<a class="nav-item nav-link" href="historico_de_negociacoes.php">Historico de Negociações</a>
 										<a class="nav-item nav-link" href="lista_produtos.php">Lista de Produtos</a>
-										<a class="nav-item nav-link" href="lista_de_usuarios.php">Lista de usuarios</a>
+										<a class="nav-item nav-link" href="lista_usuarios.php">Lista de usuarios</a>
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" id="cadastro-menu" href="cadastro.html">Cadastro de Usuarios</a>
 
@@ -170,4 +170,9 @@
 				}
 			?>
         </header>
-		<div id="botao"></div>
+		<?php
+			if(isset($_SESSION["tipo_de_usuario"])){
+				echo "<div id='botao'></div>";
+			}
+		?>
+		

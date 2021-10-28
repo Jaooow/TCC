@@ -4,7 +4,7 @@
 
 	if(!empty($_POST))
     {	
-		if($_POST["id"] && !$_POST["valor"]){
+		if(isset($_POST["id"])){
 			$id=$_POST["id"];
 			$id=strtoupper($id);
 			$tabela="";
@@ -53,7 +53,7 @@
 			}
 			echo $tabela;
 		}
-        if($_POST["valor"] && !$_POST["id"]){
+        if(isset($_POST["valor"])){
 			$valor=strtoupper($_POST["valor"]);
 			$tabela="";
 			$select="SELECT regiao, foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 

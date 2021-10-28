@@ -7,19 +7,19 @@
 		$dados="";
 		
         $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
-				inner join vendedores on produtos.cod_vendedor=vendedor.cod_vendedor 
+				inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
 				inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE 1=1 ";
 		
-		if($tipo_produto!=){
+		if(!empty($tipo_produto)){
 			$select+="and tipo_produto='$tipo_produto' ";
 		}
-		if($usuario!=){
+		if(!empty($usuario)){
 			$select+="and id_usuario='$usuario' ";
 		}
-		if($preco!=){
+		if(!empty($preco)){
 			$select+="and preco>='$preco' ";
 		}
-		$select+="ORDET BY usuarios.nome";
+		$select+="ORDER BY nome_usuario";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
 			$dados.='<!-- Table Produtos e demais-->
@@ -50,13 +50,13 @@
 							<br />
 							<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 							<br/>
-							<button type="button" name="deletar" value="'.$linha["id_produto"].'">Deletar</button>
-							<button type="button" name="alterar" value="'.$linha["id_produto"].'">Alterar</button>
+							<button type="button" name="deletar" onclick="deleta_produto()" value="'.$linha["id_produto"].'">Deletar</button>
+							<button type="button" name="alterar" onclick="altera_produto()" value="'.$linha["id_produto"].'">Alterar</button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<br />';
 		}
-	echo $resultado;
+	echo $dados;
 ?>

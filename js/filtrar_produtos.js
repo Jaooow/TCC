@@ -40,7 +40,7 @@ $(document).ready(function(){
 		carrinho();
 	});
 		if(sessionStorage.getItem("produto")){
-			
+			console.log(JSON.parse(sessionStorage.getItem("produto")));
 		
 			var item=[];
 			var quant=[];
@@ -75,18 +75,21 @@ $(document).ready(function(){
 	console.log(quantidade);
 				console.log(produto);
 	function carrinho(){
+		console.log("teste doces");
 		$("div#tabela_produtos button").click(function(){
 				console.log(quantidade);
 				console.log(produto);
+				produto=JSON.parse(sessionStorage.getItem("produto"));
+				quantidade= JSON.parse(sessionStorage.getItem("quantidade")); 
 				var id=$(this).val();
 				if(produto[id]==null){	
 					console.log("teste"+id);
 					
 					//var id=$(this).val();
 					var valor=$("#produto"+id).val();
-					
 					produto[id]=id;
 					quantidade[id]=valor;
+					console.log("teste "+produto);
 					
 					sessionStorage.setItem("produto", JSON.stringify(produto));
 					sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
