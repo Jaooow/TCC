@@ -1,8 +1,13 @@
 <?php
+include "conexao.php";
 	include "cabecalho.php";
-	include "conexao.php";
 ?>
 <main>
+	<?php
+		if(isset($_GET["conteudo"])){
+			echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
+		}
+	?>
 	<label for="filtro_produtos">Filtro:</label>
 	<select class="form-control" id="filtro_produtos" name="filtros[]">
 		<option label="Escolha um tipo" value="0">Escolha um tipo</option>
@@ -32,7 +37,7 @@
 	
 	<div id="recebe_filtrado"></div>
 </main>
- <script src="js/script_lista_produtos.js"></script>
 <?php
+	include "modal_altera_produto.php";
 	include "rodape.php";
 ?> 

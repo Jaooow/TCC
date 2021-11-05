@@ -1,25 +1,9 @@
-<?php 
-    include "conexao.php";
-		$tipo_produto=$_POST["tipo_produto"];
-		$tipo_produto=strtoupper($tipo_produto);
-		$usuario=$_POST["usuario"];
-		$preco=$_POST["preco"];
+<?php
+	include "conexao.php";
 		$dados="";
-		
-        $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
+		$select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
 				inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
-				inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE 1=1 ";
-		
-		if(!empty($tipo_produto)){
-			$select.="and tipo_produto='$tipo_produto' ";
-		}
-		if(!empty($usuario)){
-			$select.="and id_usuario='$usuario' ";
-		}
-		if(!empty($preco)){
-			$select.="and preco>='$preco' ";
-		}
-		$select.="ORDER BY nome_usuario";
+				inner join usuarios on vendedores.cod_vendedor=id_usuario";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
 			$dados.='<!-- Table Produtos e demais-->
@@ -50,7 +34,7 @@
 							<br />
 							<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 							<br/>
-							<button type="button" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'">Deletar</button>
+							<button type="button" name="deletar_produto" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'">Deletar</button>
 							<button type="button" onclick="monta_modal_altera_produto('.$linha["id_produto"].')"  value="'.$linha["id_produto"].'" href="#" data-toggle="modal" data-target="#modal_alterar_produto">Alterar</button>
 						</div>
 					</div>
@@ -58,5 +42,5 @@
 			</div>
 			<br />';
 		}
-	echo $dados;
-?>
+		echo $dados;
+	?>

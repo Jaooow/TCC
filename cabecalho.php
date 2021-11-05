@@ -25,12 +25,6 @@
         <!--Paralax -->
         <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 		<!--Scipt usado-->
-		<script src="js/scripts.js"></script>
-		<script src="js/script_procurar_produtos.js"></script>
-		<script src="js/jquery-3.5.1.min.js"></script>
-		<script src="js/script_perfil.js"></script>
-		<script src="js/filtrar_produtos.js"></script>
-		<!--<script src="js/script_carrinho.js"></script>-->
     </head>
     <body>
         <header>

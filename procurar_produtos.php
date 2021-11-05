@@ -97,52 +97,12 @@
 							</select>
 						</div>
 					</div>
-					<!--<div class="col-md-4">
-						<div class="form-group">
-							<label for="filtragem_produtos">Ordem Preço:</label>
-							<select class="form-control" id="filtragem_produtos">
-								<option>Menor</option>
-								<option>Maior</option>
-							</select>
-						</div>-->
-					</div>
 				</div>
 			</div>
 		</div>
 		
 		<div id="tabela_produtos"></div>
 		
-		<!-- Table Produtos e demais
-		<div class="tabela-produtos">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<div class="card">
-							<img src="img/exemplo-card.jpg" class="card-img-top" alt="Imagem Produto 4">
-							<div class=" card-body">
-								<!-- Nome Produto 
-								<h5 class = "card-title">Bola de Vôlei</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<!-- Nome Produto 
-						<h6>Bola de Vôlei</h6>
-						<!-- Informação 
-						<p class="info_produto">Bola de Vôlei Mikasa MVA350 </p>
-						<br/><br/>
-						<i class="fas fa-phone"></i> (99)99999-9999
-						<p class="produto_vendedor">Vendedor: João Pedro Catarina Conçolaro</p>
-					</div>
-					<div class="col-md-5">
-						<!-- Preço 
-						<p class = "preco_produto">R$ 150,00</p>
-						<br/>
-						<h7>Seção:</h7><p class=secao_produtos>Esportes</p>
-					</div>
-				</div>
-			</div>
-		</div>-->
 	</main>
 </body>
 <?php

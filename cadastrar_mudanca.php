@@ -1,23 +1,23 @@
 <?php
 	session_start();
     include "conexao.php";
-    $tipo_de_negocio=$_POST["tipo_de_negocio"];
-	if($_POST["tipo_de_negocio"]==1){
+    $tipo_de_negocio=$_POST["tipo_de_negocio_perfil"];
+	if($_POST["tipo_de_negocio_perfil"]==1){
 		$tipo_de_negocio="Autonomo";
 		echo "teste1";
 	}
-	if($_POST["tipo_de_negocio"]==2){
+	if($_POST["tipo_de_negocio_perfil"]==2){
 		$tipo_de_negocio="Micro produtor / Micro empresario";
 		echo "teste2";
 	}
-	if($_POST["tipo_de_negocio"]==3){
+	if($_POST["tipo_de_negocio_perfil"]==3){
 		$tipo_de_negocio="Produtor ou vendedor de meio/alto porte";
 		echo "teste3";
 	}
 	
-	if($_POST["tipo_de_negocio"]==3 || $_POST["tipo_de_negocio"]==2){
+	if($_POST["tipo_de_negocio_perfil"]==3 || $_POST["tipo_de_negocio_perfil"]==2){
 		echo "teste4";
-		$arquivo=$_FILES["documento"];
+		$arquivo=$_FILES["documento_perfil"];
 		
         // Tamanho máximo do arquivo em bytes
         $tamanho = 100000000;
@@ -63,8 +63,8 @@
 										";
 			mysqli_query($con, $update)or die(mysqli_error($con));
 			
-			$cnpj=$_POST["cnpj"];
-			$telefone=$_POST["telefone"];
+			$cnpj=$_POST["cnpj_perfil"];
+			$telefone=$_POST["telefone_perfil"];
 				
 
 				$insert= "INSERT INTO vendedores(
@@ -109,8 +109,8 @@
 									";
 		mysqli_query($con, $update)or die(mysqli_error($con));
 		
-		$cnpj=$_POST["cnpj"];
-		$telefone=$_POST["telefone"];
+		$cnpj=$_POST["cnpj_perfil"];
+		$telefone=$_POST["telefone_perfil"];
 		
 
 		$insert= "INSERT INTO vendedores(
@@ -139,5 +139,5 @@
 	}
 	
 
-//header("Location: perfil.php")
+header("Location: perfil.php")
 ?>
