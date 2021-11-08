@@ -69,6 +69,17 @@ header, .navbar{
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
+
+.carbutton{
+    text-decoration: none;
+    color: #FFF;
+    background-color: transparent;
+    border-color: transparent;
+}
+.carbutton:hover{
+    border-radius: 30%;
+    background-color: #167c7a;
+}
 /* Slider */
 .container-fluid{
     padding: 0;
@@ -455,7 +466,7 @@ background-color: #F1F1F1;
     margin-bottom: 10vh;
     padding: 20px;
     border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(7, 81, 83, 0.9);
     color: #FFF;
     text-align: center;
 }
@@ -464,7 +475,7 @@ background-color: #F1F1F1;
     font-size: 30px;
 }
 .alter_button{
-    background-color: #1C9997;
+    background-color: #309b99;
     color: #FFF;
     text-transform: uppercase;
     width: 120px;
@@ -481,6 +492,30 @@ background-color: #F1F1F1;
     border-color: #1C9997;
 }
 
+/* Cadastrar Produtos */
+.cadastro_produtos{
+    justify-content: center;
+    padding: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 30px;
+    background-color: rgba(7, 81, 83, 0.9);
+    color: #FFF;
+    text-align: left;
+}
+
+/*Negociacao*/
+
+.negociacao{
+   margin: 0 auto;
+   padding: 20px;
+   border: 1px solid black;
+   border-radius: 20px;
+}
+
+.negociacao i{
+    font-size: 20px;
+}
 /*Responsive*/
 
 @media(max-width: 768px) {

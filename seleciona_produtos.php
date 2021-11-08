@@ -38,12 +38,12 @@
 						<div class="col-md-5">
 							<!-- Preço -->
 							<p class = "preco_produto">R$ '.$linha["preco"].'</p>
-							<br/>
+							
 							<label for="">Quantidade:</label>
-							<input type="number" id="produto'.$linha["id_produto"].'" />
+							<input type="number" class="form-control" id="produto'.$linha["id_produto"].'" />
 							<br />
-							<button type="button" value="'.$linha["id_produto"].'">Selecionar quantidade</button>
-							<br />
+							<button type="button" class="btn btn-primary" value="'.$linha["id_produto"].'">Selecionar Quantidade</button>
+							<br /><br />
 							<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 						</div>
 					</div>
@@ -94,7 +94,7 @@
 									<label for="">Quantidade:</label>
 									<input type="number" id="produto'.$linha["id_produto"].'" />
 									<br />
-									<button type="button" value="'.$linha["id_produto"].'">Selecionar quantidade</button>
+									<button type="button" class="btn btn-primary" value="'.$linha["id_produto"].'">Selecionar quantidade</button>
 									<br />
 									<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 								</div>
