@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 	function atualiza(){
 		var dados = {id:1};
 		$.post("atualiza_produtos.php", dados, function(d){
@@ -39,4 +39,3 @@ $(document).ready(function(){
 			$("#foto_produto_span").html(ft);
 		});
 	}
-});

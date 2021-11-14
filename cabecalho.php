@@ -25,11 +25,6 @@
         <!--Paralax -->
         <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 		<!--Scipt usado-->
-		<script src="js/scripts.js"></script>
-		<script src="js/script_procurar_produtos.js"></script>
-		<script src="js/jquery-3.5.1.min.js"></script>
-		<script src="js/script_perfil.js"></script>
-		<!--<script src="js/script_carrinho.js"></script>-->
     </head>
     <body>
         <header>
@@ -101,7 +96,7 @@
 							</nav>
 						</div>';
 					}
-					else{
+					if($_SESSION["cargo"]==2){
 						echo'
 						<!-- NavBar -->
 						<div class="container" id="nav-container">
@@ -134,6 +129,33 @@
 											</li>';
 									}
 									echo'
+										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+									</div>
+								</div>
+							</nav>
+						</div>';
+					}
+					if($_SESSION["cargo"]==0){
+						echo'
+						<!-- NavBar -->
+						<div class="container" id="nav-container">
+							<nav class = "navbar navbar-expand-lg navbar-dark">
+								<a href="index.php" class="navbar-brand">
+									<img  id="logo" src="img/Logo.png" href = "index.php" alt="Logo Site" href="index.html"> IFyou
+								</a>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" 
+									aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+									<span class = "navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+									<div class ="navbar-nav">
+										<a class="nav-item nav-link" href="adm.php">Inicio</a>
+										<a class="nav-item nav-link" href="index.php">Inicio dos usuarios</a>
+										<a class="nav-item nav-link" href="historico_de_negociacoes.php">Historico de Negociações</a>
+										<a class="nav-item nav-link" href="lista_produtos.php">Lista de Produtos</a>
+										<a class="nav-item nav-link" href="lista_usuarios.php">Lista de usuarios</a>
+										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
+										<a class="nav-item nav-link" id="cadastro-menu" href="cadastro.html">Cadastro de Usuarios</a>
 										<button type="button" href="#" class = "carbutton" data-toggle="modal" data-target="#modal_carrinho"><i class="fas fa-shopping-cart"></i></button>
 										<div id="carrinhobutton">
 										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
@@ -145,10 +167,5 @@
 				}
 			?>
         </header>
-		<?php
-			if(isset($_SESSION["tipo_de_usuario"])){
-				echo "<div id='botao'></div>";
-			}
-		?>
 		</div>
 		

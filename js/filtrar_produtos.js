@@ -1,9 +1,10 @@
-$(document).ready(function(){
+
 	//FILTRAGEM POR ROUPAS
 	$("#roupas").click(function(){
 		var id="ROUPAS";
 		$.post("seleciona_produtos.php", {"id":id}, function(v){
 			$("#tabela_produtos").html(v);
+			carrinho();
 		});
 	});
 	//FILTRAGEM POR DOCES 
@@ -11,6 +12,7 @@ $(document).ready(function(){
 		var id="DOCES";
 		$.post("seleciona_produtos.php", {"id":id}, function(v){
 			$("#tabela_produtos").html(v);
+			carrinho();
 		});
 	});
 	//FILTRAGEM POR COMIDAS
@@ -18,6 +20,7 @@ $(document).ready(function(){
 		var id="COMIDAS";
 		$.post("seleciona_produtos.php", {"id":id}, function(v){
 			$("#tabela_produtos").html(v);
+			carrinho();
 		});
 	});
 	//FILTRAGEM POR ESPORTES
@@ -25,6 +28,7 @@ $(document).ready(function(){
 		var id="ESPORTES";
 		$.post("seleciona_produtos.php", {"id":id}, function(v){
 			$("#tabela_produtos").html(v);
+			carrinho();
 		});
 	});
 	//FILTRAGEM SELECT
@@ -32,6 +36,7 @@ $(document).ready(function(){
 		var id=$("#filtragem_produtos").val();
 		$.post("seleciona_produtos.php", {"id":id}, function(v){
 			$("#tabela_produtos").html(v);
+			carrinho();
 		});
 	});
 		
@@ -41,6 +46,6 @@ $(document).ready(function(){
 		var valor=$("#procurar_produto").val();
 		$.post("seleciona_itens.php", {"valor":valor}, function(v){
 			$("#tabela_produtos").html(v);
+			carrinho();
 		});	
 	});
-});

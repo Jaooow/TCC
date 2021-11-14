@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 	
 	function dados(){
 		$.post("seleciona_usuarios.php", function(d){
@@ -79,5 +79,3 @@ $(document).ready(function(){
 			dados();
 		});
 	});
-
-});

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 	
 	$("#tipo_de_negocio_perfil").change(function(){
 		if(this.value ==1){
@@ -23,4 +23,3 @@ $(document).ready(function(){
 			window.location.href = "perfil.php";
 		})
 	});
-});

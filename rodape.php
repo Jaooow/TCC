@@ -1,9 +1,11 @@
+		<script src="js/script_carrinho.js"></script>
 		<script src="js/script_perfil.js"></script>
 		<script src="js/filtrar_produtos.js"></script>
 		<script src="js/script_lista_produtos.js"></script>
 		<script src="js/script_lista_usuarios.js"></script>
-		<script src="js/mudar_cargo.js"></script>
+		<script src="js/script_mudar_cargo.js"></script>
 		<script src="js/script_cadastro_produto.js"></script>
+		
 		<footer>
             <div id="copy-area">
                 <div class="container">
@@ -13,5 +15,8 @@
                 </div>
             </div>
     	</footer>
+		<?php
+			include "modal_carrinho.php";
+		?>
      </body>
 </html>

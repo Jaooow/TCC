@@ -9,7 +9,7 @@
 				</div>
 			<div class="modal-body">
 				<form method="post">
-					<div id="recebe"></div>
+					<div id="recebe_modal"></div>
 				</form>
 			</div>
 			<div class="modal-footer">

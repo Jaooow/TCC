@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 	function cadastrar_produto(){
 		var dados= { nome_produto: $("#nome_produto").val(),
 					 descricao: $("#descricao").val(),
@@ -22,4 +22,3 @@ $(document).ready(function(){
 			cadastrar_produto();
 		}
 	});
-});

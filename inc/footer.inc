@@ -2,8 +2,9 @@
 		<script src="js/filtrar_produtos.js"></script>
 		<script src="js/script_lista_produtos.js"></script>
 		<script src="js/script_lista_usuarios.js"></script>
-		<script src="js/mudar_cargo.js"></script>
+		<script src="js/script_mudar_cargo.js"></script>
 		<script src="js/script_cadastro_produto.js"></script>
+		<script src="js/script_carrinho.js"></script>
 <footer>
     <div id="copy-area">
         <div class="container">
