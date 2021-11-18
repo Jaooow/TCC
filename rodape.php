@@ -5,7 +5,7 @@
 		<script src="js/script_lista_usuarios.js"></script>
 		<script src="js/script_mudar_cargo.js"></script>
 		<script src="js/script_cadastro_produto.js"></script>
-		
+		<script src="js/script_negociacao.js"></script>
 		<footer>
             <div id="copy-area">
                 <div class="container">
