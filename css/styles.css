@@ -508,7 +508,7 @@ background-color: #F1F1F1;
 
 #negociacao{
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
     border-radius: 20px;
     text-align: center;
 }
@@ -531,6 +531,9 @@ background-color: #F1F1F1;
     border: 1px solid rgb(13, 106, 138);
     border-radius: 15px;
 }
+
+
+
 /*Responsive*/
 
 @media(max-width: 768px) {
