@@ -13,7 +13,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-			<button type="button" class="btn btn-success" href="negociacao.php">Finalizar Compras</button>
+			<a href="negociacao.php"><button class="btn btn-success" >Finalizar Compras</button></a>
 			</div>
 		</div>
 	</div>

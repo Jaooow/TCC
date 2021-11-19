@@ -63,11 +63,19 @@
 										";
 			mysqli_query($con, $update)or die(mysqli_error($con));
 			
+			$select="SELECT usuarios.nome as nome_vendedor FROM usuarios WHERE id_usuario='$id'";
+			$res = mysqli_query($con, $select) or die(mysqli_error($con));
+			while($linha=mysqli_fetch_assoc($res)){
+				$resultado= $linha["nome_vendedor"];
+			}
+			
 			$cnpj=$_POST["cnpj_perfil"];
 			$telefone=$_POST["telefone_perfil"];
+			
 				
 
 				$insert= "INSERT INTO vendedores(
+												nome_vendedor,
 												tipo_negocio,
 												cnpj,
 												documentacao,
@@ -78,13 +86,14 @@
 												?,
 												?,
 												?,
+												?,
 												?
 											)";
 
 
 			if($stmt = mysqli_prepare($con, $insert)) { 
 
-				mysqli_stmt_bind_param($stmt, "sssss", $tipo_de_negocio, $cnpj, $nome_arquivo, $id, $telefone);
+				mysqli_stmt_bind_param($stmt, "ssssss", $resultado, $tipo_de_negocio, $cnpj, $nome_arquivo, $id, $telefone);
 				
 
 				mysqli_stmt_execute($stmt);

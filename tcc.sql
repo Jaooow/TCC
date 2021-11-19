@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 29-Jul-2021 às 10:42
+-- Data de Criação: 19-Nov-2021 às 00:59
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -42,37 +42,41 @@ CREATE TABLE IF NOT EXISTS `adm` (
 --
 
 INSERT INTO `adm` (`id_adm`, `email`, `senha`, `tipo_de_usuario`) VALUES
-(1, 'christian.g@aluno.ifsp.edu.br', '12345', 0);
+(1, 'christian.g@aluno.ifsp.edu.br', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `itens_negocio`
+-- Estrutura da tabela `itens_negociacao`
 --
 
-CREATE TABLE IF NOT EXISTS `itens_negocio` (
-  `id_itens` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `itens_negociacao` (
+  `id_itens_negociacao` int(11) NOT NULL AUTO_INCREMENT,
   `cod_produto` int(11) NOT NULL,
-  `cod_vendedor` int(11) NOT NULL,
-  `cod_negocio` int(11) NOT NULL,
-  PRIMARY KEY (`id_itens`),
+  `cod_negociacao` int(11) NOT NULL,
+  `preco_unitario` varchar(10) NOT NULL,
+  `preco_final` varchar(10) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  PRIMARY KEY (`id_itens_negociacao`),
   KEY `cod_produto` (`cod_produto`),
-  KEY `cod_vendedor` (`cod_vendedor`),
-  KEY `cod_negocio` (`cod_negocio`)
+  KEY `cod_negociacao` (`cod_negociacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `negocios`
+-- Estrutura da tabela `negociacao`
 --
 
-CREATE TABLE IF NOT EXISTS `negocios` (
-  `id_negocio` int(11) NOT NULL AUTO_INCREMENT,
-  `cod_usuario` int(11) NOT NULL,
-  `data` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_negocio`),
-  KEY `cod_usuario` (`cod_usuario`)
+CREATE TABLE IF NOT EXISTS `negociacao` (
+  `id_negocioacao` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_comprador` int(11) NOT NULL,
+  `cod_vendedor` int(11) NOT NULL,
+  `data_negociacao` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`id_negocioacao`),
+  KEY `cod_comprador` (`cod_comprador`),
+  KEY `cod_vendedor` (`cod_vendedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -99,11 +103,8 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 --
 
 INSERT INTO `produtos` (`nome`, `preco`, `tipo_produto`, `descricao`, `quantidade`, `cod_vendedor`, `foto`, `id_produto`) VALUES
-('banana', 1, '', 'banana maçã', 1, 4, 'd3df5af8e44cab7af3b3326183849ad2.jpg', 1),
-('banana2', 2, '', 'banana maçã2', 2, 4, '41d7d2d0498e4ce4cb31c76dd750ecc4.jpg', 2),
-('banana3', 3, '', 'banana maçã3', 3, 4, 'd0567246b8b68e2026ca533832755deb.jpg', 3),
-('banana4', 4, 'COMIDAS', 'banana maçã4', 4, 4, 'e423258a486d7a6c97b7f2d5034f4b85.jpg', 4),
-('banana5', 4, 'COMIDAS', 'banana maçã5', 4, 4, '4fd2245ee0bf6b6cac67df3ae7d505eb.jpg', 5);
+('banana 3', 2, 'COMIDAS', 'banana maçã', 10, 4, 'f98ed90cd8066e31d885db02ad058557.jpg', 4),
+('banana 4', 1, 'COMIDAS', 'banana maçã', 4, 4, 'ee9c6a9acc609f9880c4acf466f17e74.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -120,17 +121,16 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_usuario`, `id_usuario`) VALUES
-('chris', 'Christian.c.g.f777@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Produtor ou vendedor de meio/alto porte', 2, 4),
+('Christian G.', 'Christian.c.g.f777@hotmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Autonomo', 2, 4),
 ('amanda', 'amanda@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, 5),
-('jao', 'jao@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 7),
-('fernando ', 'fernando@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Autonomo', 2, 8);
+('jao', 'jao@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Ausente', 1, 7);
 
 -- --------------------------------------------------------
 
@@ -140,6 +140,7 @@ INSERT INTO `usuarios` (`nome`, `email`, `senha`, `tipo_de_negocio`, `tipo_de_us
 
 CREATE TABLE IF NOT EXISTS `vendedores` (
   `id_vendedores` int(11) NOT NULL AUTO_INCREMENT,
+  `nome_vendedor` varchar(100) NOT NULL,
   `tipo_negocio` varchar(300) NOT NULL,
   `cnpj` varchar(300) DEFAULT NULL,
   `documentacao` varchar(100) DEFAULT NULL,
@@ -149,46 +150,44 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
   PRIMARY KEY (`id_vendedores`),
   UNIQUE KEY `cnpj` (`cnpj`),
   KEY `cod_vendedor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `vendedores`
 --
 
-INSERT INTO `vendedores` (`id_vendedores`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `telefone`, `cod_vendedor`) VALUES
-(2, 'Autonomo', '', '', '', '', 7),
-(3, 'Autonomo', '88', '', '', '', 7),
-(7, 'Produtor ou vendedor de meio/alto porte', '555', '983d839dbb3dc23646828afbe3ea6676.pdf', '', '+5516981108180', 4);
+INSERT INTO `vendedores` (`id_vendedores`, `nome_vendedor`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `telefone`, `cod_vendedor`) VALUES
+(1, 'kskskksks', 'Autonomo', '555', NULL, '', '+5516981108180', 4);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `itens_negocio`
+-- Limitadores para a tabela `itens_negociacao`
 --
-ALTER TABLE `itens_negocio`
-  ADD CONSTRAINT `itens_negocio_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`),
-  ADD CONSTRAINT `itens_negocio_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`id_vendedores`),
-  ADD CONSTRAINT `itens_negocio_ibfk_3` FOREIGN KEY (`cod_negocio`) REFERENCES `negocios` (`id_negocio`);
+ALTER TABLE `itens_negociacao`
+  ADD CONSTRAINT `itens_negociacao_ibfk_2` FOREIGN KEY (`cod_negociacao`) REFERENCES `negociacao` (`id_negocioacao`),
+  ADD CONSTRAINT `itens_negociacao_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`);
 
 --
--- Limitadores para a tabela `negocios`
+-- Limitadores para a tabela `negociacao`
 --
-ALTER TABLE `negocios`
-  ADD CONSTRAINT `negocios_ibfk_1` FOREIGN KEY (`cod_usuario`) REFERENCES `usuarios` (`id_usuario`);
+ALTER TABLE `negociacao`
+  ADD CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`cod_comprador`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`id_vendedores`);
 
 --
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`);
+  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`cod_vendedor`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `vendedores`
 --
 ALTER TABLE `vendedores`
-  ADD CONSTRAINT `vendedores_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `vendedores_ibfk_1` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

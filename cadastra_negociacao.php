@@ -15,16 +15,18 @@
     $insert= "INSERT INTO negociacoes(
                                     cod_comprador,
                                     cod_vendedor, 
-									data_negociacao
+									data_negociacao,
+									status
                                 ) VALUES (
                                     ?,
                                     ?,
+									?,
 									?
                                 )";
 
 	if($stmt = mysqli_prepare($con, $insert)) { 
 
-		mysqli_stmt_bind_param($stmt, "sss", $id_comprador, $resultado["id_vendedor"], $data);
+		mysqli_stmt_bind_param($stmt, "ssss", $id_comprador, $resultado["id_vendedor"], $data, 0);
 		
 
 		mysqli_stmt_execute($stmt);
