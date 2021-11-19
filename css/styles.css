@@ -487,7 +487,7 @@ background-color: #F1F1F1;
 
 .alter_button:hover{
     text-decoration: none;
-    color: #FFF;
+    color: #000;
     background-color: transparent;
     border-color: #1C9997;
 }
@@ -506,15 +506,30 @@ background-color: #F1F1F1;
 
 /*Negociacao*/
 
-.negociacao{
-   margin: 0 auto;
-   padding: 20px;
-   border: 1px solid black;
-   border-radius: 20px;
+#negociacao{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
 }
 
-.negociacao i{
-    font-size: 20px;
+.compras{
+    margin-top: 30px;
+}
+
+#comprasT{
+    background-color:rgba(0, 0, 0, 0.9);
+    justify-content: center;
+}
+
+.negociacao_button{
+    background-color: #309b99;
+}
+
+.emandamento{
+    margin-top: 10px;
+    border: 1px solid rgb(13, 106, 138);
+    border-radius: 15px;
 }
 /*Responsive*/
 

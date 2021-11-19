@@ -24,7 +24,7 @@
 								
 									input=$("#recebe_modal").html();
 									console.log(g);
-									input+="<div id='item"+JSON.parse(g).id+"'><input type='text' readonly='readonly' value='"+JSON.parse(g).nome+"'/><input type='number' name='"+JSON.parse(g).id+"' value='"+JSON.parse(g).quant+"'/><button type='button' name='deletar' value='"+JSON.parse(g).id+"'>deletar</button><br /></div>";		
+									input+="<div id='item"+JSON.parse(g).id+"'><input type='text' class='form-control' readonly='readonly' value='"+JSON.parse(g).nome+"'/><br/><input type='number' class='form-control' name='"+JSON.parse(g).id+"' value='"+JSON.parse(g).quant+"'/><br/><button type='button' class='btn btn-danger' name='deletar' value='"+JSON.parse(g).id+"'>Deletar</button><br /></div>";		
 									//$("input[name='produto"+id+"']").val(quant[i]);
 								
 									
@@ -62,7 +62,7 @@ console.log("teste function2");
 							$.post("seleciona_itens.php", dados, function(g){
 								console.log(g);
 								
-									input+=div+"<div id='item"+JSON.parse(g).id+"'><input type='text' readonly='readonly' value='"+JSON.parse(g).nome+"'/><input type='number' name='"+JSON.parse(g).id+"' value='"+JSON.parse(g).quant+"'/><button type='button' name='deletar' value='"+JSON.parse(g).id+"'>deletar</button><br /></div>";		
+									input+=div+"<div id='item"+JSON.parse(g).id+"'><input type='text' class='form-control' readonly='readonly' value='"+JSON.parse(g).nome+"'/><br/><input type='number' class='form-control' name='"+JSON.parse(g).id+"' value='"+JSON.parse(g).quant+"'/><br/><button type='button' class='btn btn-danger' name='deletar' value='"+JSON.parse(g).id+"'>Deletar</button><br /></div>";		
 								console.log(input);
 								$("#recebe_modal").html(input);
 							});			

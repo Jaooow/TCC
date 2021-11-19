@@ -10,7 +10,7 @@ if(sessionStorage.getItem("produto")){
 			$.post("seleciona_itens.php", dados_negociacao, function(v){
 				itens_negociacao=$("#itens_negociacao").html();
 				var soma= JSON.parse(v).quant*JSON.parse(v).preco;
-				itens_negociacao+= "<label for='produto_negiciacao"+JSON.parse(v).id+"'>Produto:</label><br /><input type='text' value='"+JSON.parse(v).nome+"' id='produto_negociacao"+JSON.parse(v).id+"' readonly='readonly'/><br /><label for='descricao"+JSON.parse(v).id+"'>Descrição:</label><textarea id='descricao"+JSON.parse(v).id+"' readonly='readonly'>"+JSON.parse(v).descricao+"</textarea><br /><label for='quantidade"+JSON.parse(v).id+"'>Quantidade:</label><input type='number' id='quantidade"+JSON.parse(v).id+"' value='"+JSON.parse(v).quant+"' readonly='readonly'/> <label for='preco"+JSON.parse(v).id+"'>Preço:</label><input type='number' id='preco"+JSON.parse(v).id+"' value='"+JSON.parse(v).preco+"' readonly='readonly'/> <label for='valor"+JSON.parse(v).id+"'>Valor Total:</label><input type='number' id='valor"+JSON.parse(v).id+"' value='"+soma+"' readonly='readonly'/><br /><label for='vendedor"+JSON.parse(v).id+"'>Vendedor: </label><input type='text' id='vendedor"+JSON.parse(v).id+"' value='"+JSON.parse(v).nome_vendedor+"'/></br>";
+				itens_negociacao+= "<label for='produto_negiciacao"+JSON.parse(v).id+"'>Produto:</label><br /><input type='text' value='"+JSON.parse(v).nome+"' id='produto_negociacao"+JSON.parse(v).id+"' readonly='readonly'/><br /><label for='descricao"+JSON.parse(v).id+"'>Descrição:</label><textarea id='descricao"+JSON.parse(v).id+"' readonly='readonly'>"+JSON.parse(v).descricao+"</textarea><br /><label for='quantidade"+JSON.parse(v).id+"'>Quantidade:</label><input type='number' id='quantidade"+JSON.parse(v).id+"' value='"+JSON.parse(v).id+"' readonly='readonly'/> <label for='preco"+JSON.parse(v).id+"'>Preço:</label><input type='number' id='preco"+JSON.parse(v).id+"' value='"+JSON.parse(v).preco+"' readonly='readonly'/> <label for='valor"+JSON.parse(v).id+"'>Valor Total:</label><input type='number' id='valor"+JSON.parse(v).id+"' value='"+soma+"' readonly='readonly'/><br />";
 				$("#itens_negociacao").html(itens_negociacao);
 				url+="\n "+JSON.parse(v).nome+": "+JSON.parse(v).quant+" Unidade(s) ";
 				if(i==id.length-1){
@@ -36,15 +36,4 @@ if(sessionStorage.getItem("produto")){
 					});
 				}
 			}
-		});
-		
-		$("#cancelar_compra").click(function(){
-			var id_cancelar=JSON.parse(sessionStorage.getItem("produto"));
-			var quantidade_cancelar= JSON.parse(sessionStorage.getItem("quantidade")); 
-			for(i=0; i < id_confirmar.length; i++){
-				id_cancelar[i]=null;
-				quantidade_cancelar[i]=null;
-			}
-			sessionStorage.setItem("produto", JSON.stringify(id_cancelar));
-			sessionStorage.setItem("quantidade", JSON.stringify(quantidade_cancelar));
 		});

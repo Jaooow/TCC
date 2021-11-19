@@ -88,7 +88,7 @@
 										</li>';
 									}
 									echo'
-										<button type="button" href="#" class = "carbutton" data-toggle="modal" data-target="#modal_carrinho"><i class="fas fa-shopping-cart"></i></button>
+										<button type="button" href="#" class = "carbutton" data-toggle="modal" data-target="#modal_carrinho"><i class="fas fa-shopping-cart"> Carrinho</i></button>
 										<div id="carrinhobutton">
 										<a class="nav-item nav-link" id="logout" href="logout.php">Sair</a>
 									</div>
