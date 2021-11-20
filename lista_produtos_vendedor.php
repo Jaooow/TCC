@@ -60,6 +60,6 @@
 			</div>
 			<br />';*/
 		}
-	
-	include "rodape.php";
+
+		include "rodape.php"
 ?>

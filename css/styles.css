@@ -122,7 +122,7 @@ header, .navbar{
 }
 .main-btn:hover{
     text-decoration: none;
-    color: #FFF;
+    color: #000;
     background-color: transparent;
     border-color: #1C9997;
 }
@@ -251,8 +251,9 @@ background-color: #F1F1F1;
     margin-bottom: 30vh;
     padding:80px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #FFF;
+    background-color: #FFF;
+    color: #000;
+    
 }
 #login_area div{
     margin-bottom: 6px;
@@ -268,7 +269,7 @@ background-color: #F1F1F1;
 
 #login_area a{
     font-size: 16px;
-    color: #FFF;
+    color: #000;
     text-decoration: none;
 }
 #login_area .main-btn{
@@ -277,7 +278,7 @@ background-color: #F1F1F1;
 }
 
 #login_area .underline{
-    border-top: 2px solid #333;
+    border-top: 2px solid rgb(0, 0, 0);
     width: 100%;
     margin-bottom: 12px;
 }

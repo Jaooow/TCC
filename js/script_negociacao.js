@@ -22,7 +22,7 @@ if(sessionStorage.getItem("produto")){
 					
 					var aux="Meu nome é "+JSON.parse(v).nome_usuario+" e estou interessado no(s) seguinte(s) produto(s): "+url;
 					var conteudo = encodeURIComponent(aux).replace("%5Cn", "%0A");
-					itens_negociacao+='<a href="https://wa.me/55'+JSON.parse(v).tel+'?text='+conteudo+'"target="_blank"><button id="confirmar">Confirmar Compra</button></a><button id="retornar" href="procurar_produtos.php">Voltar</button><button id="cancelar_compra">Cancelar Compra</button>';
+					itens_negociacao+='<a href="https://wa.me/55'+JSON.parse(v).tel+'?text='+conteudo+'"target="_blank"><button id="confirmar" class="btn btn-success">Confirmar Compra</button></a> <button id="retornar" class="btn btn-primary" href="procurar_produtos.php">Voltar</button> <button id="cancelar_compra" class="btn btn-danger">Cancelar Compra</button>';
 					$("#itens_negociacao").html(itens_negociacao); 	
 				}
 			});

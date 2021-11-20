@@ -28,6 +28,7 @@
 				<br/>
 				<div class="tabela-produtos">
 					<div id="itens_negociacao"></div>
+					<br/>
 					<h8> Deseja-se ver o status da sua solicitação? Vá em: <a href="negociacao_andamento.php">Negociações em Andamento.</a></h8>
 				</div>
 			</div>
