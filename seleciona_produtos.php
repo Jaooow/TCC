@@ -108,7 +108,7 @@
 		}
 
 	}
-    else{
+    /*else{
 		header("Content-Type: application/json");
         $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on id_usuario=vendedores.cod_vendedor";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
@@ -116,5 +116,5 @@
 			$resultado[]= $linha;
 		}
 		echo json_encode($resultado);
-    }
+    }*/
 ?>

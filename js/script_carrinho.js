@@ -17,17 +17,18 @@
 							var id=item[i];
 							var quantidade=quant[i];	
 							var dados={"id":id,
-										"quant":quantidade};
+										"quant":quantidade,
+										"tipo":2};
 							//console.log(id);
 							console.log(quantidade);
 							$.post("seleciona_itens.php", dados, function(g){
 								
 									input=$("#recebe_modal").html();
-									console.log(g);
-									input+="<div id='item"+JSON.parse(g).id+"'><div class='form-row'><div class='col'><input type='text' class='form-control' readonly='readonly' value='"+JSON.parse(g).nome+"'/></div><div class='col'><input type='number' class='form-control' name='"+JSON.parse(g).id+"' value='"+JSON.parse(g).quant+"'/></div><div class='col'><button type='button' class='btn btn-danger' name='deletar' onclick='deleta_item_carrinho("+JSON.parse(g).id+")' value=''>Deletar</button><br /></div></div></div>";		
+									console.log(JSON.parse(g).conteudo);
+									input+=JSON.parse(g).conteudo;
+									console.log(input);
 									//$("input[name='produto"+id+"']").val(quant[i]);
 								
-									
 								$("#recebe_modal").html(input);
 							});			
 						}
@@ -36,7 +37,7 @@
 				
 				function carrinho(){
 					console.log("teste function");
-					$("div.tabela-produtos button").click(function(){
+					$("div#tabela_produtos button").click(function(){
 console.log("teste function2");
 						if(sessionStorage.getItem("produto")){
 							produto=JSON.parse(sessionStorage.getItem("produto"));
@@ -58,11 +59,11 @@ console.log("teste function2");
 							var input="";
 							var div = $("#recebe_modal").html();
 							var dados={"id":id,
-										"quant":quantidade[id]};
+										"quant":quantidade[id],
+										"tipo":2};
 							$.post("seleciona_itens.php", dados, function(g){
 								console.log(g);
-								
-									input+=div+"<div id='item"+JSON.parse(g).id+"'><input type='text' class='form-control' readonly='readonly' value='"+JSON.parse(g).nome+"'/><br/><input type='number' class='form-control' name='"+JSON.parse(g).id+"' value='"+JSON.parse(g).quant+"'/><br/><button type='button' class='btn btn-danger' name='deletar' onclick='deleta_item_carrinho("+JSON.parse(g).id+")' value=''>Deletar</button><br /></div>";		
+								input+=JSON.parse(g).conteudo;
 								console.log(input);
 								$("#recebe_modal").html(input);
 							});			
