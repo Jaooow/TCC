@@ -11,14 +11,20 @@
 					</div>
 					<div class="col-md-6">
 						<h4>Negociações em Andamento:</h4><br/>
-						<button type="button" class = "alter_button" href="negociacao_andamento.php"><i class="fas fa-eye"> Veja</i></button>
+						<a href="negociacao_andamento.php"><button type="button" class = "alter_button"><i class="fas fa-eye"> Veja</i></button></a>
 						<br/>
 					</div>
 					<div class="col-md-6">
 						<h4>Negociações finalizadas:</h4><br/>
-						<button type="button" class = "alter_button" href="negociacao_finalizada.php"><i class="fas fa-eye"> Veja</i></button>
+						<a href="negociacao_finalizada.php"><button type="button" class = "alter_button" ><i class="fas fa-eye"> Veja</i></button></a>
 					</div>
 				</div>
+				<br/><br/><br/><br/>
+				<div class="row">
+					<div class="col-12">
+						<h2>Confirme os itens:</h2>
+					</div>
+						<div id="itens_negociacao"></div>
 				<br/>
 				<div class="tabela-produtos">
 					<div class="container">
@@ -55,7 +61,7 @@
 			</div>
 		</div>
 		<br />
-		<div id="itens_negociacao"></div>
+		
 	</main>
 <?php
 	include "modal_carrinho.php";

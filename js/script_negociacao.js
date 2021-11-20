@@ -5,20 +5,26 @@ if(sessionStorage.getItem("produto")){
 	var url="";
 	for(i=0; i < id_negociacao.length; i++){
 		var dados_negociacao ={"id":id_negociacao[i],
-								"quant":valor_negociacao[i]};
+								"quant":valor_negociacao[i],
+								"tipo":1};
+								console.log(id_negociacao[i]);
 		if(id_negociacao[i]!=null){
 			$.post("seleciona_itens.php", dados_negociacao, function(v){
 				itens_negociacao=$("#itens_negociacao").html();
-				var soma= JSON.parse(v).quant*JSON.parse(v).preco;
-				itens_negociacao+= "<label for='produto_negiciacao"+JSON.parse(v).id+"'>Produto:</label><br /><input type='text' value='"+JSON.parse(v).nome+"' id='produto_negociacao"+JSON.parse(v).id+"' readonly='readonly'/><br /><label for='descricao"+JSON.parse(v).id+"'>Descrição:</label><textarea id='descricao"+JSON.parse(v).id+"' readonly='readonly'>"+JSON.parse(v).descricao+"</textarea><br /><label for='quantidade"+JSON.parse(v).id+"'>Quantidade:</label><input type='number' id='quantidade"+JSON.parse(v).id+"' value='"+JSON.parse(v).id+"' readonly='readonly'/> <label for='preco"+JSON.parse(v).id+"'>Preço:</label><input type='number' id='preco"+JSON.parse(v).id+"' value='"+JSON.parse(v).preco+"' readonly='readonly'/> <label for='valor"+JSON.parse(v).id+"'>Valor Total:</label><input type='number' id='valor"+JSON.parse(v).id+"' value='"+soma+"' readonly='readonly'/><br />";
+				itens_negociacao+=JSON.parse(v).conteudo;
 				$("#itens_negociacao").html(itens_negociacao);
+				
 				url+="\n "+JSON.parse(v).nome+": "+JSON.parse(v).quant+" Unidade(s) ";
-				if(i==id.length-1){
-				var aux="Meu nome é "+JSON.parse(v).nome_usuario+" e estou interessado no(s) seguinte(s) produto(s): "+url;
-				var conteudo = encodeURIComponent(aux).replace("%5Cn", "%0A");
-				itens_negociacao+="<button id='confirmar' href='https://wa.me/55"+JSON.parse(v).tel+"?text='"+conteudo+"' target='_blank'>Confirmar Compra</button><button id='retornar' href='procurar_produtos.php'>Voltar</button><button id='cancelar_compra'>Cancelar Compra</button>";
-				$("#itens_negociacao").html(itens_negociacao);
-						}
+				var m=id_negociacao.length;
+				var menos=m-1;
+				console.log(i+"/"+menos+"/"+id_negociacao.length);
+				if(i==id_negociacao.length){
+					
+					var aux="Meu nome é "+JSON.parse(v).nome_usuario+" e estou interessado no(s) seguinte(s) produto(s): "+url;
+					var conteudo = encodeURIComponent(aux).replace("%5Cn", "%0A");
+					itens_negociacao+='<a href="https://wa.me/55'+JSON.parse(v).tel+'?text='+conteudo+'"target="_blank"><button id="confirmar">Confirmar Compra</button></a><button id="retornar" href="procurar_produtos.php">Voltar</button><button id="cancelar_compra">Cancelar Compra</button>';
+					$("#itens_negociacao").html(itens_negociacao); 	
+				}
 			});
 		}
 	}		
@@ -36,4 +42,15 @@ if(sessionStorage.getItem("produto")){
 					});
 				}
 			}
+		});
+		
+		$("#cancelar_compra").click(function(){
+			var id_cancelar=JSON.parse(sessionStorage.getItem("produto"));
+			var quantidade_cancelar= JSON.parse(sessionStorage.getItem("quantidade")); 
+			for(i=0; i < id_confirmar.length; i++){
+				id_cancelar[i]=null;
+				quantidade_cancelar[i]=null;
+			}
+			sessionStorage.setItem("produto", JSON.stringify(id_cancelar));
+			sessionStorage.setItem("quantidade", JSON.stringify(quantidade_cancelar));
 		});

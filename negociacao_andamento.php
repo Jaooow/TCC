@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include "conexao.php";
 	include "cabecalho.php";
 ?>
 	<main>
@@ -9,29 +9,53 @@
 			$select="SELECT usuarios.nome as nome_usuario, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
 			FROM negociacao 
 			inner join itens_negociacao on negociacao.id_negociacao=itens_negociacao.cod_negociacao 
-			inner join produtos on itens_negociacao.cod_produto=produto.id_produto 
-			inner join vendedores on produto.cod_vendedores=vendedores.id_vendedores 
+			inner join produtos on itens_negociacao.cod_produto=produtos.id_produto 
+			inner join vendedores on produtos.cod_vendedor=vendedores.id_vendedores 
 			inner join usuarios on usuarios.id_usuario=id_vendedores 
 			WHERE cod_comprador='$id' and negociacao.status='0'";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
 			while($linha=mysqli_fetch_assoc($res)){
-				$dados+="<fiedset>
-							<legend>Negocios em andamento</legend>
-							<label for='produto_negiciacao'>Produto:</label>
-							<br />
-							<input type='text' value='' id='produto_negociacao' readonly='readonly'/>
-							<br />
-							<label for='descricao'>Descrição:</label><textarea id='descricao' readonly='readonly'></textarea>
-							<br />
-							<label for='quantidade'>Quantidade:</label><input type='number' id='quantidade' value='' readonly='readonly'/>
-							<br />
-							<label for='preco'>Preço:</label><input type='number' id='preco' value='' readonly='readonly'/> 
-							<br />
-							<label for='valor'>Valor Total:</label><input type='number' id='valor' value='' readonly='readonly'/>
-							<br />
-							<label for='vendedor'>Vendedor: </label><input type='text' id='vendedor' value=''/>
-						</fieldset>
-						<br />";
+				$dados+='<div class="col-12">
+							<div class="compras">
+								<div class="form-row">
+									<div class="col">
+										<img src="img/logo.png" alt="..." width="120px">
+										<label for="">Produto:</label>
+										<input type="text" value="'.$linha["nome_produto"].'" class="form-control" placeholder="" readonly="readonly"/>
+									</div>
+									<div class="col">
+										<label for="">Descrição:</label>
+										<input type="text" value="'.$linha["descricao"].'" class="form-control" readonly="readonly"/>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col">
+										<label for="">Quantidade:</label>
+										<input type="text" value="'.$linha["quantidade"].'" class="form-control" placeholder="" readonly="readonly"/>
+									</div>
+									<div class="col">
+										<label for="">Preço Unitario:</label>
+										<input type="number" value="'.$linha["preco_unitario"].'" class="form-control" readonly="readonly"/>
+									</div>
+									<div class="col">
+										<label for="">Valor Total:</label>
+										<input type="text" value="'.$linha["preco_final"].'" class="form-control" placeholder="" readonly="readonly"/>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col">
+										<label for="">Vendedor:</label>
+										<input type="text" value="'.$linha["nome_vendedor"].'" class="form-control" placeholder="" readonly="readonly"/>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col">
+										<label for="">Status:</label>
+										<input type="text" readonly="readonly" value="Compra em andamento, verifique o contato do vendedor em seu WhatsApp" class="form-control" placeholder=""/>
+									</div>
+								</div>
+							</div>
+						</div>';
 			}
 			echo $dados;
 		?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 19-Nov-2021 às 00:59
+-- Data de Criação: 20-Nov-2021 às 01:50
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -69,12 +69,12 @@ CREATE TABLE IF NOT EXISTS `itens_negociacao` (
 --
 
 CREATE TABLE IF NOT EXISTS `negociacao` (
-  `id_negocioacao` int(11) NOT NULL AUTO_INCREMENT,
+  `id_negociacao` int(11) NOT NULL AUTO_INCREMENT,
   `cod_comprador` int(11) NOT NULL,
   `cod_vendedor` int(11) NOT NULL,
   `data_negociacao` varchar(100) NOT NULL,
   `status` int(11) NOT NULL,
-  PRIMARY KEY (`id_negocioacao`),
+  PRIMARY KEY (`id_negociacao`),
   KEY `cod_comprador` (`cod_comprador`),
   KEY `cod_vendedor` (`cod_vendedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
 --
 
 INSERT INTO `vendedores` (`id_vendedores`, `nome_vendedor`, `tipo_negocio`, `cnpj`, `documentacao`, `regiao`, `telefone`, `cod_vendedor`) VALUES
-(1, 'kskskksks', 'Autonomo', '555', NULL, '', '+5516981108180', 4);
+(1, 'kskskksks', 'Autonomo', '555', NULL, '', '16981108180', 4);
 
 --
 -- Constraints for dumped tables
@@ -167,8 +167,8 @@ INSERT INTO `vendedores` (`id_vendedores`, `nome_vendedor`, `tipo_negocio`, `cnp
 -- Limitadores para a tabela `itens_negociacao`
 --
 ALTER TABLE `itens_negociacao`
-  ADD CONSTRAINT `itens_negociacao_ibfk_2` FOREIGN KEY (`cod_negociacao`) REFERENCES `negociacao` (`id_negocioacao`),
-  ADD CONSTRAINT `itens_negociacao_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`);
+  ADD CONSTRAINT `itens_negociacao_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `produtos` (`id_produto`),
+  ADD CONSTRAINT `itens_negociacao_ibfk_2` FOREIGN KEY (`cod_negociacao`) REFERENCES `negociacao` (`id_negociacao`);
 
 --
 -- Limitadores para a tabela `negociacao`

@@ -42,10 +42,10 @@
 		
 	
 	
-	$("#procurar").click(function(){
+	/*$("#procurar").click(function(){
 		var valor=$("#procurar_produto").val();
 		$.post("seleciona_itens.php", {"valor":valor}, function(v){
 			$("#tabela_produtos").html(v);
 			carrinho();
 		});	
-	});
+	});*/
