@@ -86,18 +86,18 @@ console.log("teste function2");
 							sessionStorage.setItem("produto", JSON.stringify(produto));
 							$("item"+id).remove();
 						}	
+						$("input[name='quantidade_negociacao']").click(function(){
+							var id=$(this).attr('id');
+							var quant=$(this).attr('value');
+							
+							var quantidade= JSON.parse(sessionStorage.getItem("quantidade")); 
+							$("input[name='"+id+"']").val(quant);
+							quantidade[id]=quant;
+							sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
+						});
 					});
 				}
 				carrinho();
-				
-				$("input[name='quantidade_negociacao']").click(function(){
-					var id=$(this).attr('id');
-					var quant=$(this).attr('value');
-					
-					var quantidade= JSON.parse(sessionStorage.getItem("quantidade")); 
-					$("input[name='"+id+"']").val(quant);
-					quantidade[id]=quant;
-					sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
-				});
+			
 					
 				
