@@ -38,6 +38,7 @@
 						<p><b>Tipo de negocio:</b>'.$linha["tipo_de_negocio"].'</p>
 						<p><b>Tipo de usuario:</b>Cliente</p>
 						<button onclick="deleta_usuario('.$linha["id_usuario"].')">Deletar usuario</button>
+						<a href="mudar_cargo.php"><button>Tornar o Usuario Vendedor</button></a>
 						<button onclick="monta_modal('.$linha["id_usuario"].')" href="#" data-toggle="modal" data-target="#modal_alterar">Alterar</button>
 					</fieldset>
 					<br />';
@@ -81,6 +82,7 @@
 						<p><b>Tipo de negocio:</b>'.$linha["tipo_de_negocio"].'</p>
 						<p><b>Tipo de usuario:</b>Cliente</p>
 						<button onclick="deleta_usuario('.$linha["id_usuario"].')">Deletar usuario</button>
+						<a href="mudar_cargo.php?usuario='.$linha["id_usuario"].'"><button>Tornar o Usuario Vendedor</button></a>
 						<button onclick="monta_modal('.$linha["id_usuario"].')" href="#" data-toggle="modal" data-target="#modal_alterar">Alterar</button>
 					</fieldset>
 					<br />';

@@ -42,6 +42,28 @@
 						<input type="text" class="form-control" id="quantidade" name = "quantidade" placeholder="Quantidade">
 					</div>
 				</div>
+				<?php
+					if($_SESSION["tipo_de_usuario"]==0){
+						echo'<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="usuario_adm">Selecione o vendedor:</label>
+								<select  id="usuario_adm" name="usuario_adm" class="form-control">
+									<option label="Escolha um Usuario" value="0">Escolha um Usuario</option>';
+									
+										$select="SELECT nome, id_usuario FROM usuarios inner join vendedores on id_usuario=cod_vendedor";
+										$res = mysqli_query($con, $select) or die(mysqli_error($con));
+										while($linha=mysqli_fetch_assoc($res)){
+											echo '<option value="'.$linha["id_usuario"].'">'.$linha["nome"].'</option>';
+										}
+								
+								echo'</select>
+							</div>
+						</div>';
+					}
+					else{
+						echo'<input type="hidden" id="usuario_adm" name="usuario_adm" value="1">';
+					}
+				?>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="tipo_produto">Categoria:</label>

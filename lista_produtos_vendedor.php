@@ -1,65 +1,27 @@
 <?php
 	include "cabecalho.php";
+?>
+	<label for="filtro_produtos_vendedor">Filtro:</label>
+	<select class="form-control" id="filtro_produtos_vendedor">
+		<option label="Escolha um tipo" value="0">Escolha um tipo</option>
+		<option value="Roupas">Roupas</option>
+		<option value="Doces">Doces</option>
+		<option value="Comidas">Comidas</option>
+		<option value="Esportes">Esportes</option>
+		<option value="Verduras/Legumes">Verduras/Legumes</option>
+	</select>
+	
+	<label for="filtro_preco_vendedor">Filtro por preço:</label>
+	<input type="number" name="filtro_preco_vendedor" id="filtro_preco_vendedor"/>
+	
+	<button type="button" id="filtrar_produtos" name="filtrar_produtos">Filtrar</button>
+	
+	<h3 class ="main-title-search">Meus Produtos</h3>
+					
+	<div id="recebe_produtos_vendedor">
 
-    include "conexao.php";
-
-	echo'<div class="container">
-			<div class="row">
-				<div class = "col-12">
-					<h3 class ="main-title-search">Meus Produtos</h3>
-				</div>';
-
-    $select="SELECT id_produto, produtos.nome as nome_produto, descricao, preco, foto FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE id_usuario=".$_SESSION["id_usuario"]."";
-    $res = mysqli_query($con, $select) or die(mysqli_error($con));
-    while($linha=mysqli_fetch_assoc($res)){
-		echo '<div class="container">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="card">
-							<img src="fotos/'.$linha["foto"].'" class="card-img-top" alt="Imagem Produto 1">
-							<div class=" card-body">
-								<h5 class = "card-title">'.$linha["nome_produto"].'</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<p class = "meus_produtos">Descrição</p>
-						<span>'.$linha["descricao"].'</span>
-					</div>
-					<div class="col-md-2">
-						<p class = "meus_produtos">Preço</p>
-						<span>R$ '.$linha["preco"].'</span>
-					</div>
-					<div class="col-md-4">
-						<div class="meus_produtos_buttons">
-							<button type="button" class="btn btn-warning" id="altera"  name="altera" value="'.$linha["id_produto"].'">Alterar</button>
-							<button type="button" class="btn btn-danger" id="remove"  name="remove" value="'.$linha["id_produto"].'">Remover</button>
-						</div>
-					</div>
-						
-				</div>
-			</div>';
-
-       /* echo'<div class="container">
-				<table class="text-center table table-dark table-bordered table-responsive">
-					<tr>
-						<td scope="col" rowspan="3">'.$linha["foto"].'</td>
-						<td scope="col">Nome: '.$linha["nome_produto"].'</td>
-					</tr>
-					<tr>
-						<td scope="col">Descrição: '.$linha["descricao"].'</td>
-					</tr>
-					<tr>
-						<td scope="col">Preço: '.$linha["preco"].'</td>
-					</tr>
-					<tr>
-						<td scope="col"><button id="remove" name="remove" value="'.$linha["id_produto"].'">Remover</button></td>
-						<td scope="col"><button id="altera" name="altera" value="'.$linha["id_produto"].'">Alterar</button></td>
-					</tr>
-				</table>
-			</div>
-			<br />';*/
-		}
-
+	</div>
+<?php
+		include "modal_altera_produto.php";
 		include "rodape.php"
 ?>

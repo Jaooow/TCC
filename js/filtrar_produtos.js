@@ -1,7 +1,4 @@
-	//$.post("seleciona_produtos.php", function(v){
-			//$("#tabela_produtos").html(v);
-			//carrinho();
-	//});
+
 	//FILTRAGEM POR ROUPAS
 	$("#roupas").click(function(){
 		var id="ROUPAS";

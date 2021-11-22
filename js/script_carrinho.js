@@ -1,4 +1,5 @@
-					console.log("teste carrinho");
+
+				console.log("teste carrinho");
 					var produto=[];
 					var quantidade=[];
 				if(sessionStorage.getItem("produto")){
@@ -24,9 +25,7 @@
 							$.post("seleciona_itens.php", dados, function(g){
 								
 									input=$("#recebe_modal").html();
-									console.log(JSON.parse(g).conteudo);
 									input+=JSON.parse(g).conteudo;
-									console.log(input);
 									//$("input[name='produto"+id+"']").val(quant[i]);
 								
 								$("#recebe_modal").html(input);
@@ -34,6 +33,7 @@
 						}
 					}
 				}
+	
 				
 				function carrinho(){
 					console.log("teste function");
@@ -45,7 +45,7 @@ console.log("teste function2");
 						}
 						var id=$(this).val();
 						console.log(id);
-						if(typeof produto[id] == "undefined"){	
+						if(typeof produto[id] == "undefined" || typeof produto[id] == "object"){	
 							console.log("teste"+id);
 							
 							var valor=$("#produto"+id).val();
@@ -56,15 +56,14 @@ console.log("teste function2");
 							sessionStorage.setItem("produto", JSON.stringify(produto));
 							sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
 							
-							var input="";
-							var div = $("#recebe_modal").html();
+							
 							var dados={"id":id,
 										"quant":quantidade[id],
 										"tipo":2};
 							$.post("seleciona_itens.php", dados, function(g){
-								console.log(g);
+								var input=$("#recebe_modal").html();
 								input+=JSON.parse(g).conteudo;
-								console.log(input);
+								
 								$("#recebe_modal").html(input);
 							});			
 						}
@@ -78,15 +77,9 @@ console.log("teste function2");
 							else{
 								produto[id]=null;
 								sessionStorage.setItem("produto", JSON.stringify(produto));
-								$("item"+id).remove();
+								$("item"+id).html("");
 							}
 						}
-						function deleta_item_carrinho(id){
-							produto=JSON.parse(sessionStorage.getItem("produto"));
-							produto[id]=null;
-							sessionStorage.setItem("produto", JSON.stringify(produto));
-							$("item"+id).remove();
-						}	
 						$("input[name='quantidade_negociacao']").click(function(){
 							var id=$(this).attr('id');
 							var quant=$(this).attr('value');
@@ -100,5 +93,15 @@ console.log("teste function2");
 				}
 				carrinho();
 			
-					
+				
+		function deleta_item_carrinho(a){
+			console.log("item"+a);
+			produto=JSON.parse(sessionStorage.getItem("produto"));
+			quantidade=JSON.parse(sessionStorage.getItem("quantidade"));
+			produto[a]=null;
+			quantidade[a]=null;
+			sessionStorage.setItem("produto", JSON.stringify(produto));
+			sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
+			$("#item"+a).remove();
+		}
 				

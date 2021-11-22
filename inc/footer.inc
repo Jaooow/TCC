@@ -5,6 +5,8 @@
 		<script src="js/script_mudar_cargo.js"></script>
 		<script src="js/script_cadastro_produto.js"></script>
 		<script src="js/script_carrinho.js"></script>
+		<script src="js/script_altera_produtos_vendedor.js"></script>
+		<script src="js/script_historico_negociacao.js"></script>
 <footer>
     <div id="copy-area">
         <div class="container">

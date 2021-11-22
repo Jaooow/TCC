@@ -1,6 +1,6 @@
 <?php
-	session_start();
 	include "cabecalho.php";
+	include "conexao.php";
 ?>
 	<main>
 		<?php
@@ -10,9 +10,9 @@
 			FROM negociacao 
 			inner join itens_negociacao on negociacao.id_negociacao=itens_negociacao.cod_negociacao 
 			inner join produtos on itens_negociacao.cod_produto=produtos.id_produto 
-			inner join vendedores on produtos.cod_vendedor=vendedores.id_vendedores
-			inner join usuarios on usuarios.id_usuario=id_vendedores 
-			WHERE cod_comprador='$id' and negociacao.status='1'";
+			inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor
+			inner join usuarios on usuarios.id_usuario=vendedores.cod_vendedor
+			WHERE negociacao.cod_comprador='$id' and negociacao.status='1'";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
 			while($linha=mysqli_fetch_assoc($res)){
 				$dados+='<div class="container">
@@ -32,7 +32,7 @@
 								<!-- Informação -->
 								<p class="info_produto">'.$linha["descricao"].'</p>
 								<p class="info_produto">Vendedor:'.$linha["nome_vendedor"].'</p>
-								<p class="info_produto" style="color:red;">Compra em andamento, verifique o contato do vendedor em seu WhatsApp</p>
+								<p class="info_produto" style="color:red;">Compra Finalizada</p>
 								<br/><br/>
 							</div>
 							<div class="col-md-5">
@@ -40,7 +40,7 @@
 								<p class = "preco_produto">Valor Total: R$ '.$valor.'</p>
 								<p class="produto_vendedor">Preço (Un): R$ '.$linha["preco"].'</p>
 								<label for="'.$id.'">Quantidade:</label>
-								<input type="number" name="quantidade_negociacao" id="'.$id.'" class="produto_vendedor" value="'.$quant.'"/>
+								<input type="number" readonly="readonly" name="quantidade_negociacao" id="'.$id.'" class="produto_vendedor" value="'.$quant.'"/>
 								<br /><br />
 								<h7>Seção:</h7><p class=secao_produtos>Comida</p>
 							</div>

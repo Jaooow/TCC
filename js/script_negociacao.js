@@ -23,14 +23,16 @@ if(sessionStorage.getItem("produto")){
 					var aux="Meu nome é "+JSON.parse(v).nome_usuario+" e estou interessado no(s) seguinte(s) produto(s): "+url;
 					var conteudo = encodeURIComponent(aux).replace("%5Cn", "%0A");
 					itens_negociacao+='<a href="https://wa.me/55'+JSON.parse(v).tel+'?text='+conteudo+'"target="_blank"><button id="confirmar" class="btn btn-success">Confirmar Compra</button></a> <button id="retornar" class="btn btn-primary" href="procurar_produtos.php">Voltar</button> <button id="cancelar_compra" class="btn btn-danger">Cancelar Compra</button>';
-					$("#itens_negociacao").html(itens_negociacao); 	
+					$("#itens_negociacao").html(itens_negociacao);
+					confirma();
 				}
 			});
 		}
-	}		
+	}
 }
-		
+	function confirma(){
 		$("#confirmar").click(function(){
+			console.log("confirmaaaa");
 			var id_confirmar=JSON.parse(sessionStorage.getItem("produto"));
 			var quantidade_confirmar= JSON.parse(sessionStorage.getItem("quantidade")); 
 			for(i=0; i < id_confirmar.length; i++){
@@ -38,11 +40,14 @@ if(sessionStorage.getItem("produto")){
 							"quant":quantidade_confirmar[i]};
 				if(id_confirmar[i]!=null){
 					$.post("cadastra_negociacao.php", dados_confirmar, function(v){
-						window.location="negociacao_andamento.php";
 					});
 				}
 			}
+			sessionStorage.removeItem("produto");
+			sessionStorage.removeItem("quantidade");
+			$("#mensagem_negociacao").html("Sua compra foi tranferida para Negociações em Andamento!!");
 		});
+	}
 		
 		$("#cancelar_compra").click(function(){
 			var id_cancelar=JSON.parse(sessionStorage.getItem("produto"));

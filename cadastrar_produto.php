@@ -1,6 +1,7 @@
 <?php
 	session_start();
     include "conexao.php";
+	$usuario_adm=$_POST["usuario_adm"];
     $nome_produto=$_POST["nome_produto"];
     $descricao=$_POST["descricao"];
     $preco=$_POST["preco"];
@@ -71,8 +72,13 @@
 									?
                                 )";
 			if($stmt = mysqli_prepare($con, $insert)) { 
-				mysqli_stmt_bind_param($stmt, "sssssss", $nome_produto, $preco,$descricao, $id, $tipo_produto, $quantidade, $nome_imagem);
-					
+				if($_SESSION["tipo_de_usuario"]==0){
+					mysqli_stmt_bind_param($stmt, "sssssss", $nome_produto, $preco,$descricao, $usuario_adm, $tipo_produto, $quantidade, $nome_imagem);
+				}
+				else{
+					mysqli_stmt_bind_param($stmt, "sssssss", $nome_produto, $preco,$descricao, $id, $tipo_produto, $quantidade, $nome_imagem);
+				}
+									
 				mysqli_stmt_execute($stmt);
 			  
 				mysqli_stmt_close($stmt);

@@ -110,7 +110,7 @@
 								</button>
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
-										<a class="nav-item nav-link" href="negociacao.php">Home/Negocioações</a>
+										<a class="nav-item nav-link" href="tratamento_negociacao.php">Home/Negocioações</a>
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" href="lista_produtos_vendedor.php">Meus Produtos</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>';
@@ -158,7 +158,7 @@
 										<a class="nav-item nav-link" id="cadastro-menu" href="cadastro.html">Cadastro de Usuarios</a>
 										<button type="button" href="#" class = "carbutton" data-toggle="modal" data-target="#modal_carrinho"><i class="fas fa-shopping-cart"></i></button>
 										<div id="carrinhobutton">
-										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+										<a class="nav-item nav-link" id="logout" href="logout.php">Sair</a>
 									</div>
 								</div>
 							</nav>

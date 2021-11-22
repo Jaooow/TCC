@@ -1,6 +1,7 @@
 
 	function cadastrar_produto(){
-		var dados= { nome_produto: $("#nome_produto").val(),
+		var dados= { usuario_adm:$("#usuario_adm").val(),
+					 nome_produto: $("#nome_produto").val(),
 					 descricao: $("#descricao").val(),
                      preco: $("#preco").val(),
 					 foto: $("#foto").val(),

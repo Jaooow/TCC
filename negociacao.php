@@ -24,8 +24,10 @@
 					<div class="col-12">
 						<h2>Confirme os itens:</h2>
 					</div>
-						
+					
 				<br/>
+				<div style="color:red;" id="mensagem_negociacao"></div>
+				<br />
 				<div class="tabela-produtos">
 					<div id="itens_negociacao"></div>
 					<br/>

@@ -52,8 +52,14 @@
         
             // Insere os dados no banco
 			$tipo_de_usuario=2;
-			$id=$_SESSION["id_usuario"];
-			$_SESSION["tipo_de_usuario"]=2;
+			if($_SESSION["tipo_de_usuario"]==0){
+				$id=$_POST["usuario_selecionado"];
+			}
+			else{
+				$id=$_SESSION["id_usuario"];
+				$_SESSION["tipo_de_usuario"]=2;
+			}
+			
 			
 			$update= "UPDATE usuarios SET
 											tipo_de_negocio='$tipo_de_negocio',

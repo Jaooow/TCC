@@ -8,6 +8,14 @@
 				if(isset($_GET["conteudo"])){
 					echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
 				}
+			
+				if(isset($_GET["usuario"]))
+				{
+					$usuario=$_GET["usuario"];
+					echo'<input type="hidden" id="usuario_selecionado" name="usuario_selecionado" value="'.$usuario.'">';
+				}
+				
+					
 			?>
 			<form action="cadastrar_mudanca.php" enctype="multipart/form-data" method="POST">
 				<div class="form-group">
@@ -19,7 +27,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="telefone_perfil"><h3>Digite seu nimero de celular com Whatsapp:</h3></label>
+					<label for="telefone_perfil"><h3>Digite seu numero de celular com Whatsapp:</h3></label>
 					<input type="text" class="form-control" id="telefone_perfil" name="telefone_perfil" required="required" placeholder="+55(16)xxxxx-xxxx">
 				</div>
 				<div class="form-group">
