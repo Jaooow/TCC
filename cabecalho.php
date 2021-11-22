@@ -90,7 +90,7 @@
 									echo'
 										<button type="button" href="#" class = "carbutton" data-toggle="modal" data-target="#modal_carrinho"><i class="fas fa-shopping-cart"> Carrinho</i></button>
 										<div id="carrinhobutton">
-										<a class="nav-item nav-link" id="logout" href="logout.php">Sair</a>
+										<a class="nav-item nav-link" id="logout" href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
 									</div>
 								</div>
 							</nav>
@@ -129,7 +129,7 @@
 											</li>';
 									}
 									echo'
-										<a class="nav-item nav-link" id="perfil" href="logout.php">Sair</a>
+										<a class="nav-item nav-link" id="perfil" href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
 									</div>
 								</div>
 							</nav>
@@ -156,9 +156,9 @@
 										<a class="nav-item nav-link" href="lista_usuarios.php">Lista de usuarios</a>
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" id="cadastro-menu" href="cadastro.html">Cadastro de Usuarios</a>
-										<button type="button" href="#" class = "carbutton" data-toggle="modal" data-target="#modal_carrinho"><i class="fas fa-shopping-cart"></i></button>
+										
 										<div id="carrinhobutton">
-										<a class="nav-item nav-link" id="logout" href="logout.php">Sair</a>
+										<a class="nav-item nav-link" id="logout" href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
 									</div>
 								</div>
 							</nav>

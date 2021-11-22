@@ -45,7 +45,7 @@
 							<img src="img/card-camiseta.jpg" class="card-img-top" alt="Imagem Produto 1">
 							<div class=" card-body">
 								<h5 class = "card-title">Roupas</h5>
-								<p class = "card-text">Informação</p>
+								<!--<p class = "card-text">Informação</p>-->
 							</div>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 							<img src="img/card-doces.png" class="card-img-top" alt="Imagem Produto 2">
 							<div class=" card-body">
 								<h5 class = "card-title">Doces</h5>
-								<p class = "card-text">Informação</p>
+								
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 							<img src="img/card-comida.png" class="card-img-top" alt="Imagem Produto 3">
 							<div class=" card-body">
 								<h5 class = "card-title">Comidas</h5>
-								<p class = "card-text">Informação</p>
+								
 							</div>
 						</div>
 					</div>
@@ -72,7 +72,7 @@
 							<img src="img/card-esporte.png" class="card-img-top" alt="Imagem Produto 4">
 							<div class=" card-body">
 								<h5 class = "card-title">Esporte</h5>
-								<p class = "card-text">Informação</p>
+								
 							</div>
 						</div>
 					</div>
