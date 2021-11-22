@@ -50,8 +50,8 @@
 							<br />
 							<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 							<br/>
-							<button type="button" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'">Deletar</button>
-							<button type="button" onclick="monta_modal_altera_produto('.$linha["id_produto"].')"  value="'.$linha["id_produto"].'" href="#" data-toggle="modal" data-target="#modal_alterar_produto">Alterar</button>
+							<button type="button" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'" class="btn btn-danger">Deletar</button>
+							<button type="button" onclick="monta_modal_altera_produto('.$linha["id_produto"].')"  value="'.$linha["id_produto"].'" href="#" data-toggle="modal" data-target="#modal_alterar_produto" class="btn btn-warning">Alterar</button>
 						</div>
 					</div>
 				</div>
