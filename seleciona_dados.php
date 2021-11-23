@@ -7,7 +7,7 @@
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
 			if($linha["tipo_de_usuario"]==2){
-				$select2="SELECT cnpj, documentacao, regiao, telefone FROM vendedores WHERE cod_vendedor='$id'";
+				$select2="SELECT cnpj, documentacao, regiao, telefone FROM vendedores WHERE vendedores.cod_vendedor='$id'";
 				$res = mysqli_query($con, $select) or die(mysqli_error($con));
 				while($linha2=mysqli_fetch_assoc($res)){
 					$vetor["id_usuario"]=$linha["id_usuario"];

@@ -4,7 +4,7 @@
 	$id=$_SESSION["id_usuario"];
     $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
 				inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
-				inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE cod_vendedor='$id'";
+				inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE vendedores.cod_vendedor='$id'";
 	$dados="";
     $res = mysqli_query($con, $select) or die(mysqli_error($con));
     while($linha=mysqli_fetch_assoc($res)){

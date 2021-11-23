@@ -38,14 +38,17 @@ if(sessionStorage.getItem("produto")){
 			for(i=0; i < id_confirmar.length; i++){
 				var dados_confirmar ={"id":id_confirmar[i],
 							"quant":quantidade_confirmar[i]};
+				console.log("foi 1");
 				if(id_confirmar[i]!=null){
 					$.post("cadastra_negociacao.php", dados_confirmar, function(v){
+						console.log("foi 2");
 					});
 				}
 			}
 			sessionStorage.removeItem("produto");
 			sessionStorage.removeItem("quantidade");
 			$("#mensagem_negociacao").html("Sua compra foi tranferida para Negociações em Andamento!!");
+			$("#itens_negociacao").html("");
 		});
 	}
 		

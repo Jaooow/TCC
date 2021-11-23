@@ -1,20 +1,22 @@
 <?php
 	session_start();
     include "conexao.php";
-    $id=$_GET["id"];
-    $quant=$_GET["quant"];
+    $id=$_POST["id"];
+    $quant=$_POST["quant"];
 	$resultado=[];
-	$select="SELECT id_vendedores, preco FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor WHERE id_produto='$id'";
+	$select="SELECT  preco, vendedores.cod_vendedor as cod_vendedores FROM vendedores inner join produtos on produtos.cod_vendedor=vendedores.cod_vendedor WHERE id_produto='$id'";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
-			$resultado["id_vendedor"]= $linha["id_vendedores"];
+			$resultado["cod_vendedor"]= $linha["cod_vendedores"];
 			$resultado["preco"]= $linha["preco"];
 		}
 	$id_comprador= $_SESSION["id_usuario"];
+	
 	date_default_timezone_set('America/Sao_Paulo');
 	$hora=date("H");
 	$hora-=1;
-	$data=@date("l, d  F  Y, ".$hora.":i:s");
+	$data=@date("l, d  F  Y, H:i:s");
+	
     $insert= "INSERT INTO negociacao(
                                     cod_comprador,
                                     cod_vendedor, 
@@ -28,7 +30,8 @@
                                 )";
 
 	if($stmt = mysqli_prepare($con, $insert)) { 
-		$id_v=$resultado["id_vendedor"];
+		$id_v=$resultado["cod_vendedor"];
+		echo $id_v;
 		$zero=0;
 		mysqli_stmt_bind_param($stmt, "ssss", $id_comprador, $id_v, $data, $zero);
 		

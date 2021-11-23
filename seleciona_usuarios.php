@@ -11,7 +11,7 @@
 				$res = mysqli_query($con, $select) or die(mysqli_error($con));
 				while($linha=mysqli_fetch_assoc($res)){
 					if($linha["tipo_de_usuario"]==2){
-						$select2="SELECT cnpj, documentacao, regiao, telefone FROM vendedores WHERE cod_vendedor='$id'";
+						$select2="SELECT cnpj, documentacao, regiao, telefone FROM vendedores WHERE vendedores.cod_vendedor='$id'";
 						$res2 = mysqli_query($con, $select2) or die(mysqli_error($con));
 						while($linha2=mysqli_fetch_assoc($res2)){
 							$dados.='<fieldset>
@@ -55,7 +55,7 @@
 				$res = mysqli_query($con, $select) or die(mysqli_error($con));
 				while($linha=mysqli_fetch_assoc($res)){
 					if($linha["tipo_de_usuario"]==2){
-						$select2="SELECT cnpj, documentacao, regiao, telefone FROM vendedores where cod_vendedor='".$linha["id_usuario"]."'";
+						$select2="SELECT cnpj, documentacao, regiao, telefone FROM vendedores where vendedores.cod_vendedor='".$linha["id_usuario"]."'";
 						$res2 = mysqli_query($con, $select2) or die(mysqli_error($con));
 						while($linha2=mysqli_fetch_assoc($res2)){
 							$dados.='<fieldset>

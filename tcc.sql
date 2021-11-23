@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 22-Nov-2021 às 17:03
+-- Data de Criação: 23-Nov-2021 às 04:11
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -60,18 +60,14 @@ CREATE TABLE IF NOT EXISTS `itens_negociacao` (
   PRIMARY KEY (`id_itens_negociacao`),
   KEY `cod_produto` (`cod_produto`),
   KEY `cod_negociacao` (`cod_negociacao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
 
 --
 -- Extraindo dados da tabela `itens_negociacao`
 --
 
 INSERT INTO `itens_negociacao` (`id_itens_negociacao`, `cod_produto`, `cod_negociacao`, `preco_unitario`, `preco_final`, `quantidade`) VALUES
-(5, 4, 5, '2', '6', 3),
-(6, 4, 6, '2', '6', 3),
-(7, 4, 7, '2', '6', 3),
-(8, 4, 8, '2', '6', 3),
-(9, 4, 9, '2', '6', 3);
+(58, 4, 56, '2', '6', 3);
 
 -- --------------------------------------------------------
 
@@ -88,18 +84,14 @@ CREATE TABLE IF NOT EXISTS `negociacao` (
   PRIMARY KEY (`id_negociacao`),
   KEY `cod_comprador` (`cod_comprador`),
   KEY `cod_vendedor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Extraindo dados da tabela `negociacao`
 --
 
 INSERT INTO `negociacao` (`id_negociacao`, `cod_comprador`, `cod_vendedor`, `data_negociacao`, `status`) VALUES
-(5, 4, 1, 'Monday, 22  November  2021, 14:30:17', 0),
-(6, 4, 1, 'Monday, 22  November  2021, 14:30:37', 0),
-(7, 4, 1, 'Monday, 22  November  2021, 12:31:56', 0),
-(8, 4, 1, 'Monday, 22  November  2021, 11:38:02', 0),
-(9, 4, 1, 'Monday, 22  November  2021, 11:38:15', 0);
+(56, 4, 4, 'Tuesday, 23  November  2021, 00:53:36', 1);
 
 -- --------------------------------------------------------
 
@@ -197,7 +189,7 @@ ALTER TABLE `itens_negociacao`
 --
 ALTER TABLE `negociacao`
   ADD CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`cod_comprador`) REFERENCES `usuarios` (`id_usuario`),
-  ADD CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `vendedores` (`id_vendedores`);
+  ADD CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`cod_vendedor`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Limitadores para a tabela `produtos`
