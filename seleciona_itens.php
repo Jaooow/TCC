@@ -5,6 +5,7 @@
 		$quant=$_POST["quant"];
 		$resultado=[];
 		if(isset($_POST["tipo"]) and $_POST["tipo"] == 1){
+			$tamanho=$_POST["tamanho"];
 			$select="SELECT foto, nome_vendedor, telefone, produtos.nome as nome_produto, preco, descricao FROM produtos inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor WHERE id_produto='$id'";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
 			while($linha=mysqli_fetch_assoc($res)){
@@ -46,6 +47,7 @@
 				$resultado["descricao"]= $linha["descricao"];
 				$resultado["tel"]= $linha["telefone"];
 				$resultado["nome_vendedor"]= $linha["nome_vendedor"];
+				$resultado["tamanho"]=$tamanho;
 			}
 			$id_usuario=$_SESSION["id_usuario"];
 			$select2="SELECT usuarios.nome as nome_usuario FROM usuarios  WHERE id_usuario='$id_usuario'";

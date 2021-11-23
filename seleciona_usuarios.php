@@ -39,7 +39,7 @@
 							<p><b>Tipo de negocio:</b>'.$linha["tipo_de_negocio"].'</p>
 							<p><b>Tipo de usuario:</b>Cliente</p>
 							<button onclick="deleta_usuario('.$linha["id_usuario"].')" class="btn btn-danger">Deletar usuario</button>
-							<a href="mudar_cargo.php"><button>Tornar o Usuario Vendedor</button></a>
+							<a href="mudar_cargo.php?usuario='.$linha["id_usuario"].'"><button class="btn btn-primary">Tornar o Usuario Vendedor</button></a>
 							<button onclick="monta_modal('.$linha["id_usuario"].')" href="#" data-toggle="modal" data-target="#modal_alterar" class="btn btn-warning">Alterar</button>
 						</fieldset>
 						<br />';

@@ -6,7 +6,8 @@
 				inner join usuarios on vendedores.cod_vendedor=id_usuario";
 		$res = mysqli_query($con, $select) or die(mysqli_error($con));
 		while($linha=mysqli_fetch_assoc($res)){
-			$dados.='<!-- Table Produtos e demais-->
+			$dados.='<div id="atualiza'.$linha["id_produto"].'">
+			<!-- Table Produtos e demais-->
 			<div class="tabela-produtos">
 				<div class="container">
 					<div class="row">
@@ -39,6 +40,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 			<br />';
 		}

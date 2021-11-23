@@ -53,6 +53,7 @@
         
             // Insere os dados no banco
 			$update= "UPDATE produtos SET
+									foto='$nome_imagem',
                                     nome='$nome_produto',
 									descricao='$descricao',
 									preco='$preco',
@@ -76,6 +77,19 @@
         }
     }
 	else{
-		header("Location: lista_produtos.php?conteudo=Envie uma imagem");
+		$update= "UPDATE produtos SET
+                                    nome='$nome_produto',
+									descricao='$descricao',
+									preco='$preco',
+									tipo_produto='$tipo_produto',
+									quantidade='$quantidade'
+									WHERE
+									id_produto='$id'
+									";
+
+			mysqli_query($con, $update) or die(mysqli_error($con));
+			mysqli_close($con);
+			$notifica= "Produto Alterado Com Sucesso";
+		header("Location: lista_produtos.php?conteudo=$notifica");
 	}
 ?> 

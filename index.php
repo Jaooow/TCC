@@ -21,7 +21,14 @@
 									<h2>Bolos, Salgados e alimentos em geral</h2>
 									<p>Visite Nossos Parceiros!</p>
 								</div>
-                                <a href="#" class="main-btn">Visitar</a>
+								<?php
+									if(!isset($_SESSION["tipo_de_usuario"])){
+										echo '<a href="login.html" class="main-btn">Visitar</a>';
+									}
+									else{
+										echo '<a href="procurar_produtos.php" class="main-btn">Visitar</a>';
+									}
+								?>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -31,7 +38,14 @@
                             <div class = "carousel-caption  d-md-block">
                                 <h2>Esportes</h2>
                                 <p>Visite Nossos Parceiros!</p>
-                                <a href="#" class="main-btn">Visitar</a>
+                               <?php
+									if(!isset($_SESSION["tipo_de_usuario"])){
+										echo '<a href="login.html" class="main-btn">Visitar</a>';
+									}
+									else{
+										echo '<a href="procurar_produtos.php" class="main-btn">Visitar</a>';
+									}
+								?>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -41,7 +55,14 @@
                             <div class = "carousel-caption  d-md-block">
                                 <h2>Verduras e Legumes</h2>	
                                 <p>Visite Nossos Parceiros!</p>
-                                <a href="#" class="main-btn">Visitar</a>
+                                <?php
+									if(!isset($_SESSION["tipo_de_usuario"])){
+										echo '<a href="login.html" class="main-btn">Visitar</a>';
+									}
+									else{
+										echo '<a href="procurar_produtos.php" class="main-btn">Visitar</a>';
+									}
+								?>
                             </div>
                         </div>
                     </div>
@@ -67,15 +88,15 @@
                             </div>
                             <div class="col-md-6">
                                 <h3 class="about-title">Pensando no melhor para você!</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                <p>eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Tincidunt augue interdum velit euismod in pellentesque massa</p>
+                                <p>Oferecemos um sistema gratuito capaz de alavancar seus negocios os deizando ao alcance da mão.</p>
+                                <p>Entre em contato diretamente com quem você quer negociar.</p>
+                                <p>Exponha seus preciosos produtos em uma vitrine on-line.</p>
                                 <p>Veja outros diferenciais:</p>
                                 <ul id="about-list">
-                                    <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet</li>
-                                    <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet</li>
-                                    <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet</li>
-                                    <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet</li>
+                                    <li><i class="fas fa-check"></i>Alcance melhorado de negocios.</li>
+                                    <li><i class="fas fa-check"></i>Negocio parcialmente digital</li>
+                                    <li><i class="fas fa-check"></i>Rapidez de contato</li>
+                                    <li><i class="fas fa-check"></i>Melhor visibilidade para os vendedores.</li>
                                 </ul>
                             </div>
                         </div>
@@ -120,7 +141,7 @@
                         </div>
                         <div class="col-md-4 contact-box">
                             <i class="fas fa-phone"></i>
-                            <p><span class ="contact-title">Ligue Para:</span> (16) 99999-9999</p>
+                            <p><span class ="contact-title">Ligue Para:</span> (16) 98110-8180</p>
                         </div>
                         <div class="col-md-4 contact-box">
                             <i class="fas fa-envelope"></i>

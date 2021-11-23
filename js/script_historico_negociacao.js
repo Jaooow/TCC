@@ -13,9 +13,9 @@
 					 usuario_consumidor: $("#filtro_usuarios_negociacao_consumidores").val(),
 					 usuario_vendedor: $("#filtro_usuarios_negociacao_vendedores").val(),
                      preco: $("#filtro_preco_negociacao").val()};
-					 console.log("test");
+					 console.log(dados);
 		$.post("filtro_historico_negociacao.php", dados, function(d){
-			
+			console.log(d);
 			$("#recebe_filtrado_negociacao").html(d);
 		});
 	});

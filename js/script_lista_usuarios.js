@@ -15,8 +15,10 @@
 	});
 	
 	function deleta_usuario(a){
-		var id={id: a,
+		
+		var id={id_deleta: a,
 				tipo: 1};
+				console.log(id);
 		$.post("deleta_altera_usuarios.php", id, function(d){
 			alert("Usuario deletado com sucesso!!!");
 			dados();
@@ -55,27 +57,30 @@
 	
 	function monta_modal_vendedor(a){
 		var id={id: a};
+		console.log(a);
 		$.post("seleciona_dados.php", id, function(d){
-			$("#altera_vendedor").val(d.id_usuario);
-			$("#nome_altera").val(d.nome);
-			$("#email_altera").val(d.email);
+			$("#alterar_vendedor").val(d.id_usuario);
+			$("#nome_altera_vendedor").val(d.nome);
+			$("#email_altera_vendedor").val(d.email);
 			$("#cnpj_altera").val(d.cnpj);
 			$("#telefone_altera").val(d.telefone);
 		});
 	}
 	
 	$("#alterar_vendedor").click(function(){
-		var id={id: $(this).val(),
+		var id={id_deleta: parseInt($(this).val()),
 				tipo: 4,
 				nome:$("#nome_altera_vendedor").val(),
 				email:$("#email_altera_vendedor").val(),
 				senha:$("#senha_altera_vendedor").val(),
 				cnpj:$("#cnpj_altera").val(),
 				telefone:$("#telefone_altera").val(),
-				regiao:$("#regiao_altera").val(),
+				//regiao:$("#regiao_altera").val(),
 				tipo_de_negocio:$("#tipo_de_negocio_altera_vendedor").val()};
+		console.log(id);
 		$.post("deleta_altera_usuarios.php", id, function(d){
 			alert("Vendedor Alterado com sucesso!!!");
 			dados();
 		});
+		$('#modal_alterar_vendedor').modal('hide');	
 	});

@@ -4,6 +4,7 @@
 			$("#nome_perfil").html(v.nome);
 			$("#email_perfil").html(v.email);
 			$("#tipo_negocio").html(v.tipo_de_negocio);
+			$("#id_usuario").val(v.id_usuario);
 			if(v.tipo_de_usuario==1){
 				$("#cargo").html("Cliente");
 			}

@@ -30,6 +30,7 @@
 </body>
 
 <?php
+include "modal_altera_vendedor.php";
 	include "modal_altera_usuario.php";
 	include "rodape.php";
 ?> 

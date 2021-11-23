@@ -13,7 +13,7 @@
 		}
 	});
 	
-	$("#cadastrar_mudanca").click(function(){
+	/*$("#cadastrar_mudanca").click(function(){
 		var dados= { tipo_de_negocio: $("#tipo_de_negocio_perfil").val(),
 					 cnpj: $("#cnpj_perfil").val(),
                      documento: $("#documento_perfil").val(),
@@ -22,4 +22,4 @@
 			alert("mudança feita com sucesso!!");
 			window.location.href = "perfil.php";
 		})
-	});
+	});*/

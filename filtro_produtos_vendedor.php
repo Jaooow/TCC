@@ -9,7 +9,7 @@
 		
         $select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
 				inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
-				inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE cod_vendedor='$id' ";
+				inner join usuarios on vendedores.cod_vendedor=id_usuario WHERE vendedores.cod_vendedor='$id' ";
 		
 		if(!empty($tipo_produto)){
 			$select.="and tipo_produto='$tipo_produto' ";
@@ -47,8 +47,8 @@
 							<br />
 							<h7>Seção:</h7><p class=secao_produtos>'.$linha["tipo_produto"].'</p>
 							<br/>
-							<button type="button" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'">Deletar</button>
-							<button type="button" onclick="monta_modal_altera_produto('.$linha["id_produto"].')"  value="'.$linha["id_produto"].'" href="#" data-toggle="modal" data-target="#modal_alterar_produto">Alterar</button>
+							<button type="button" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'" class="btn btn-danger">Deletar</button>
+							<button type="button" onclick="monta_modal_altera_produto('.$linha["id_produto"].')"  value="'.$linha["id_produto"].'" href="#" data-toggle="modal" data-target="#modal_alterar_produto" class="btn btn-warning">Alterar</button>
 						</div>
 					</div>
 				</div>

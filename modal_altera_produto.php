@@ -9,6 +9,7 @@
       </div>
       <div class="modal-body">
 		<form method="post" enctype="multipart/form-data" action="alterar_produto.php">
+		<input type="hidden" id="hidden" name="hidden" value="">
 			<p>Foto produto:<span id="foto_produto_span"></span></p>
 			<label for="nome_produto">Nome produto:</label>
 			<input class="form-control" type="text" name="nome_produto_modal" id="nome_produto_modal"/>

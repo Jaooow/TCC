@@ -11,7 +11,7 @@
 					<div class="col-md-3 search-box" id="roupas">
 						
 					</div>
-					<div class="col-sm-4 search-box" id="andamento_tratamanto">
+					<div class="col-sm-3 search-box" id="andamento_tratamanto">
 						<div class="card">
 							<img src="img/card-usuarios.png" class="card-img-top" alt="Imagem de Negociações me Andamento">
 							<div class=" card-body">
@@ -20,7 +20,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 search-box" id="finalizadas_tratamento">
+					<div class="col-md-3 search-box" id="finalizadas_tratamento">
 						<div class="card">
 							<img src="img/card-gerenciamento.png" class="card-img-top" alt="Imagem de Negociações Finalizadas">
 							<div class=" card-body">

@@ -16,7 +16,7 @@
 				WHERE negociacao.cod_vendedor='$id' and negociacao.cod_comprador='$id2' and negociacao.status='0'";
 				$res = mysqli_query($con, $select) or die(mysqli_error($con));
 				while($linha=mysqli_fetch_assoc($res)){
-					$dados.='<div id="status'.$linha["id_negociacao"].'">
+					$dados.='<div name="status">
 					<div class="container">
 							<div class="row">
 								<div class="col-md-3">

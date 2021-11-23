@@ -24,7 +24,7 @@
 					<div class="col-12">
 						<h2>Confirme os itens:</h2>
 					</div>
-					
+					<div id="confirma_botao"></div>
 				<br/>
 				<div style="color:red;" id="mensagem_negociacao"></div>
 				<br />

@@ -29,7 +29,8 @@ function aparece_negociacao(a, b){
 function finaliza(a){
 	$.post("finaliza.php", {"id":a}, function(v){
 		tratamento();
+		alert("Compra finalizada com sucesso");
 	});
-	$("#status"+a).remove();
-	$("#botao"+a).remove();
+	$('div[name="botao"]').remove();
+	$("div[name='status']").remove();
 }

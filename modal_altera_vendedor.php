@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
 			<label for="nome_altera_vendedor">Nome:</label>
-			<input class="form-control" type="text" name="nome_altera_vendedor" id="Nome_altera_vendedor"/>
+			<input class="form-control" type="text" name="nome_altera_vendedor" id="nome_altera_vendedor"/>
 			<br />
 			<label for="email_altera_vendedor">E-mail:</label>
 			<input class="form-control" type="email" name="email_altera_vendedor" id="email_altera_vendedor"/>
@@ -31,12 +31,12 @@
 			<label for="telefone_altera">Telefone:</label>
 			<input class="form-control" type="number" name="telefone_altera" id="telefone_altera"/>
 			<br />
-			<label for="regiao_altera">Regiao:</label>
+			<!-- <label for="regiao_altera">Tipo de Negocio:</label>
 			<select class="form-control" id="regiao_altera" name="regiao_altera" required="required">
 				<option value="Autonomo">Autonomo</option>
 				<option value="Micro Produtor / Micro Empresario">Micro Produtor / Micro Empresario</option>
 				<option value="Produtor ou vendedor de meio/alto porte">Produtor ou vendedor de Meio/Alto Porte</option>
-			</select>
+			</select>-->
       </div>
       <div class="modal-footer">
         <button type="button" id="cancelar_modal_altera_vendedor" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

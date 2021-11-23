@@ -8,15 +8,15 @@
 			echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
 		}
 	?>
-	<label for="status_negociacao">Filtro:</label>
+	<label for="status_negociacao">Filtro de status:</label>
 	<select class="form-control" id="status_negociacao">
-		<option label="Escolha um tipo" value="0">Escolha o Status</option>
+		<option label="Escolha um tipo" value="">Escolha o Status</option>
 		<option value="0">Em andamento</option>
 		<option value="1">Finalizada</option>
 	</select>
-	<label for="filtro_produtos_negociacao">Filtro:</label>
+	<label for="filtro_produtos_negociacao">Filtro de tipo de produto:</label>
 	<select class="form-control" id="filtro_produtos_negociacao" name="filtros[]">
-		<option label="Escolha um tipo" value="0">Escolha um tipo</option>
+		<option label="Escolha um tipo" value="">Escolha um tipo</option>
 		<option value="Roupas">Roupas</option>
 		<option value="Doces">Doces</option>
 		<option value="Comidas">Comidas</option>
@@ -26,7 +26,7 @@
 	
 	<label for="filtro_usuarios_negociacao_vendedores">Filtro de usuarios Vendedores:</label>
 	<select class="form-control" id="filtro_usuarios_negociacao_vendedores">
-		<option label="Escolha um Usuario" value="0">Escolha um Usuario</option>
+		<option label="Escolha um Usuario" value="">Escolha um Usuario</option>
 		<?php
 			$select="SELECT nome, id_usuario FROM usuarios inner join vendedores on id_usuario=cod_vendedor";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
@@ -38,7 +38,7 @@
 	
 	<label for="filtro_usuarios_negociacao_consumidores">Filtro de usuarios Consumidores:</label>
 	<select class="form-control" id="filtro_usuarios_negociacao_consumidores">
-		<option label="Escolha um Usuario" value="0">Escolha um Usuario</option>
+		<option label="Escolha um Usuario" value="">Escolha um Usuario</option>
 		<?php
 			$select="SELECT nome, id_usuario FROM usuarios";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));

@@ -77,6 +77,7 @@
 			
 			$cnpj=$_POST["cnpj_perfil"];
 			$telefone=$_POST["telefone_perfil"];
+			$regiao=$_POST["regiao_perfil"];
 			
 				
 
@@ -86,8 +87,10 @@
 												cnpj,
 												documentacao,
 												cod_vendedor,
-												telefone
+												telefone, 
+												regiao
 											) VALUES (
+												?,
 												?,
 												?,
 												?,
@@ -99,7 +102,7 @@
 
 			if($stmt = mysqli_prepare($con, $insert)) { 
 
-				mysqli_stmt_bind_param($stmt, "ssssss", $resultado, $tipo_de_negocio, $cnpj, $nome_arquivo, $id, $telefone);
+				mysqli_stmt_bind_param($stmt, "sssssss", $resultado, $tipo_de_negocio, $cnpj, $nome_arquivo, $id, $telefone, $regiao);
 				
 
 				mysqli_stmt_execute($stmt);
@@ -109,12 +112,17 @@
 			mysqli_close($con);
 			header("Location: perfil.php");
         }
-		
+		header("Location: perfil.php");
 	}
 	else{
 		$tipo_de_usuario=2;
-		$id=$_SESSION["id_usuario"];
-		$_SESSION["tipo_de_usuario"]=2;
+		if($_SESSION["tipo_de_usuario"]==0){
+			$id=$_POST["usuario_selecionado"];
+		}
+		else{
+			$id=$_SESSION["id_usuario"];
+			$_SESSION["tipo_de_usuario"]=2;
+		}
 		
 		$update= "UPDATE usuarios SET
 										tipo_de_negocio='$tipo_de_negocio',
@@ -124,16 +132,27 @@
 									";
 		mysqli_query($con, $update)or die(mysqli_error($con));
 		
+		$select="SELECT usuarios.nome as nome_vendedor FROM usuarios WHERE id_usuario='$id'";
+			$res = mysqli_query($con, $select) or die(mysqli_error($con));
+			while($linha=mysqli_fetch_assoc($res)){
+				$resultado= $linha["nome_vendedor"];
+			}
+		echo $resultado;
 		$cnpj=$_POST["cnpj_perfil"];
 		$telefone=$_POST["telefone_perfil"];
+		$regiao=$_POST["regiao_perfil"];
 		
 
 		$insert= "INSERT INTO vendedores(
+										nome_vendedor,
 										tipo_negocio,
 										cnpj,
 										cod_vendedor,
-										telefone
+										telefone,
+										regiao
 									) VALUES (
+										?,
+										?,
 										?,
 										?,
 										?,
@@ -143,7 +162,7 @@
 
 		if($stmt = mysqli_prepare($con, $insert)) { 
 
-			mysqli_stmt_bind_param($stmt, "ssss", $tipo_de_negocio, $cnpj, $id, $telefone);
+			mysqli_stmt_bind_param($stmt, "ssssss", $resultado, $tipo_de_negocio, $cnpj, $id, $telefone, $regiao);
 			
 
 			mysqli_stmt_execute($stmt);
@@ -151,8 +170,7 @@
 			mysqli_stmt_close($stmt);
 		}
 		mysqli_close($con);
+		header("Location: perfil.php");
 	}
 	
-
-header("Location: perfil.php")
 ?>

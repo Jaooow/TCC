@@ -8,7 +8,8 @@
 	$dados="";
     $res = mysqli_query($con, $select) or die(mysqli_error($con));
     while($linha=mysqli_fetch_assoc($res)){
-		$dados.='<div class="container">
+		$dados.='<div id="atualiza'.$linha["id_produto"].'">
+		<div class="container">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="card">
@@ -28,13 +29,14 @@
 					</div>
 					<div class="col-md-4">
 						<div class="meus_produtos_buttons">
-							<button type="button" class="btn btn-warning" id="altera"  name="altera" value="'.$linha["id_produto"].'">Alterar</button>
-							<button type="button" class="btn btn-danger" id="remove"  name="remove" value="'.$linha["id_produto"].'">Remover</button>
+							<button type="button" onclick="monta_modal_altera_produto('.$linha["id_produto"].')"  value="'.$linha["id_produto"].'" href="#" data-toggle="modal" data-target="#modal_alterar_produto" class="btn btn-warning">Alterar</button>
+							<button type="button" onclick="deleta_produto('.$linha["id_produto"].')" value="'.$linha["id_produto"].'" class="btn btn-danger">Remover</button>
 						</div>
 					</div>
 						
 				</div>
 			</div>
+		</div>
 			<br />';
 		}
 	echo $dados;

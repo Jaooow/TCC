@@ -24,13 +24,14 @@
 		$.post("deleta_produtos.php", dados, function(d){
 			alert("Produto deletado com sucesso!!!");
 			atualiza();
+			$("#atualiza"+a).remove();
 		});
 	}
 	
 	function monta_modal_altera_produto(a){
 		var id={id: a};
 		$.post("seleciona_dados_produtos.php", id, function(d){
-			$("#btn_altera_produto").val(d.id_produto);
+			$("#hidden").val(d.id_produto);
 			$("#nome_produto_modal").val(d.nome);
 			$("#preco_produto").val(d.preco);
 			$("#descricao_produto").val(d.descricao);

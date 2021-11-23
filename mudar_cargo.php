@@ -8,16 +8,17 @@
 				if(isset($_GET["conteudo"])){
 					echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
 				}
-			
+				
+					
+			?>
+			<form action="cadastrar_mudanca.php" enctype="multipart/form-data" method="POST">
+			<?php
 				if(isset($_GET["usuario"]))
 				{
 					$usuario=$_GET["usuario"];
 					echo'<input type="hidden" id="usuario_selecionado" name="usuario_selecionado" value="'.$usuario.'">';
 				}
-				
-					
 			?>
-			<form action="cadastrar_mudanca.php" enctype="multipart/form-data" method="POST">
 				<div class="form-group">
 					<label for="tipo_de_negocio_perfil"><h3>Tipo de Negocio</h3></label>
 					<select class="form-control" id="tipo_de_negocio_perfil" name="tipo_de_negocio_perfil" required="required">
@@ -32,11 +33,15 @@
 				</div>
 				<div class="form-group">
 					<label for="cnpj_perfil">CNPJ:</label>
-					<input type="text" class="form-control" id="cnpj_perfil" name="cnpj_perfil" placeholder="CNPJ (Caso Tenha)">
+					<input type="text" class="form-control" value="" id="cnpj_perfil" name="cnpj_perfil" placeholder="CNPJ (Caso Tenha)">
 				</div>
 				<div class="documento">
 					<label for="documento_perfil">Documentação (Caso Tenha):</label>
-					<input type="file" accept=".docx,.pdf" class="form-control-file" name="documento_perfil" id="documento_perfil">
+					<input type="file" accept=".docx,.pdf" value="" class="form-control-file" name="documento_perfil" id="documento_perfil">
+				</div>
+				<div >
+					<label for="regiao_perfil">Bairro do seu estabelecimento:</label>
+					<input type="text"  value=""  name="regiao_perfil" id="regiao_perfil">
 				</div>
 				</br>
 				<input type="submit" id="cadastrar_mudanca" name="cadastrar_mudanca" value="Mudar" class = "alter_button">
