@@ -10,6 +10,9 @@
 				<div class="col-12">
 					<h3 class ="main-title-search">Lista Usuários</h3>
 				</div>
+				<div class="col-md-3">
+					
+				</div>
 				<div class="col-md-6">
 					<label for="select_usuarios">Filtro de usuarios:</label>
 					<select class="form-control" id="select_usuarios">
@@ -25,7 +28,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="recebe_usuarios"></div>
+		<div class="lista_usuarios">
+			<div id="recebe_usuarios"></div>
+		</div>
 	</main>
 </body>
 

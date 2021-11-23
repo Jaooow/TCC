@@ -2,19 +2,20 @@
 	include "conexao.php";
 	include "cabecalho.php";
 ?>
+<link rel="stylesheet" href="css/login.css">	
 <main>
 	<div class = "container">
-		<?php
-			if(isset($_GET["conteudo"])){
-				echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
-			}
-		?>
-		<div class="row">
-			<div class="col-12">
-				<h3 class ="main-title-search">Cadastro Produtos</h3>
-			</div>
-		</div>
 		<div class="cadastro_produtos">
+			<?php
+				if(isset($_GET["conteudo"])){
+					echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
+				}
+			?>
+			<div class="row">
+				<div class="col-12">
+					<h3 class ="main-title-search">Cadastro Produtos</h3>
+				</div>
+			</div>
 			<form method="post" enctype="multipart/form-data" action="cadastrar_produto.php">
 				<!--<label for="nome_produto">Nome do Produto:</label>
 					<input type="text" id="nome_produto" name="nome_produto" class="form-control"/>

@@ -219,7 +219,7 @@ header, .navbar{
 /*Copy*/
 
 #copy-area{
-background-color: #F1F1F1;
+    background-color: #F1F1F1;
 }
 
 #copy-area .container{
@@ -360,7 +360,14 @@ background-color: #F1F1F1;
 .products-area .container{
     padding-bottom:0px;
 }
+.products-area a{
+    color: #333;
+    text-decoration: none;
+}
 
+.products-area a:hover{
+    color: #5e8883;
+}
 #filtragem_produtos .container{
     padding:0px
 }
@@ -466,18 +473,18 @@ background-color: #F1F1F1;
     margin-left: 30vw;
     margin-bottom: 10vh;
     padding: 20px;
-    border-radius: 30px;
-    background-color: rgba(7, 81, 83, 0.9);
-    color: #FFF;
+    border-radius: 15px;
+    background-color: #FFF;
+    color: #000;
     text-align: center;
 }
 
 #mudar_cargo h3{
-    font-size: 30px;
+    font-size: 1.5em;
 }
 .alter_button{
     background-color: #309b99;
-    color: #FFF;
+    color: #000;
     text-transform: uppercase;
     width: 120px;
     padding: 10px 20px;
@@ -499,9 +506,9 @@ background-color: #F1F1F1;
     padding: 20px;
     margin-left: 20%;
     margin-right: 20%;
-    border-radius: 30px;
-    background-color: rgba(7, 81, 83, 0.9);
-    color: #FFF;
+    border-radius: 20px;
+    background-color: #FFF;
+    color: #000;
     text-align: left;
 }
 
@@ -533,8 +540,20 @@ background-color: #F1F1F1;
     border-radius: 15px;
 }
 
+/*Lista Vendedor*/
+.lista_vendedor{
+    margin-bottom: 24vh;
+}
 
-
+.lista_usuarios {
+    text-align: center;
+    padding: 20px;
+    margin-right: 25%;
+    margin-left: 25%;
+    
+    margin-bottom: 20vh;
+    border: 1px solid black;
+}
 /*Responsive*/
 
 @media(max-width: 768px) {
@@ -561,6 +580,16 @@ background-color: #F1F1F1;
     #about-area img{
         margin-top: 100px;
     }
+    /*Cadastro Produtos*/
+    .cadastro_produtos{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 15vh;
+    }
+    /*Produtos area*/
+    .products-area{
+        margin-bottom: 28vh;
+    }
 }
 
 @media(max-width: 425px){
@@ -582,6 +611,7 @@ background-color: #F1F1F1;
     .carousel-caption .main-btn{
         font-size:14px;
     }
+
     /*About*/
     .main-title{
         font-size: 30px;
@@ -659,6 +689,11 @@ background-color: #F1F1F1;
 
     .underline{
         margin-bottom: 5vh;
+    }
+}
+@media(max-width: 768px){
+    .main-title{
+        font-size: 25px;
     }
 }
 
