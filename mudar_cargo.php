@@ -1,7 +1,7 @@
 <?php
 	include "cabecalho.php";
 ?>
-<link rel="stylesheet" href="css/login.css">	
+ <link rel="stylesheet" href="css/login.css">	
 <main>
 	<div class = "container">
 		<div id = "mudar_cargo">
@@ -30,7 +30,7 @@
 				</div>
 				<div class="form-group">
 					<label for="telefone_perfil"><h3>Digite seu número de Whatsapp:</h3></label>
-					<input type="text" class="form-control" id="telefone_perfil" name="telefone_perfil" required="required" placeholder="+55 (16) 99999-9999">
+					<input type="text" class="form-control" id="telefone_perfil" name="telefone_perfil" required="required" placeholder="(00) 90000-0000">
 				</div>
 				<div class="form-group">
 					<label for="cnpj_perfil">CNPJ:</label>

@@ -1,4 +1,4 @@
-
+	
 	$.getJSON("seleciona_perfil.php", function(r){
 		$.each(r, function(i,v){
 			$("#nome_perfil").html(v.nome);

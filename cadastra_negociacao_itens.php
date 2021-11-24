@@ -11,8 +11,8 @@
 		}
 		echo print_r($resultado);
 	$id_negociacao= $_SESSION["insert_id"];
-	echo "/////$id_negociacao";
 	$preco_final= $resultado["preco"]*$quant;
+	echo "/////$id_negociacao";
 	$insert2= "INSERT INTO itens_negociacao(
 										cod_produto,
 										cod_negociacao, 

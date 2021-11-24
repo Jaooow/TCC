@@ -7,8 +7,8 @@ if($_SESSION["tipo_de_usuario"]==0){
 }
 else{
 	
-
-	echo'<main>
+?>
+	<main>
 		<div class = "container">
 			<div id="perfil">
 				<div class="container">
@@ -29,10 +29,12 @@ else{
 								<li class="list-group-item"><i class="far fa-chart-bar"></i>Negócio: <span id="tipo_negocio"></span></li>
 								<li class="list-group-item"><i class="fas fa-folder-open "></i>Documentação: <span id="documentacao"></span></li>
 							</ul>
-							<a class = "mudar_cargo" href="mudar_cargo.php">Mudar Cargo</a>';
-									$id= $_SESSION["id_usuario"];
-									echo'<button type="button" id="id_usuario" href="#" data-toggle="modal" data-target="#modal_alterar" value="'.$id.'" class="btn btn-warning">Alterar</button>';
-						echo'</div>
+							<a class = "mudar_cargo" href="mudar_cargo.php">Mudar Cargo</a>
+									<?php
+										$id= $_SESSION["id_usuario"];
+										echo'<button type="button" id="id_usuario" href="#" data-toggle="modal" data-target="#modal_alterar" value="'.$id.'" class="btn btn-warning">Alterar</button>';
+									?>
+						</div>
 					</div>	
 				</div>
 			</div>
@@ -64,7 +66,8 @@ else{
 		  </div>
 		</div>
 	  </div>
-	</div>';
+	</div>
+<?php
 }
 
 	include "rodape.php";

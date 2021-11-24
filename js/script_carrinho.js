@@ -100,6 +100,20 @@ console.log("teste function2");
 			quantidade=JSON.parse(sessionStorage.getItem("quantidade"));
 			produto[a]=null;
 			quantidade[a]=null;
+			console.log(produto);
+			var p=[];
+			for (var i = produto.length-1; i >=0; i--) {
+				if(produto[i]==null ){
+					console.log(produto[i]);
+					produto.pop();
+					 p[i]=i;
+				}
+				else{
+					console.log(produto[produto.length-i]);
+					i=0;
+				}
+			}
+			console.log(p);
 			sessionStorage.setItem("produto", JSON.stringify(produto));
 			sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
 			$("#item"+a).remove();

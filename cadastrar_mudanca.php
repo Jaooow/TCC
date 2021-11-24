@@ -76,7 +76,7 @@
 			}
 			
 			$cnpj=$_POST["cnpj_perfil"];
-			$telefone=$_POST["telefone_perfil"];
+			$telefone=preg_replace("/[^0-9]/", "", $_POST["telefone_perfil"]);
 			$regiao=$_POST["regiao_perfil"];
 			
 				

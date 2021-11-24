@@ -7,7 +7,7 @@
 			$id2=$_POST["id"];
 			$status=$_POST["status"];
 			if($status==0){
-				$select="SELECT id_negociacao, foto, usuarios.nome as nome_usuario, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
+				$select="SELECT negociacao.cod_comprador as cod_comprador, negociacao.cod_vendedor as cod_vendedor, id_negociacao, foto, usuarios.nome as nome_usuario, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
 				FROM negociacao 
 				inner join itens_negociacao on negociacao.id_negociacao=itens_negociacao.cod_negociacao 
 				inner join produtos on itens_negociacao.cod_produto=produtos.id_produto 

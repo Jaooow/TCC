@@ -18,8 +18,10 @@ if(sessionStorage.getItem("produto")){
 				url+="\n "+JSON.parse(v).nome+": "+JSON.parse(v).quant+" Unidade(s) ";
 				var m=id_negociacao.length;
 				var menos=m-1;
-				console.log(i+"/"+menos+"/"+id_negociacao.length);
-				if(id_negociacao[id_negociacao.length-1]==JSON.parse(v).tamanho){
+				//console.log(i+"/"+menos+"/"+id_negociacao.length);
+				console.log(id_negociacao.length+"////"+id_negociacao[id_negociacao.length-1]+"////"+JSON.parse(v).tamanho)
+				var subtrai=id_negociacao.length-1;
+				if(id_negociacao[subtrai]==JSON.parse(v).tamanho){
 					console.log(i+"/"+id_negociacao.length);
 					var aux="Meu nome é "+JSON.parse(v).nome_usuario+" e estou interessado no(s) seguinte(s) produto(s): "+url;
 					var conteudo = encodeURIComponent(aux).replace("%5Cn", "%0A");
