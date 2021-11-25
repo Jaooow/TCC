@@ -92,11 +92,6 @@
 		</div>
 	</div>
 </main>
-<script>
-	$("#cadastrar_produto").click(function(){
-		alert("requisição enviada");
-	});
-</script>
 <?php
 	include "rodape.php";
 ?> 

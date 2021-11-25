@@ -10,6 +10,7 @@
 		<script src="js/script_historico_negociacao.js"></script>
 		<script src="js/script_tratamento.js"></script>
 		<script src="js/script_perfil_altera_usuario.js"></script>
+		<script src="js/scripts.js"></script>
 		<footer>
             <div id="copy-area">
                 <div class="container">
@@ -20,6 +21,8 @@
             </div>
     	</footer>
 		<?php
+			include "modal_ajuda.php";
+			include "modal_boas_vindas.php";
 			include "modal_carrinho.php";
 		?>
      </body>

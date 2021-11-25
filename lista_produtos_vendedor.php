@@ -4,6 +4,11 @@
 
 <body>
 	<main>
+		<?php
+			if(isset($_GET["conteudo"])){
+				echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
+			}
+		?>
 		<div class="container">
 			<div class="lista_vendedor">
 				<div class="row">

@@ -39,6 +39,14 @@
 			carrinho();
 		});
 	});
+	
+	$("#select_usuarios_produtos").change(function(){
+		var vendedor=$("#select_usuarios_produtos").val();
+		$.post("seleciona_produtos.php", {"vendedor":vendedor}, function(v){
+			$("#tabela_produtos").html(v);
+			carrinho();
+		});
+	});
 		
 	
 	

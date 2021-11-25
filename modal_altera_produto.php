@@ -39,7 +39,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="cancelar_modal_altera_produto" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="submit" id="btn_altera_produto" value="" class="btn btn-primary">Alterar</button>
+        <button type="submit" id="btn_altera_produto_vendedor" value="" class="btn btn-primary">Alterar</button>
       </div>
 		</form>
     </div>

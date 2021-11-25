@@ -1,5 +1,6 @@
 
 <?php
+include "conexao.php";
 	include "cabecalho.php";
 ?>
 <body>
@@ -23,15 +24,19 @@
 					<div class="col-12">
 						<h3 class ="main-title-search">Encontre Diversos Produtos</h3>
                     </div>
+					<div style="color:red;">Selecione apenas produtos do mesmo vendedor, se deseja comprar peodutos de vendedores diferentes faça negociações separadas com vendedores distintos.</div>
 					<div class="col-md-10">
-						<div class="input-group">
-							<input type="text" class="form-control input-produtos" id="procurar_produto" aria-describedby="Procurar Produto" placeholder="Procurar por produtos e marcas">
-						</div>
-					</div>
-					<div class="col-md-1">
-						<button type="button" id="procurar" class="btn btn-danger">
-							<i class="fas fa-search"> Procurar </i>
-						</button>
+						<label for="select_usuarios_produtos">Filtre por Vendedores:</label>
+						<select class="form-control" id="select_usuarios_produtos">
+							<option label="Escolha um Usuario" value="0">Escolha um Vendedor</option>
+							<?php
+								$select="SELECT nome_vendedor, cod_vendedor FROM vendedores";
+								$res = mysqli_query($con, $select) or die(mysqli_error($con));
+								while($linha=mysqli_fetch_assoc($res)){
+									echo '<option value="'.$linha["cod_vendedor"].'">'.$linha["nome_vendedor"].'</option>';
+								}
+							?>
+						</select>
 					</div>
 				</div>
 			</div>
@@ -103,7 +108,7 @@
 		
 		<div id="tabela_produtos">
 		<?php
-			include "conexao.php";
+			
 			$tabela="";
 			$select="SELECT foto, id_produto, produtos.nome as nome_produto, preco, tipo_produto, descricao, telefone, usuarios.nome as nome_usuario FROM produtos 
 			inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor 
@@ -155,7 +160,6 @@
 	</main>
 </body>
 <?php
-	include "modal_carrinho.php";
-	include "inc/footer.inc";
+	include "rodape.php";
 ?>
 </html>

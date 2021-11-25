@@ -3,6 +3,22 @@
 	include "conexao.php";
 ?>
 	<main>
+		<div class="container">
+			<div id="negociacao">
+				<div class="row">
+					<div class="col-12">
+						<h3 class ="main-title">Negociações</h3>
+					</div>
+					<div class="col-md-6">
+						<h4>Negociações em Andamento:</h4><br/>
+						<a href="negociacao_andamento.php"><button type="button" class = "alter_button"><i class="fas fa-eye"> Veja</i></button></a>
+						<br/>
+					</div>
+					<div class="col-md-6">
+						<h4>Negociações finalizadas:</h4><br/>
+						<a href="negociacao_finalizada.php"><button type="button" class = "alter_button" ><i class="fas fa-eye"> Veja</i></button></a>
+					</div>
+				</div>
 		<?php
 		$dados="";
 		$id=$_SESSION["id_usuario"];
@@ -37,10 +53,10 @@
 							</div>
 							<div class="col-md-5">
 								<!-- Preço -->
-								<p class = "preco_produto">Valor Total: R$ '.$valor.'</p>
-								<p class="produto_vendedor">Preço (Un): R$ '.$linha["preco"].'</p>
-								<label for="'.$id.'">Quantidade:</label>
-								<input type="number" readonly="readonly" name="quantidade_negociacao" id="'.$id.'" class="produto_vendedor" value="'.$quant.'"/>
+								<p class = "preco_produto">Valor Total: R$ '.$linha["preco_final"].'</p>
+								<p class="produto_vendedor">Preço (Un): R$ '.$linha["preco_unitario"].'</p>
+								<label>Quantidade:</label>
+								<input type="number" name="quantidade_negociacao"  readonly="readonly"  value="'.$linha["quantidade"].'"/>
 								<br /><br />
 								<h7>Seção:</h7><p class=secao_produtos>Comida</p>
 							</div>
@@ -49,6 +65,8 @@
 			}
 			echo $dados;
 		?>
+		</div>
+		</div>
 	</main>
 <?php
 	include "modal_carrinho.php";

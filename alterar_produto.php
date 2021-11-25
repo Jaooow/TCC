@@ -1,4 +1,5 @@
 <?php
+	session_start();
     include "conexao.php";
 	$id=$_POST["hidden"];
     $nome_produto=$_POST["nome_produto_modal"];
@@ -73,7 +74,12 @@
             foreach ($error as $erro) {
                 $notifica.= $erro."//";
             }
-			header("Location: lista_produtos.php?conteudo=$notifica");
+			if($_SESSION["tipo_de_usuario"]==0){
+				header("Location: lista_produtos.php?conteudo=$notifica");
+			}
+			else{
+				header("Location: lista_produtos_vendedor.php?conteudo=$notifica");
+			}
         }
     }
 	else{
@@ -90,6 +96,11 @@
 			mysqli_query($con, $update) or die(mysqli_error($con));
 			mysqli_close($con);
 			$notifica= "Produto Alterado Com Sucesso";
-		header("Location: lista_produtos.php?conteudo=$notifica");
+		if($_SESSION["tipo_de_usuario"]==0){
+				header("Location: lista_produtos.php?conteudo=$notifica");
+			}
+			else{
+				header("Location: lista_produtos_vendedor.php?conteudo=$notifica");
+			}
 	}
 ?> 
