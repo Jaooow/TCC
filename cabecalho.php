@@ -72,7 +72,7 @@
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
 										<a class="nav-item nav-link" href="index.php">Home</a>
-										<a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_ajuda">Precisa de ajuda??</a>
+										<a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_ajuda">Ajuda</a>
 										<a class="nav-item nav-link" href="procurar_produtos.php">Procurar</a>
 										<a class="nav-item nav-link" href="negociacao.php">Negociações</a>
 										<a class="nav-item nav-link" id="perfil" href="perfil.php">Perfil</a>';
@@ -112,7 +112,7 @@
 								</button>
 								<div class="collapse navbar-collapse justify-content-end" id="navbar-links">
 									<div class ="navbar-nav">
-										<a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_ajuda">Precisa de ajuda??</a>
+										<a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#modal_ajuda">Ajuda</a>
 										<a class="nav-item nav-link" href="tratamento_negociacao.php">Home/Negocioações</a>
 										<a class="nav-item nav-link" href="cadastro_de_produtos.php">Cadastrar Produtos</a>
 										<a class="nav-item nav-link" href="lista_produtos_vendedor.php">Meus Produtos</a>
@@ -170,5 +170,5 @@
 				}
 			?>
         </header>
-		</div>
+	</div>
 		

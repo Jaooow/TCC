@@ -24,7 +24,10 @@ include "conexao.php";
 					<div class="col-12">
 						<h3 class ="main-title-search">Encontre Diversos Produtos</h3>
                     </div>
-					<div style="color:red;">Selecione apenas produtos do mesmo vendedor, se deseja comprar peodutos de vendedores diferentes faça negociações separadas com vendedores distintos.</div>
+					<div class="col-md-12">
+						<div style="color:red;">*Selecione apenas produtos do mesmo vendedor, caso deseja comprar produtos de vendedores diferentes, faça negociações separadas com vendedores distintos.</div>
+						<br/>
+					</div>
 					<div class="col-md-10">
 						<label for="select_usuarios_produtos">Filtre por Vendedores:</label>
 						<select class="form-control" id="select_usuarios_produtos">
