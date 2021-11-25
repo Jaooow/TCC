@@ -469,14 +469,14 @@ header, .navbar{
 
 /* Mudar Cargo*/
 #mudar_cargo{
-    margin-right: 30vw;
-    margin-left: 30vw;
-    margin-bottom: 10vh;
-    padding: 20px;
+    padding: 60px;
     border-radius: 15px;
     background-color: #FFF;
     color: #000;
     text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 70vh;
 }
 
 #mudar_cargo h3{
@@ -597,6 +597,13 @@ header, .navbar{
     .products-area{
         margin-bottom: 28vh;
     }
+   .mudar_cargo{
+       padding: 100px;
+   }
+   .mudar_cargo h3{
+       font-size: 20px;
+   }
+
 }
 
 @media(max-width: 425px){
@@ -638,6 +645,7 @@ header, .navbar{
     #mudar_cargo{
         margin-right: 20vw;
         margin-left: 20vw;
+        padding: 10px;
     }
     #mudar_cargo h3{
         font-size: 27px;
@@ -696,6 +704,10 @@ header, .navbar{
 
     .underline{
         margin-bottom: 5vh;
+    }
+    .mudar_cargo{
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 @media(max-width: 768px){
