@@ -1,7 +1,9 @@
 <?php
 	session_start();
     include "conexao.php";
-	$usuario_adm=$_POST["usuario_adm"];
+	if($_SESSION["tipo_de_usuario"]==0){
+		$usuario_adm=$_POST["usuario_adm"];
+	}
     $nome_produto=$_POST["nome_produto"];
     $descricao=$_POST["descricao"];
     $preco=$_POST["preco"];
@@ -11,6 +13,8 @@
 	$quantidade=$_POST["quantidade"];
 	$id=$_SESSION["id_usuario"];
 	
+	echo print_r($_POST);
+	echo print_r($_FILES);
 	if (!empty($foto["name"])) {
 
         // Largura máxima em pixels
@@ -85,7 +89,8 @@
 			}
 
 			mysqli_close($con);
-			header("Location: cadastro_de_produtos.php");
+			$notifica = "Produto cadastrado com sucesso!!!";
+			header("Location: cadastro_de_produtos.php?conteudo=$notifica");
         }
         // Se houver mensagens de erro, exibe-as
         if (count($error) != 0) {

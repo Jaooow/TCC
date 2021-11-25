@@ -10,7 +10,8 @@
 			}
 			else{
 				$("#cargo").html("Cliente/Vendedor");
-				if(v.documentacao && v.documentacao!=""){
+				
+				if(v.documentacao != null){
 					$("#documentacao").html("<a href='documentos/"+v.documentacao+"'>documentos/"+v.documentacao+"</a>");
 				}
 				else{

@@ -35,7 +35,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="telefone_perfil"><h5>Digite seu número de Whatsapp:</h5></label>
-							<input type="text" class="form-control" id="telefone_perfil" name="telefone_perfil" required="required" placeholder="(00) 90000-0000">
+							<input type="text" class="form-control" maxlength="2" id="telefone_perfil" name="telefone_perfil" required="required" placeholder="(00) 90000-0000">
 						</div>
 					</div>
 					<div class="col-md-6">

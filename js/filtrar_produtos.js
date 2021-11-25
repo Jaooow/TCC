@@ -1,4 +1,6 @@
-
+	function notifica(){
+		alert("Produto selecionado!!");
+	}
 	//FILTRAGEM POR ROUPAS
 	$("#roupas").click(function(){
 		var id="ROUPAS";

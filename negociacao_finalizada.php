@@ -31,11 +31,11 @@
 			WHERE negociacao.cod_comprador='$id' and negociacao.status='1'";
 			$res = mysqli_query($con, $select) or die(mysqli_error($con));
 			while($linha=mysqli_fetch_assoc($res)){
-				$dados+='<div class="container">
+				$dados.='<div class="container">
 						<div class="row">
 							<div class="col-md-3">
 								<div class="card">
-									<img src="img/'.$linha["foto"].'" class="card-img-top" alt="Imagem Item">
+									<img src="fotos/'.$linha["foto"].'" class="card-img-top" alt="Imagem Item">
 									<div class=" card-body">
 										<!-- Nome Produto -->
 										<h5 class = "card-title">'.$linha["nome_produto"].'</h5>

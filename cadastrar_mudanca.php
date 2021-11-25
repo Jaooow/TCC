@@ -15,7 +15,7 @@
 		echo "teste3";
 	}
 	
-	if($_POST["tipo_de_negocio_perfil"]==3 || $_POST["tipo_de_negocio_perfil"]==2){
+	if(isset($_POST["documento_perfil"])){
 		echo "teste4";
 		$arquivo=$_FILES["documento_perfil"];
 		

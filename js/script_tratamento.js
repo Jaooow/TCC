@@ -5,6 +5,7 @@ function tratamento(){
 			$("#botoes").html(v);
 			console.log("dale");
 		});
+		$("#tratamento").html("");
 	});
 }
 tratamento();

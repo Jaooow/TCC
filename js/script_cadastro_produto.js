@@ -9,7 +9,7 @@
 					 quantidade: $("#quantidade").val()};
 					 console.log(dados);
 		$.post("cadastrar_produto.php", dados, function(d){
-			//alert("Produto cadastrado com sucesso!!!");
+			
 			$("#limpar").click();
 		});
 	}
@@ -20,6 +20,7 @@
 			$("#msg").html("Todos os campos (Nome, descrição, preço, tipo de produto e foto) devem der preenchidos devidamente, veja se estao devidamente preenchidos!!");
 		}
 		else{
-			cadastrar_produto();
+			
+			//$("#limpar").click();
 		}
 	});

@@ -1,6 +1,6 @@
 
 	
-	$("#tipo_de_negocio_perfil").change(function(){
+	/*$("#tipo_de_negocio_perfil").change(function(){
 		if(this.value ==1){
 			$("cnpj_perfil").attr("required", "false");
 			$("documento_perfil").attr("required", "false");
@@ -13,7 +13,7 @@
 		}
 	});
 	
-	/*$("#cadastrar_mudanca").click(function(){
+	$("#cadastrar_mudanca").click(function(){
 		var dados= { tipo_de_negocio: $("#tipo_de_negocio_perfil").val(),
 					 cnpj: $("#cnpj_perfil").val(),
                      documento: $("#documento_perfil").val(),

@@ -8,7 +8,7 @@
 		<div class="cadastro_produtos">
 			<?php
 				if(isset($_GET["conteudo"])){
-					echo"<div class='text-danger'>".$_GET['conteudo']."</div>";
+					echo"<div class='text-danger text-center'>".$_GET['conteudo']."</div>";
 				}
 			?>
 			<div class="row">
@@ -27,27 +27,27 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="nome_produto">Nome do Produto:</label>
-						<input type="text" class="form-control" id="nome_produto" name = "nome_produto" placeholder="Nome">
+						<input type="text" required="required" class="form-control" id="nome_produto" name = "nome_produto" placeholder="Nome">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="descricao">Descrição do Produto:</label>
-						<input type="text" class="form-control" id="descricao" name = "descricao" placeholder="Descrição">
+						<input type="text" required="required" class="form-control" id="descricao" name = "descricao" placeholder="Descrição">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="preco">Preço do Produto:</label>
-						<input type="text" class="form-control" id="preco" name = "preco" placeholder="R$">
+						<input type="number" required="required"  class="form-control" step="0.01" id="preco" name = "preco" placeholder="R$">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="quantidade">Quantidade:</label>
-						<input type="text" class="form-control" id="quantidade" name = "quantidade" placeholder="Quantidade">
+						<input type="text" required="required" class="form-control" id="quantidade" name = "quantidade" placeholder="Quantidade">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="tipo_produto">Categoria:</label>
-						<select  id="tipo_produto" name="tipo_produto" class="form-control">
+						<select  id="tipo_produto" required="required" name="tipo_produto" class="form-control">
 							<option value="Roupas" selected>Roupas</option>
 							<option value="Doces">Doces</option>
 							<option value="Comidas">Comidas</option>
@@ -57,7 +57,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label for="foto">Foto do Produto:</label>
-						<input type="file" accept=".jpg,.jpeg,.png,.pdf" id="foto" name="foto" />
+						<input type="file" required="required" accept=".jpg,.jpeg,.png,.pdf" id="foto" name="foto" />
 						<br />
 					</div>
 				</div>
@@ -67,7 +67,7 @@
 							<div class="form-group col-md-12">
 								<label for="usuario_adm">Selecione o vendedor:</label>
 								<select  id="usuario_adm" name="usuario_adm" class="form-control">
-									<option label="Escolha um Usuario" value="0">Escolha um Usuario</option>';
+									<option label="Escolha um Usuario" value="">Escolha um Usuario</option>';
 									
 										$select="SELECT nome, id_usuario FROM usuarios inner join vendedores on id_usuario=cod_vendedor";
 										$res = mysqli_query($con, $select) or die(mysqli_error($con));
@@ -86,7 +86,7 @@
 				<div id="msg" class="text-danger"></div>
 				<br />
 
-				<button type="submit" class="btn btn-primary" id="cadastrar_produto" name="cadastrar_produto">Cadastrar</button>
+				<button type="submit" class="btn btn-primary" id="cadastrar_produto" >Cadastrar</button>
 				<button type="reset" class="btn btn-secondary" id="limpar" name="limpar">Limpar</button>
 			</form>
 		</div>
