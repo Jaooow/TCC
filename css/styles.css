@@ -554,6 +554,13 @@ header, .navbar{
     margin-bottom: 20vh;
     border: 1px solid black;
 }
+
+
+.botoes{
+    text-align: center;
+    justify-content: center;
+}
+
 /*Responsive*/
 
 @media(max-width: 768px) {
