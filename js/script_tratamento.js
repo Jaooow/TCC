@@ -3,7 +3,7 @@ function tratamento(){
 		var id="0";
 		$.post("botoes.php", {"id":id}, function(v){
 			$("#botoes").html(v);
-			console.log("dale");
+			console.log("dale"+v);
 		});
 		$("#tratamento").html("");
 	});

@@ -25,7 +25,7 @@ if(sessionStorage.getItem("produto")){
 					console.log(i+"/"+id_negociacao.length);
 					var aux="Meu nome é "+JSON.parse(v).nome_usuario+" e estou interessado no(s) seguinte(s) produto(s): "+url;
 					var conteudo = encodeURIComponent(aux).replace("%5Cn", "%0A");
-					var confirma_botao='<a href="https://wa.me/55'+JSON.parse(v).tel+'?text='+conteudo+'"target="_blank"><button id="confirmar" class="btn btn-success">Confirmar Compra</button></a> <button id="retornar" class="btn btn-primary" href="procurar_produtos.php">Voltar</button> <button id="cancelar_compra" class="btn btn-danger">Cancelar Compra</button>';
+					var confirma_botao='<a href="https://wa.me/55'+JSON.parse(v).tel+'?text='+conteudo+'"target="_blank"><button id="confirmar" class="btn btn-success">Confirmar Compra</button></a> <button id="retornar" class="btn btn-primary" href="procurar_produtos.php">Voltar</button> <button id="cancelar_compra" onclick="cancelar_compra()" class="btn btn-danger">Cancelar Compra</button>';
 					$("#confirma_botao").html(confirma_botao);
 					confirma();
 				}
@@ -58,17 +58,19 @@ if(sessionStorage.getItem("produto")){
 			sessionStorage.removeItem("produto");
 			sessionStorage.removeItem("quantidade");
 			$("#mensagem_negociacao").html("Sua compra foi tranferida para Negociações em Andamento!!");
+			$("#confirma_botao").html("");
 			$("#itens_negociacao").html("");
 		});
 	}
 		
-		$("#cancelar_compra").click(function(){
+		function cancelar_compra(){
 			var id_cancelar=JSON.parse(sessionStorage.getItem("produto"));
 			var quantidade_cancelar= JSON.parse(sessionStorage.getItem("quantidade")); 
-			for(i=0; i < id_confirmar.length; i++){
+			for(i=0; i < id_cancelar.length; i++){
 				id_cancelar[i]=null;
 				quantidade_cancelar[i]=null;
 			}
 			sessionStorage.setItem("produto", JSON.stringify(id_cancelar));
 			sessionStorage.setItem("quantidade", JSON.stringify(quantidade_cancelar));
-		});
+			window.location.href="negociacao.php";
+		}

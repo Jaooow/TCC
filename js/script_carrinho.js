@@ -38,7 +38,7 @@
 				function carrinho(){
 					console.log("teste function");
 					$("div#tabela_produtos button").click(function(){
-console.log("teste function2");
+						
 						if(sessionStorage.getItem("produto")){
 							produto=JSON.parse(sessionStorage.getItem("produto"));
 							quantidade= JSON.parse(sessionStorage.getItem("quantidade")); 
@@ -55,7 +55,7 @@ console.log("teste function2");
 							
 							sessionStorage.setItem("produto", JSON.stringify(produto));
 							sessionStorage.setItem("quantidade", JSON.stringify(quantidade));
-							
+							alert("Quantidade selecionada!! Vá ao carrinho para ver");
 							
 							var dados={"id":id,
 										"quant":quantidade[id],

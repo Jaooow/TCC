@@ -34,7 +34,7 @@
 								<p class = "preco_produto">Valor Total: R$ '.$valor.'</p>
 								<p class="produto_vendedor">Preço (Un): R$ '.$linha["preco"].'</p>
 								<label for="'.$id.'">Quantidade:</label>
-								<input type="number" name="quantidade_negociacao" id="'.$id.'" class="produto_vendedor" value="'.$quant.'"/>
+								<input type="number" name="quantidade_negociacao" readonly="readonly" id="'.$id.'" class="produto_vendedor" value="'.$quant.'"/>
 								<br /><br />
 								<h7>Seção:</h7><p class=secao_produtos>Comida</p>
 							</div>

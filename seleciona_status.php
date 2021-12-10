@@ -7,12 +7,10 @@
 			$id2=$_POST["id"];
 			$status=$_POST["status"];
 			if($status==0){
-				$select="SELECT negociacao.cod_comprador as cod_comprador, negociacao.cod_vendedor as cod_vendedor, id_negociacao, foto, usuarios.nome as nome_usuario, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
+				$select="SELECT  foto, nome_comprador, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
 				FROM negociacao 
 				inner join itens_negociacao on negociacao.id_negociacao=itens_negociacao.cod_negociacao 
 				inner join produtos on itens_negociacao.cod_produto=produtos.id_produto 
-				inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor
-				inner join usuarios on usuarios.id_usuario=vendedores.cod_vendedor
 				WHERE negociacao.cod_vendedor='$id' and negociacao.cod_comprador='$id2' and negociacao.status='0'";
 				$res = mysqli_query($con, $select) or die(mysqli_error($con));
 				while($linha=mysqli_fetch_assoc($res)){
@@ -34,7 +32,7 @@
 									<!-- Informação -->
 									<p class="info_produto">'.$linha["descricao"].'</p>
 									<p class="info_produto">Vendedor:'.$linha["nome_vendedor"].'</p>
-									<p class="info_produto">Comprador:'.$linha["nome_usuario"].'</p>
+									<p class="info_produto">Comprador:'.$linha["nome_comprador"].'</p>
 									<p class="info_produto" style="color:red;">Compra em andamento, verifique o contato do vendedor em seu WhatsApp</p>
 									<br/><br/>
 								</div>
@@ -53,13 +51,11 @@
 				echo $dados;
 			}
 			else{
-				$select="SELECT id_negociacao, foto, usuarios.nome as nome_usuario, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
+				$select="SELECT  id_negociacao, foto, nome_comprador, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
 				FROM negociacao 
 				inner join itens_negociacao on negociacao.id_negociacao=itens_negociacao.cod_negociacao 
 				inner join produtos on itens_negociacao.cod_produto=produtos.id_produto 
-				inner join vendedores on produtos.cod_vendedor=vendedores.cod_vendedor
-				inner join usuarios on usuarios.id_usuario=vendedores.cod_vendedor
-				WHERE negociacao.cod_comprador='$id2' and negociacao.cod_vendedor='$id' and negociacao.status='1'";
+				WHERE negociacao.cod_vendedor='$id' and negociacao.cod_comprador='$id2' and negociacao.status='1'";
 				$res = mysqli_query($con, $select) or die(mysqli_error($con));
 				while($linha=mysqli_fetch_assoc($res)){
 					$dados.='<div id="status'.$linha["id_negociacao"].'">
@@ -80,7 +76,7 @@
 									<!-- Informação -->
 									<p class="info_produto">'.$linha["descricao"].'</p>
 									<p class="info_produto">Vendedor:'.$linha["nome_vendedor"].'</p>
-									<p class="info_produto">Comprador:'.$linha["nome_usuario"].'</p>
+									<p class="info_produto">Comprador:'.$linha["nome_comprador"].'</p>
 									<p class="info_produto" style="color:red;">Compra Finalizada</p>
 									<br/><br/>
 								</div>

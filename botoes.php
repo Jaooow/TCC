@@ -1,10 +1,4 @@
-<div class="botoes">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
 
-			</div>
-			<div class="col-md-12">
 				<?php
 					session_start();
 					include "conexao.php";
@@ -47,9 +41,6 @@
 						echo $dados;
 					}
 				?>
-			</div>
-		</div>
-	</div>
-</div>
+		
 
 

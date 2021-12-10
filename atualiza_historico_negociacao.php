@@ -1,7 +1,7 @@
 <?php
 	include "conexao.php";
 		$dados="";
-		$select="SELECT negociacao.status as status, foto, usuarios.nome as nome_usuario, nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
+		$select="SELECT negociacao.status as status, foto, nome_comprador, negociacao.nome_vendedor as nome_vendedor, produtos.nome as nome_produto, preco_unitario, preco_final, itens_negociacao.quantidade as quantidade, descricao 
 				FROM negociacao 
 				inner join itens_negociacao on negociacao.id_negociacao=itens_negociacao.cod_negociacao 
 				inner join produtos on itens_negociacao.cod_produto=produtos.id_produto 
@@ -26,7 +26,7 @@
 								<!-- Informação -->
 								<p class="info_produto">'.$linha["descricao"].'</p>
 								<p class="info_produto">Vendedor: '.$linha["nome_vendedor"].'</p>
-								<p class="info_produto">Comprador: '.$linha["nome_usuario"].'</p>';
+								<p class="info_produto">Comprador: '.$linha["nome_comprador"].'</p>';
 								if($linha["status"]==0){
 									$dados.='<p class="info_produto" style="color:red;">Compra em andamento</p>';
 								}

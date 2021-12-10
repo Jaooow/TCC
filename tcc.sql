@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 24-Nov-2021 às 12:45
+-- Data de Criação: 10-Dez-2021 às 14:25
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `itens_negociacao` (
   PRIMARY KEY (`id_itens_negociacao`),
   KEY `cod_produto` (`cod_produto`),
   KEY `cod_negociacao` (`cod_negociacao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -74,10 +74,12 @@ CREATE TABLE IF NOT EXISTS `negociacao` (
   `cod_vendedor` int(11) NOT NULL,
   `data_negociacao` varchar(100) NOT NULL,
   `status` int(11) NOT NULL,
+  `nome_comprador` varchar(100) NOT NULL,
+  `nome_vendedor` varchar(100) NOT NULL,
   PRIMARY KEY (`id_negociacao`),
   KEY `cod_comprador` (`cod_comprador`),
   KEY `cod_vendedor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -96,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_produto`),
   KEY `cod_vendendor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `vendedores` (
   `cod_vendedor` int(11) NOT NULL,
   PRIMARY KEY (`id_vendedores`),
   KEY `cod_vendedor` (`cod_vendedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Constraints for dumped tables
